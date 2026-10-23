@@ -26,6 +26,7 @@ flowchart LR
 | `.venv/` | PySpark và Py4J của dự án, được Git bỏ qua |
 | `config/project.json` | Danh sách bốn CSV, schema, số dòng kiểm tra và đường dẫn |
 | `src/common.py` | Đường dẫn, UTC, SHA-256, ghi JSON và tạo SparkSession |
+| `src/checkpoint2.py` | Điều phối demo, hiện tóm tắt terminal, lưu stdout/stderr đầy đủ theo từng lần chạy |
 | `src/env_check.py` | Phiên bản thực tế, `range(1_000_000).count()` và Python worker |
 | `src/ingest_file.py` | Quality gate, copy nguyên byte, dedupe, manifest và log |
 | `src/inspect_raw.py` | Đọc raw từ manifest bằng Spark, in schema và vài dòng |
@@ -38,7 +39,7 @@ flowchart LR
 | `docs/evidence/` | Bằng chứng JSON nhỏ và bản ghi versions; có thể vào Git |
 | `logs/checkpoint2/` | Log chi tiết, bản sao cấu hình trước sửa; nằm ngoài Git |
 
-`RUN_CHECKPOINT2.ps1` gọi môi trường một lần, ingestion ba lần rồi inspect. Khi chạy Python trực tiếp, chỉ gọi các module đầu vào cần thiết. Các module `common` được import tự động, không chạy lần lượt từng file trong `src`.
+`RUN_CHECKPOINT2.ps1` gọi `src.checkpoint2`, lần lượt chạy môi trường một lần, ingestion ba lần rồi inspect. Terminal chỉ hiển thị tiến độ, kết quả và số liệu chính; stdout/stderr đầy đủ, schema và bảng mẫu được lưu trong `logs/checkpoint2/run_<ma-lan-chay>/`. Khi một bước lỗi, chương trình dừng và trả mã thoát khác 0. Khi chạy Python trực tiếp, chỉ gọi các module đầu vào cần thiết. Các module `common` được import tự động, không chạy lần lượt từng file trong `src`.
 
 ## Bố trí raw và hành vi chạy lại
 

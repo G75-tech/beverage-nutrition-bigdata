@@ -1,5 +1,5 @@
 {
-  "started_at_utc": "2026-10-23T06:28:39.288478Z",
+  "started_at_utc": "2026-10-23T16:27:39.997354Z",
   "status": "PASS",
   "file_name": "branded_food.csv",
   "spark": "3.5.9",
@@ -259,5 +259,5 @@
   "row_count": null,
   "full_dataset_validated": false,
   "note": "Explicit schema and first rows only; no filtering or ETL; no full row count claimed",
-  "finished_at_utc": "2026-10-23T06:28:46.269816Z"
+  "finished_at_utc": "2026-10-23T16:27:47.845455Z"
 }
