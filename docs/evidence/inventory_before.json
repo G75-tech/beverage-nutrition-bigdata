@@ -1,0 +1,279 @@
+{
+  "created_at_utc": "2026-10-23T06:21:54.879590Z",
+  "root": "G:\\BigDATA\\beverage-nutrition-bigdata",
+  "source_files": [
+    {
+      "path": "datasets/usda_branded_2026/csv/branded_food.csv",
+      "size_bytes": 954002257,
+      "mtime_ns": 1777306409000000000,
+      "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "fdc_id",
+        "brand_owner",
+        "brand_name",
+        "subbrand_name",
+        "gtin_upc",
+        "ingredients",
+        "not_a_significant_source_of",
+        "serving_size",
+        "serving_size_unit",
+        "household_serving_fulltext",
+        "branded_food_category",
+        "data_source",
+        "package_weight",
+        "modified_date",
+        "available_date",
+        "market_country",
+        "discontinued_date",
+        "preparation_state_code",
+        "trade_channel",
+        "short_description",
+        "material_code"
+      ],
+      "first_record_width": 21
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/Download API Field Descriptions.xlsx",
+      "size_bytes": 32849,
+      "mtime_ns": 1777300093000000000,
+      "sha256": "84597b955d1d0b9ea4b407b0cc24a32b84f7bbc0ee06ef38a1d24011f3a281b4",
+      "matches_previous_layout_sha256": true
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/food.csv",
+      "size_bytes": 375881194,
+      "mtime_ns": 1777305064000000000,
+      "sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "fdc_id",
+        "data_type",
+        "description",
+        "food_category_id",
+        "publication_date",
+        "market_country",
+        "trade_channel",
+        "microbe_data"
+      ],
+      "first_record_width": 8
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/food_attribute.csv",
+      "size_bytes": 133026234,
+      "mtime_ns": 1777305086000000000,
+      "sha256": "cb8a2e6501ead60f8bc724ea9d73efac5d844470fa124dc121af6ba644cfe441",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "fdc_id",
+        "seq_num",
+        "food_attribute_type_id",
+        "name",
+        "value"
+      ],
+      "first_record_width": 6
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/food_attribute_type.csv",
+      "size_bytes": 331,
+      "mtime_ns": 1777306409000000000,
+      "sha256": "35ac614cc9958eaa5f43402bb592b595902b5cc43dad4b947958a0057287adde",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "name",
+        "description"
+      ],
+      "first_record_width": 3
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/food_nutrient.csv",
+      "size_bytes": 1496063311,
+      "mtime_ns": 1777305388000000000,
+      "sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "fdc_id",
+        "nutrient_id",
+        "amount",
+        "data_points",
+        "derivation_id",
+        "min",
+        "max",
+        "median",
+        "footnote",
+        "min_year_acquired"
+      ],
+      "first_record_width": 11
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/food_update_log_entry.csv",
+      "size_bytes": 132826299,
+      "mtime_ns": 1777305099000000000,
+      "sha256": "3c6b35c021f5436ffeef23046881eac89cadbea7edbaf42f8f1b943040977f92",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "description",
+        "last_updated"
+      ],
+      "first_record_width": 3
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/FoodData_Central_branded_food_csv_2026-04-30.zip",
+      "size_bytes": 448767220,
+      "mtime_ns": 1792726225276825900,
+      "sha256": "26050a5d03197469813754743a21ee0fad4ccf22b6aac2a995846a987719fc49",
+      "matches_previous_layout_sha256": true,
+      "zip_members": [
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/",
+          "size_bytes": 0,
+          "compressed_bytes": 0,
+          "crc32": "00000000"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/food_attribute.csv",
+          "size_bytes": 133026234,
+          "compressed_bytes": 13998569,
+          "crc32": "cbf1f988"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/microbe.csv",
+          "size_bytes": 1579,
+          "compressed_bytes": 278,
+          "crc32": "af3c1f35"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/measure_unit.csv",
+          "size_bytes": 1969,
+          "compressed_bytes": 831,
+          "crc32": "cb0792df"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/Download API Field Descriptions.xlsx",
+          "size_bytes": 32849,
+          "compressed_bytes": 24838,
+          "crc32": "f19bb4b6"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/food.csv",
+          "size_bytes": 375881194,
+          "compressed_bytes": 35142060,
+          "crc32": "1bd068e8"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/food_attribute_type.csv",
+          "size_bytes": 331,
+          "compressed_bytes": 192,
+          "crc32": "1bbd9e26"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/branded_food.csv",
+          "size_bytes": 954002257,
+          "compressed_bytes": 171938263,
+          "crc32": "46d7dd31"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/food_nutrient.csv",
+          "size_bytes": 1496063311,
+          "compressed_bytes": 198371650,
+          "crc32": "567e5661"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/nutrient.csv",
+          "size_bytes": 21556,
+          "compressed_bytes": 6678,
+          "crc32": "81019c1e"
+        },
+        {
+          "name": "FoodData_Central_branded_food_csv_2026-04-30/food_update_log_entry.csv",
+          "size_bytes": 132826299,
+          "compressed_bytes": 29281077,
+          "crc32": "b783c9ec"
+        }
+      ],
+      "zip_validation_scope": "Central directory read only; member CRC not fully tested"
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/measure_unit.csv",
+      "size_bytes": 1969,
+      "mtime_ns": 1777306409000000000,
+      "sha256": "62cde43ede7257a7748bb03d1b62f6905fab3ee0014efd41c9a040ac404da4d6",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "name"
+      ],
+      "first_record_width": 2
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/microbe.csv",
+      "size_bytes": 1579,
+      "mtime_ns": 1777306409000000000,
+      "sha256": "39f6453879f5f4b0ab1c4c6c92c1767e0a432704da8b7aa209f88559c88cbe84",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "foodId",
+        "method",
+        "microbe_code",
+        "min_value",
+        "max_value",
+        "uom"
+      ],
+      "first_record_width": 7
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/nutrient.csv",
+      "size_bytes": 21556,
+      "mtime_ns": 1777306409000000000,
+      "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+      "matches_previous_layout_sha256": true,
+      "header": [
+        "id",
+        "name",
+        "unit_name",
+        "nutrient_nbr",
+        "rank"
+      ],
+      "first_record_width": 5
+    },
+    {
+      "path": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+      "size_bytes": 204270542,
+      "mtime_ns": 1792726270054858100,
+      "sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+      "matches_previous_layout_sha256": true,
+      "zip_members": [
+        {
+          "name": "FoodData_Central_branded_food_json_2026-04-30.json",
+          "size_bytes": 3315545449,
+          "compressed_bytes": 204270292,
+          "crc32": "8c1209f1"
+        }
+      ],
+      "zip_validation_scope": "Central directory read only; member CRC not fully tested"
+    }
+  ],
+  "disk_free_bytes": 139842215936,
+  "git": {
+    "status": {
+      "exit_code": 0,
+      "stdout": "## No commits yet on main\n?? .gitignore\n?? AGENTS.md\n?? PROJECT_CONTEXT.md\n?? README.md\n?? RUN_CHECKPOINT2.ps1\n?? config/\n?? data/\n?? datasets/\n?? docs/\n?? logs/\n?? metadata/\n?? requirements.txt\n?? scripts/\n?? setup.ps1\n?? src/\n?? tests/\n",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    }
+  }
+}

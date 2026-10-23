@@ -1,0 +1,7 @@
+{
+  "started_at_utc": "2026-10-23T06:28:04.512020Z",
+  "status": "FAIL",
+  "file_name": "branded_food.csv",
+  "error": "Traceback (most recent call last):\n  File \"G:\\BigDATA\\beverage-nutrition-bigdata\\src\\inspect_raw.py\", line 43, in main\n    .option(\"escape\", '\"').option(\"encoding\", \"UTF-8\").schema(schema).csv(path.as_uri()))\n                                                                      ^^^^^^^^^^^^^^^^^^\n  File \"G:\\BigDATA\\beverage-nutrition-bigdata\\.venv\\Lib\\site-packages\\pyspark\\sql\\readwriter.py\", line 740, in csv\n    return self._df(self._jreader.csv(self._spark._sc._jvm.PythonUtils.toSeq(path)))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"G:\\BigDATA\\beverage-nutrition-bigdata\\.venv\\Lib\\site-packages\\py4j\\java_gateway.py\", line 1322, in __call__\n    return_value = get_return_value(\n                   ^^^^^^^^^^^^^^^^^\n  File \"G:\\BigDATA\\beverage-nutrition-bigdata\\.venv\\Lib\\site-packages\\pyspark\\errors\\exceptions\\captured.py\", line 185, in deco\n    raise converted from None\npyspark.errors.exceptions.captured.AnalysisException: [PATH_NOT_FOUND] Path does not exist: file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date%3D2026-10-23/run_id%3Dcheckpoint2_20261023T062747094486Z_1/branded_food.csv.\n",
+  "finished_at_utc": "2026-10-23T06:28:09.580986Z"
+}

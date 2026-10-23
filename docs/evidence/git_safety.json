@@ -1,0 +1,255 @@
+{
+  "checked_at_utc": "2026-10-23T07:40:48.138148Z",
+  "status": "PASS",
+  "staged_files": [
+    {
+      "path": ".env.example",
+      "staged_bytes": 324
+    },
+    {
+      "path": ".gitattributes",
+      "staged_bytes": 261
+    },
+    {
+      "path": ".gitignore",
+      "staged_bytes": 716
+    },
+    {
+      "path": "AGENTS.md",
+      "staged_bytes": 1116
+    },
+    {
+      "path": "PROJECT_CONTEXT.md",
+      "staged_bytes": 7661
+    },
+    {
+      "path": "README.md",
+      "staged_bytes": 8275
+    },
+    {
+      "path": "RUN_CHECKPOINT2.ps1",
+      "staged_bytes": 664
+    },
+    {
+      "path": "config/project.json",
+      "staged_bytes": 1843
+    },
+    {
+      "path": "data/raw/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "data/sample/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "datasets/usda_branded_2026/csv/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "datasets/usda_branded_2026/json/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "docs/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "docs/NEXT_STEPS.md",
+      "staged_bytes": 1084
+    },
+    {
+      "path": "docs/PITCH_4_MINUTES.md",
+      "staged_bytes": 2060
+    },
+    {
+      "path": "docs/architecture.md",
+      "staged_bytes": 6580
+    },
+    {
+      "path": "docs/checkpoint2_report.md",
+      "staged_bytes": 11591
+    },
+    {
+      "path": "docs/evidence/environment.json",
+      "staged_bytes": 1058
+    },
+    {
+      "path": "docs/evidence/git_safety.json",
+      "staged_bytes": 5670
+    },
+    {
+      "path": "docs/evidence/ingestion_three_runs.json",
+      "staged_bytes": 21163
+    },
+    {
+      "path": "docs/evidence/inventory_before.json",
+      "staged_bytes": 8772
+    },
+    {
+      "path": "docs/evidence/pip_freeze.txt",
+      "staged_bytes": 30
+    },
+    {
+      "path": "docs/evidence/raw_inspection.json",
+      "staged_bytes": 9422
+    },
+    {
+      "path": "docs/evidence/raw_inspection_initial_failure.json",
+      "staged_bytes": 1417
+    },
+    {
+      "path": "docs/evidence/requirements_review.json",
+      "staged_bytes": 938
+    },
+    {
+      "path": "docs/evidence/runtime_downloads.json",
+      "staged_bytes": 946
+    },
+    {
+      "path": "docs/evidence/source_preservation.json",
+      "staged_bytes": 5421
+    },
+    {
+      "path": "docs/evidence/unit_tests.json",
+      "staged_bytes": 171
+    },
+    {
+      "path": "docs/evidence/validation.json",
+      "staged_bytes": 3033
+    },
+    {
+      "path": "docs/evidence/validation_initial.json",
+      "staged_bytes": 2807
+    },
+    {
+      "path": "logs/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "metadata/.gitkeep",
+      "staged_bytes": 0
+    },
+    {
+      "path": "metadata/dataset_layout_manifest.json",
+      "staged_bytes": 4575
+    },
+    {
+      "path": "metadata/manifests/ingestion.jsonl",
+      "staged_bytes": 15153
+    },
+    {
+      "path": "metadata/source_usda.json",
+      "staged_bytes": 2197
+    },
+    {
+      "path": "requirements.txt",
+      "staged_bytes": 114
+    },
+    {
+      "path": "scripts/bootstrap_runtime.py",
+      "staged_bytes": 5037
+    },
+    {
+      "path": "scripts/finalize_evidence.py",
+      "staged_bytes": 2262
+    },
+    {
+      "path": "scripts/git_safety.py",
+      "staged_bytes": 3725
+    },
+    {
+      "path": "scripts/inventory.py",
+      "staged_bytes": 2586
+    },
+    {
+      "path": "scripts/validate_checkpoint.py",
+      "staged_bytes": 5489
+    },
+    {
+      "path": "scripts/write_report.py",
+      "staged_bytes": 14997
+    },
+    {
+      "path": "setup.ps1",
+      "staged_bytes": 1405
+    },
+    {
+      "path": "src/__init__.py",
+      "staged_bytes": 64
+    },
+    {
+      "path": "src/common.py",
+      "staged_bytes": 2606
+    },
+    {
+      "path": "src/env_check.py",
+      "staged_bytes": 3123
+    },
+    {
+      "path": "src/ingest_file.py",
+      "staged_bytes": 10044
+    },
+    {
+      "path": "src/inspect_raw.py",
+      "staged_bytes": 3693
+    },
+    {
+      "path": "src/main.py",
+      "staged_bytes": 342
+    },
+    {
+      "path": "tests/test_ingestion.py",
+      "staged_bytes": 5991
+    }
+  ],
+  "staged_count": 50,
+  "max_staged_bytes": 21163,
+  "ignore_probes": [
+    {
+      "path": "datasets/usda_branded_2026/csv/branded_food.csv",
+      "ignored": true,
+      "matched_rule": ".gitignore:38:*.csv\tdatasets/usda_branded_2026/csv/branded_food.csv"
+    },
+    {
+      "path": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+      "ignored": true,
+      "matched_rule": ".gitignore:36:*.zip\tdatasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip"
+    },
+    {
+      "path": "data/raw/example/test.csv",
+      "ignored": true,
+      "matched_rule": ".gitignore:29:/data/raw/**\tdata/raw/example/test.csv"
+    },
+    {
+      "path": ".env",
+      "ignored": true,
+      "matched_rule": ".gitignore:13:.env\t.env"
+    },
+    {
+      "path": ".env.production",
+      "ignored": true,
+      "matched_rule": ".gitignore:14:.env.*\t.env.production"
+    },
+    {
+      "path": ".venv/Scripts/python.exe",
+      "ignored": true,
+      "matched_rule": ".gitignore:2:.venv/\t.venv/Scripts/python.exe"
+    },
+    {
+      "path": ".tools/runtime.json",
+      "ignored": true,
+      "matched_rule": ".gitignore:4:.tools/\t.tools/runtime.json"
+    },
+    {
+      "path": "logs/checkpoint2/ingestion.log",
+      "ignored": true,
+      "matched_rule": ".gitignore:33:/logs/**\tlogs/checkpoint2/ingestion.log"
+    }
+  ],
+  "problems": [],
+  "remote_names": [],
+  "remote_credentials_check": "NOT_APPLICABLE_NO_REMOTE",
+  "secret_scan_scope": "Staged text content: private key blocks, GitHub/AWS token signatures and embedded URL credentials. No claim of exhaustive secret detection.",
+  "push_performed": false
+}

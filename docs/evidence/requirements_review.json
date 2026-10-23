@@ -1,0 +1,20 @@
+{
+  "status": "READ",
+  "sources": [
+    {
+      "path": "G:\\Downloads\\Documents\\BigData_Buoi06_DoAn2_Brief_Checkpoint_Template.docx",
+      "size_bytes": 40638,
+      "sha256": "40dcaa091f73a8fbd6f606f0ae7ec638d7ea172053fbaddbab1c8950ea49edf1",
+      "read_at_utc": "2026-10-23T06:33:24.504151Z",
+      "read_scope": "Body paragraphs and tables for DOCX; all 32 slides and speaker notes for PPTX; text extraction, no edits"
+    },
+    {
+      "path": "G:\\Downloads\\Documents\\BigData_Buoi06_DoAn2_Environment_Ingestion_RawStorage.pptx",
+      "size_bytes": 748611,
+      "sha256": "f98d32d65ba38f79a3e48453d4d587d5689c25b41b6f51371c0e653aaafc4250",
+      "read_at_utc": "2026-10-23T06:33:24.508430Z",
+      "read_scope": "Body paragraphs and tables for DOCX; all 32 slides and speaker notes for PPTX; text extraction, no edits"
+    }
+  ],
+  "reference": "DOCX section 4 and Exit ticket; PPTX slides 8, 10, 17, 18, 24, 28, 31, 32"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "unit_tests",
+  "status": "PASS",
+  "tests_run": 13,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "log_path": "logs/checkpoint2/unit_tests_console.log"
+}

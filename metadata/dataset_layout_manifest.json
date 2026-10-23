@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "operation": "local_dataset_layout_migration",
+  "created_at_utc": "2026-10-23T05:14:21.874996+00:00",
+  "root": "G:\\BigDATA\\beverage-nutrition-bigdata",
+  "source_url": null,
+  "downloaded_at": null,
+  "note": "No ingestion. Dataset contents preserved; JSON archive not extracted.",
+  "files": [
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/branded_food.csv",
+      "path": "datasets/usda_branded_2026/csv/branded_food.csv",
+      "bytes": 954002257,
+      "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/Download API Field Descriptions.xlsx",
+      "path": "datasets/usda_branded_2026/csv/Download API Field Descriptions.xlsx",
+      "bytes": 32849,
+      "sha256": "84597b955d1d0b9ea4b407b0cc24a32b84f7bbc0ee06ef38a1d24011f3a281b4",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/food.csv",
+      "path": "datasets/usda_branded_2026/csv/food.csv",
+      "bytes": 375881194,
+      "sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/food_attribute.csv",
+      "path": "datasets/usda_branded_2026/csv/food_attribute.csv",
+      "bytes": 133026234,
+      "sha256": "cb8a2e6501ead60f8bc724ea9d73efac5d844470fa124dc121af6ba644cfe441",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/food_attribute_type.csv",
+      "path": "datasets/usda_branded_2026/csv/food_attribute_type.csv",
+      "bytes": 331,
+      "sha256": "35ac614cc9958eaa5f43402bb592b595902b5cc43dad4b947958a0057287adde",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/food_nutrient.csv",
+      "path": "datasets/usda_branded_2026/csv/food_nutrient.csv",
+      "bytes": 1496063311,
+      "sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/food_update_log_entry.csv",
+      "path": "datasets/usda_branded_2026/csv/food_update_log_entry.csv",
+      "bytes": 132826299,
+      "sha256": "3c6b35c021f5436ffeef23046881eac89cadbea7edbaf42f8f1b943040977f92",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/measure_unit.csv",
+      "path": "datasets/usda_branded_2026/csv/measure_unit.csv",
+      "bytes": 1969,
+      "sha256": "62cde43ede7257a7748bb03d1b62f6905fab3ee0014efd41c9a040ac404da4d6",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/microbe.csv",
+      "path": "datasets/usda_branded_2026/csv/microbe.csv",
+      "bytes": 1579,
+      "sha256": "39f6453879f5f4b0ab1c4c6c92c1767e0a432704da8b7aa209f88559c88cbe84",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30/FoodData_Central_branded_food_csv_2026-04-30/nutrient.csv",
+      "path": "datasets/usda_branded_2026/csv/nutrient.csv",
+      "bytes": 21556,
+      "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_csv_2026-04-30.zip",
+      "path": "datasets/usda_branded_2026/csv/FoodData_Central_branded_food_csv_2026-04-30.zip",
+      "bytes": 448767220,
+      "sha256": "26050a5d03197469813754743a21ee0fad4ccf22b6aac2a995846a987719fc49",
+      "status": "verified"
+    },
+    {
+      "original_path": "Dataset/FoodData_Central_branded_food_json_2026-04-30.zip",
+      "path": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+      "bytes": 204270542,
+      "sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+      "status": "verified"
+    }
+  ]
+}

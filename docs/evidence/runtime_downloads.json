@@ -1,0 +1,19 @@
+{
+  "selected_at_utc": "2026-10-23T06:22:00.766852+00:00",
+  "python": {
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261021/cpython-3.11.17%2B20261021-x86_64-pc-windows-msvc-install_only.tar.gz",
+    "sha256": "136bbb2e50fe037fd5e32126e70e95b35d1fa5dac5bd04a55b8088415ee99540",
+    "name": "cpython-3.11.17+20261021-x86_64-pc-windows-msvc-install_only.tar.gz",
+    "release": "20261021",
+    "distribution": "Astral python-build-standalone"
+  },
+  "java": {
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jdk_x64_windows_hotspot_17.0.20.1_1.zip",
+    "sha256": "e53a79c3c3d86865bd7e787903884331068e71321714ffd44f145785affc7cb0",
+    "name": "OpenJDK17U-jdk_x64_windows_hotspot_17.0.20.1_1.zip",
+    "version": "17.0.20+101",
+    "distribution": "Eclipse Temurin"
+  },
+  "verified_at_utc": "2026-10-23T06:22:12.749244+00:00",
+  "status": "PASS"
+}

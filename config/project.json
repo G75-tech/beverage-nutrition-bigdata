@@ -1,0 +1,32 @@
+{
+  "source": "USDA FoodData Central Branded Foods",
+  "release": "2026-04-30",
+  "dataset": "usda_branded_2026_04",
+  "input_dir": "datasets/usda_branded_2026/csv",
+  "raw_dir": "data/raw",
+  "manifest": "metadata/manifests/ingestion.jsonl",
+  "type_sample_rows": 1000,
+  "default_files": ["branded_food.csv", "food.csv", "food_nutrient.csv", "nutrient.csv"],
+  "csv_schemas": {
+    "branded_food.csv": {
+      "columns": ["fdc_id", "brand_owner", "brand_name", "subbrand_name", "gtin_upc", "ingredients", "not_a_significant_source_of", "serving_size", "serving_size_unit", "household_serving_fulltext", "branded_food_category", "data_source", "package_weight", "modified_date", "available_date", "market_country", "discontinued_date", "preparation_state_code", "trade_channel", "short_description", "material_code"],
+      "types": {"fdc_id": "long", "serving_size": "double"},
+      "required_values": ["fdc_id"]
+    },
+    "food.csv": {
+      "columns": ["fdc_id", "data_type", "description", "food_category_id", "publication_date", "market_country", "trade_channel", "microbe_data"],
+      "types": {"fdc_id": "long", "food_category_id": "long"},
+      "required_values": ["fdc_id"]
+    },
+    "food_nutrient.csv": {
+      "columns": ["id", "fdc_id", "nutrient_id", "amount", "data_points", "derivation_id", "min", "max", "median", "footnote", "min_year_acquired"],
+      "types": {"id": "long", "fdc_id": "long", "nutrient_id": "long", "amount": "double", "data_points": "long", "derivation_id": "long", "min": "double", "max": "double", "median": "double", "min_year_acquired": "long"},
+      "required_values": ["id", "fdc_id", "nutrient_id"]
+    },
+    "nutrient.csv": {
+      "columns": ["id", "name", "unit_name", "nutrient_nbr", "rank"],
+      "types": {"id": "long", "rank": "double"},
+      "required_values": ["id"]
+    }
+  }
+}

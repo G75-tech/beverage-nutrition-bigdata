@@ -1,0 +1,134 @@
+[
+  {
+    "path": "datasets/usda_branded_2026/csv/branded_food.csv",
+    "exists": true,
+    "before_sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+    "before_size_bytes": 954002257,
+    "before_mtime_ns": 1777306409000000000,
+    "after_sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+    "after_size_bytes": 954002257,
+    "after_mtime_ns": 1777306409000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/Download API Field Descriptions.xlsx",
+    "exists": true,
+    "before_sha256": "84597b955d1d0b9ea4b407b0cc24a32b84f7bbc0ee06ef38a1d24011f3a281b4",
+    "before_size_bytes": 32849,
+    "before_mtime_ns": 1777300093000000000,
+    "after_sha256": "84597b955d1d0b9ea4b407b0cc24a32b84f7bbc0ee06ef38a1d24011f3a281b4",
+    "after_size_bytes": 32849,
+    "after_mtime_ns": 1777300093000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/food.csv",
+    "exists": true,
+    "before_sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+    "before_size_bytes": 375881194,
+    "before_mtime_ns": 1777305064000000000,
+    "after_sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+    "after_size_bytes": 375881194,
+    "after_mtime_ns": 1777305064000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/food_attribute.csv",
+    "exists": true,
+    "before_sha256": "cb8a2e6501ead60f8bc724ea9d73efac5d844470fa124dc121af6ba644cfe441",
+    "before_size_bytes": 133026234,
+    "before_mtime_ns": 1777305086000000000,
+    "after_sha256": "cb8a2e6501ead60f8bc724ea9d73efac5d844470fa124dc121af6ba644cfe441",
+    "after_size_bytes": 133026234,
+    "after_mtime_ns": 1777305086000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/food_attribute_type.csv",
+    "exists": true,
+    "before_sha256": "35ac614cc9958eaa5f43402bb592b595902b5cc43dad4b947958a0057287adde",
+    "before_size_bytes": 331,
+    "before_mtime_ns": 1777306409000000000,
+    "after_sha256": "35ac614cc9958eaa5f43402bb592b595902b5cc43dad4b947958a0057287adde",
+    "after_size_bytes": 331,
+    "after_mtime_ns": 1777306409000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/food_nutrient.csv",
+    "exists": true,
+    "before_sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+    "before_size_bytes": 1496063311,
+    "before_mtime_ns": 1777305388000000000,
+    "after_sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+    "after_size_bytes": 1496063311,
+    "after_mtime_ns": 1777305388000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/food_update_log_entry.csv",
+    "exists": true,
+    "before_sha256": "3c6b35c021f5436ffeef23046881eac89cadbea7edbaf42f8f1b943040977f92",
+    "before_size_bytes": 132826299,
+    "before_mtime_ns": 1777305099000000000,
+    "after_sha256": "3c6b35c021f5436ffeef23046881eac89cadbea7edbaf42f8f1b943040977f92",
+    "after_size_bytes": 132826299,
+    "after_mtime_ns": 1777305099000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/FoodData_Central_branded_food_csv_2026-04-30.zip",
+    "exists": true,
+    "before_sha256": "26050a5d03197469813754743a21ee0fad4ccf22b6aac2a995846a987719fc49",
+    "before_size_bytes": 448767220,
+    "before_mtime_ns": 1792726225276825900,
+    "after_sha256": "26050a5d03197469813754743a21ee0fad4ccf22b6aac2a995846a987719fc49",
+    "after_size_bytes": 448767220,
+    "after_mtime_ns": 1792726225276825900,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/measure_unit.csv",
+    "exists": true,
+    "before_sha256": "62cde43ede7257a7748bb03d1b62f6905fab3ee0014efd41c9a040ac404da4d6",
+    "before_size_bytes": 1969,
+    "before_mtime_ns": 1777306409000000000,
+    "after_sha256": "62cde43ede7257a7748bb03d1b62f6905fab3ee0014efd41c9a040ac404da4d6",
+    "after_size_bytes": 1969,
+    "after_mtime_ns": 1777306409000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/microbe.csv",
+    "exists": true,
+    "before_sha256": "39f6453879f5f4b0ab1c4c6c92c1767e0a432704da8b7aa209f88559c88cbe84",
+    "before_size_bytes": 1579,
+    "before_mtime_ns": 1777306409000000000,
+    "after_sha256": "39f6453879f5f4b0ab1c4c6c92c1767e0a432704da8b7aa209f88559c88cbe84",
+    "after_size_bytes": 1579,
+    "after_mtime_ns": 1777306409000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/csv/nutrient.csv",
+    "exists": true,
+    "before_sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+    "before_size_bytes": 21556,
+    "before_mtime_ns": 1777306409000000000,
+    "after_sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+    "after_size_bytes": 21556,
+    "after_mtime_ns": 1777306409000000000,
+    "status": "PASS"
+  },
+  {
+    "path": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+    "exists": true,
+    "before_sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+    "before_size_bytes": 204270542,
+    "before_mtime_ns": 1792726270054858100,
+    "after_sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+    "after_size_bytes": 204270542,
+    "after_mtime_ns": 1792726270054858100,
+    "status": "PASS"
+  }
+]

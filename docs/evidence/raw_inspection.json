@@ -1,0 +1,263 @@
+{
+  "started_at_utc": "2026-10-23T06:28:39.288478Z",
+  "status": "PASS",
+  "file_name": "branded_food.csv",
+  "spark": "3.5.9",
+  "master": "local[*]",
+  "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-23/run_id=checkpoint2_20261023T062747094486Z_1/branded_food.csv",
+  "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "fdc_id",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "brand_owner",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "brand_name",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "subbrand_name",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "gtin_upc",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "ingredients",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "not_a_significant_source_of",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "serving_size",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "serving_size_unit",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "household_serving_fulltext",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "branded_food_category",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "data_source",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "package_weight",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "modified_date",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "available_date",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "market_country",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "discontinued_date",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "preparation_state_code",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "trade_channel",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "short_description",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "material_code",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  },
+  "schema_tree": "root\n |-- fdc_id: long (nullable = true)\n |-- brand_owner: string (nullable = true)\n |-- brand_name: string (nullable = true)\n |-- subbrand_name: string (nullable = true)\n |-- gtin_upc: string (nullable = true)\n |-- ingredients: string (nullable = true)\n |-- not_a_significant_source_of: string (nullable = true)\n |-- serving_size: double (nullable = true)\n |-- serving_size_unit: string (nullable = true)\n |-- household_serving_fulltext: string (nullable = true)\n |-- branded_food_category: string (nullable = true)\n |-- data_source: string (nullable = true)\n |-- package_weight: string (nullable = true)\n |-- modified_date: string (nullable = true)\n |-- available_date: string (nullable = true)\n |-- market_country: string (nullable = true)\n |-- discontinued_date: string (nullable = true)\n |-- preparation_state_code: string (nullable = true)\n |-- trade_channel: string (nullable = true)\n |-- short_description: string (nullable = true)\n |-- material_code: string (nullable = true)\n",
+  "sample_rows": [
+    {
+      "fdc_id": 1105904,
+      "brand_owner": "Richardson Oilseed Products (US) Limited",
+      "brand_name": null,
+      "subbrand_name": null,
+      "gtin_upc": "00027000612323",
+      "ingredients": "Vegetable Oil",
+      "not_a_significant_source_of": null,
+      "serving_size": 15.0,
+      "serving_size_unit": "ml",
+      "household_serving_fulltext": "1 Tbsp (15 ml)",
+      "branded_food_category": "Oils Edible",
+      "data_source": "GDSN",
+      "package_weight": null,
+      "modified_date": "2020-10-02",
+      "available_date": "2020-11-13",
+      "market_country": "United States",
+      "discontinued_date": null,
+      "preparation_state_code": null,
+      "trade_channel": null,
+      "short_description": null,
+      "material_code": null
+    },
+    {
+      "fdc_id": 1105905,
+      "brand_owner": "CAMPBELL SOUP COMPANY",
+      "brand_name": null,
+      "subbrand_name": null,
+      "gtin_upc": "00051000198808",
+      "ingredients": "INGREDIENTS: BEEF STOCK, CONTAINS LESS THAN 2% OF: MIREPOIX (CARROTS, CELERY, ONIONS), SALT, NATURAL FLAVORING, YEAST EXTRACT, CANE SUGAR.",
+      "not_a_significant_source_of": null,
+      "serving_size": 240.0,
+      "serving_size_unit": "ml",
+      "household_serving_fulltext": "Amount per serving",
+      "branded_food_category": "Herbs/Spices/Extracts",
+      "data_source": "GDSN",
+      "package_weight": null,
+      "modified_date": "2020-09-12",
+      "available_date": "2020-11-13",
+      "market_country": "United States",
+      "discontinued_date": null,
+      "preparation_state_code": null,
+      "trade_channel": null,
+      "short_description": null,
+      "material_code": null
+    },
+    {
+      "fdc_id": 1105906,
+      "brand_owner": "CAMPBELL SOUP COMPANY",
+      "brand_name": null,
+      "subbrand_name": null,
+      "gtin_upc": "00051000213273",
+      "ingredients": "INGREDIENTS: CLAM STOCK, POTATOES, CLAMS, CREAM, VEGETABLE OIL (CORN, CANOLA, AND/OR SOYBEAN), CELERY, CONTAINS LESS THAN 2% OF: MODIFIED FOOD STARCH, SALT, WHEAT FLOUR, SOY PROTEIN CONCENTRATE, UNCURED SMOKED BACON PIECES-NO NITRATES OR NITRITES ADDED, EXCEPT FOR THOSE NATURALLY OCCURRING IN SEA SALT (PORK, WATER, SEA SALT, SUGAR), DRIED ONIONS, SPICES, SODIUM PHOSPHATE, FLAVORING, CLAM EXTRACT, SUCCINIC ACID, SUGAR, SOY LECITHIN, SOY SAUCE (SOYBEANS, WHEAT, SALT).CONTAINS: COD, WHEAT, MILK, SOY.",
+      "not_a_significant_source_of": null,
+      "serving_size": 440.0,
+      "serving_size_unit": "g",
+      "household_serving_fulltext": "PER CONTAINER",
+      "branded_food_category": "Prepared Soups",
+      "data_source": "GDSN",
+      "package_weight": null,
+      "modified_date": "2020-09-01",
+      "available_date": "2020-11-13",
+      "market_country": "United States",
+      "discontinued_date": null,
+      "preparation_state_code": null,
+      "trade_channel": null,
+      "short_description": null,
+      "material_code": null
+    },
+    {
+      "fdc_id": 1105907,
+      "brand_owner": "CAMPBELL SOUP COMPANY",
+      "brand_name": null,
+      "subbrand_name": null,
+      "gtin_upc": "00051000213303",
+      "ingredients": "INGREDIENTS: WATER, CREAM, BROCCOLI, CELERY, VEGETABLE OIL (CORN, CANOLA, AND/OR SOYBEAN), MODIFIED FOOD STARCH, CHEDDAR CHEESE** (CHEDDAR CHEESE [CULTURED MILK, SALT, ENZYMES], WHEY, SALT, SODIUM PHOSPHATE), CONTAINS LESS THAN 2% OF: BUTTER, PARMESAN AND CHEDDAR CHEESE (MILK, CULTURES, SALT, ENZYMES), WHEAT FLOUR, SALT, POTATOES**, ONIONS**, SOY PROTEIN CONCENTRATE, ROASTED GARLIC**, ANNATTO EXTRACT FOR COLOR, SOY LECITHIN.  **DRIEDCONTAINS: WHEAT, MILK, SOY.",
+      "not_a_significant_source_of": null,
+      "serving_size": 440.0,
+      "serving_size_unit": "g",
+      "household_serving_fulltext": "PER CONTAINER",
+      "branded_food_category": "Prepared Soups",
+      "data_source": "GDSN",
+      "package_weight": null,
+      "modified_date": "2020-09-01",
+      "available_date": "2020-11-13",
+      "market_country": "United States",
+      "discontinued_date": null,
+      "preparation_state_code": null,
+      "trade_channel": null,
+      "short_description": null,
+      "material_code": null
+    },
+    {
+      "fdc_id": 1105908,
+      "brand_owner": "CAMPBELL SOUP COMPANY",
+      "brand_name": null,
+      "subbrand_name": null,
+      "gtin_upc": "00051000224637",
+      "ingredients": "INGREDIENTS: CHICKEN STOCK, CONTAINS LESS THAN 2% OF: YEAST EXTRACT, DEHYDRATED CHICKEN, NATURAL FLAVORING, CARROT JUICE CONCENTRATE, CELERIAC JUICE CONCENTRATE, CHICKEN FAT, ONION EXTRACT.",
+      "not_a_significant_source_of": null,
+      "serving_size": 240.0,
+      "serving_size_unit": "ml",
+      "household_serving_fulltext": "Amount per Serving",
+      "branded_food_category": "Herbs/Spices/Extracts",
+      "data_source": "GDSN",
+      "package_weight": null,
+      "modified_date": "2020-10-03",
+      "available_date": "2020-11-13",
+      "market_country": "United States",
+      "discontinued_date": null,
+      "preparation_state_code": null,
+      "trade_channel": null,
+      "short_description": null,
+      "material_code": null
+    }
+  ],
+  "sample_count": 5,
+  "row_count": null,
+  "full_dataset_validated": false,
+  "note": "Explicit schema and first rows only; no filtering or ETL; no full row count claimed",
+  "finished_at_utc": "2026-10-23T06:28:46.269816Z"
+}

@@ -1,0 +1,29 @@
+{
+  "started_at_utc": "2026-10-23T06:27:39.381072Z",
+  "python": "3.11.17 (main, Oct 21 2026, 17:46:24) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "G:\\BigDATA\\beverage-nutrition-bigdata\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.22631-SP0",
+  "cpu_count": 12,
+  "status": "PASS",
+  "java_executable": "G:\\BigDATA\\beverage-nutrition-bigdata\\.tools\\java17\\jdk-17.0.20.1+1\\bin\\java.EXE",
+  "java_home": "G:\\BigDATA\\beverage-nutrition-bigdata\\.tools\\java17\\jdk-17.0.20.1+1",
+  "java_version": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)",
+  "pyspark": "3.5.9",
+  "py4j": "0.10.9.7",
+  "spark": "3.5.9",
+  "master": "local[*]",
+  "expected_count": 1000000,
+  "actual_count": 1000000,
+  "python_worker_actual": [
+    2,
+    3,
+    4
+  ],
+  "python_worker_expected": [
+    2,
+    3,
+    4
+  ],
+  "default_parallelism": 12,
+  "finished_at_utc": "2026-10-23T06:27:46.904781Z"
+}

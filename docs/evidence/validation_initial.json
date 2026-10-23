@@ -1,0 +1,109 @@
+{
+  "started_at_utc": "2026-10-23T06:27:39.274507Z",
+  "checks": [
+    {
+      "name": "environment",
+      "arguments": [
+        "-m",
+        "src.env_check"
+      ],
+      "started_at_utc": "2026-10-23T06:27:39.274507Z",
+      "finished_at_utc": "2026-10-23T06:27:46.928708Z",
+      "elapsed_seconds": 7.657,
+      "exit_code": 0,
+      "status": "PASS",
+      "log_path": "logs/checkpoint2/environment_console.log"
+    },
+    {
+      "name": "unit_tests",
+      "status": "PASS",
+      "tests_run": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "log_path": "logs/checkpoint2/unit_tests_console.log"
+    },
+    {
+      "name": "ingestion_1",
+      "arguments": [
+        "-m",
+        "src.ingest_file",
+        "--run-id",
+        "checkpoint2_20261023T062747094486Z_1"
+      ],
+      "started_at_utc": "2026-10-23T06:27:47.094486Z",
+      "finished_at_utc": "2026-10-23T06:27:54.550364Z",
+      "elapsed_seconds": 7.453,
+      "exit_code": 0,
+      "status": "PASS",
+      "log_path": "logs/checkpoint2/ingestion_1_console.log"
+    },
+    {
+      "name": "ingestion_2",
+      "arguments": [
+        "-m",
+        "src.ingest_file",
+        "--run-id",
+        "checkpoint2_20261023T062747094486Z_2"
+      ],
+      "started_at_utc": "2026-10-23T06:27:54.550364Z",
+      "finished_at_utc": "2026-10-23T06:27:59.425162Z",
+      "elapsed_seconds": 4.875,
+      "exit_code": 0,
+      "status": "PASS",
+      "log_path": "logs/checkpoint2/ingestion_2_console.log"
+    },
+    {
+      "name": "ingestion_3",
+      "arguments": [
+        "-m",
+        "src.ingest_file",
+        "--run-id",
+        "checkpoint2_20261023T062747094486Z_3"
+      ],
+      "started_at_utc": "2026-10-23T06:27:59.427070Z",
+      "finished_at_utc": "2026-10-23T06:28:04.442812Z",
+      "elapsed_seconds": 5.016,
+      "exit_code": 0,
+      "status": "PASS",
+      "log_path": "logs/checkpoint2/ingestion_3_console.log"
+    },
+    {
+      "name": "raw_inspection",
+      "arguments": [
+        "-m",
+        "src.inspect_raw"
+      ],
+      "started_at_utc": "2026-10-23T06:28:04.442812Z",
+      "finished_at_utc": "2026-10-23T06:28:09.648922Z",
+      "elapsed_seconds": 5.218,
+      "exit_code": 1,
+      "status": "FAIL",
+      "log_path": "logs/checkpoint2/raw_inspection_console.log"
+    },
+    {
+      "name": "original_sources_unchanged",
+      "status": "PASS",
+      "files_checked": 12
+    },
+    {
+      "name": "three_run_deduplication",
+      "status": "PASS",
+      "run_status_counts": [
+        {
+          "INGESTED": 4
+        },
+        {
+          "SKIPPED_DUPLICATE": 4
+        },
+        {
+          "SKIPPED_DUPLICATE": 4
+        }
+      ],
+      "raw_csv_count": 4,
+      "raw_total_bytes": 2825968318
+    }
+  ],
+  "finished_at_utc": "2026-10-23T06:28:13.179919Z",
+  "status": "FAIL"
+}
