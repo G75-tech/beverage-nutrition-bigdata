@@ -4,7 +4,7 @@
 
 Nguồn dữ liệu hiện tại là **USDA FoodData Central — Branded Foods, bản phát hành tháng 04/2026**. Dự án sử dụng Python và PySpark chạy local trên Windows.
 
-> **Trạng thái hiện tại: Checkpoint 2 — Môi trường, ingestion và lưu trữ raw.** Đã chạy kiểm chứng trên dữ liệu thật. Phần nhận diện đồ uống, nối bảng và phân tích dinh dưỡng thuộc giai đoạn tiếp theo.
+> **Checkpoint 3 đã triển khai và chạy Task 1–6.** Có RUN_CHECKPOINT3.ps1 chạy xuyên suốt, bàn giao mới và baseline toàn dữ liệu; còn chuẩn bị bài nộp Task 7.
 
 ## Bài toán và mục tiêu
 
@@ -29,10 +29,15 @@ Các chỉ số, tiêu chí phân nhóm và hình thức trình bày kết quả
 | Phát hiện dữ liệu trùng khi chạy lại | Đã triển khai |
 | Manifest, log và bằng chứng kiểm chứng | Đã triển khai |
 | Đọc schema và dữ liệu mẫu bằng Spark | Đã triển khai |
-| Lọc đồ uống, nối bảng, chuẩn hoá dinh dưỡng | Chưa triển khai |
+| Khóa input, đọc và kiểm tra toàn bộ bốn bảng bằng Spark | Đã chạy Task 1 |
+| Lọc tám nhóm đồ uống theo quy tắc và tách diện cần xem xét | Đã chạy Task 2 |
+| Kiểm tra số, khóa trùng và cơ sở đo của năm chỉ số dinh dưỡng | Đã chạy Task 3; có cờ chất lượng và độ phủ |
+| Join thông tin đồ uống–dinh dưỡng và đo độ phủ | Đã chạy Task 4 |
+| Tính KPI dinh dưỡng và kiểm tra hai lần chạy | Đã chạy Task 5 |
+| Đóng gói và baseline toàn pipeline | Đã chạy Task 6 |
 | Phân tích, biểu đồ hoặc dashboard | Chưa triển khai |
 
-Ingestion hiện dùng Python để kiểm tra và sao chép file local; Spark được dùng cho kiểm tra môi trường và đọc raw. Dự án chạy trên một máy với `local[*]`, chưa triển khai cluster.
+Ingestion dùng Python để kiểm tra và sao chép file local. Spark đọc các bảng raw đã khóa, lọc đồ uống, kiểm tra dữ liệu dinh dưỡng và ghi nhận chất lượng cho bước phân tích. Dự án chạy trên một máy với `local[*]`, chưa triển khai cluster.
 
 ## Dữ liệu
 
@@ -315,3 +320,22 @@ Xem [NEXT_STEPS.md](docs/NEXT_STEPS.md) cho các công việc tiếp theo.
 Repository lưu mã nguồn, cấu hình, tài liệu và bằng chứng nhỏ. [`.gitignore`](.gitignore) loại dataset, raw, ZIP, runtime, môi trường ảo, log và `.env` khỏi các file mới đưa vào Git. Các evidence/manifest lịch sử được giữ để review; khi cập nhật cần kiểm tra diff trước khi commit.
 
 Dữ liệu FoodData Central được USDA công bố theo **CC0 1.0**, xem [điều khoản tại nguồn](https://fdc.nal.usda.gov/). Nguồn dữ liệu sử dụng trong đồ án: U.S. Department of Agriculture, Agricultural Research Service, FoodData Central, Branded Foods, April 2026 release.
+
+## Checkpoint 3 — chạy từng task và quản lý kết quả
+
+Xem [hướng dẫn Task 1–7](docs/RUN_TASKS_CHECKPOINT3.md) và [mục lục kết quả mới](docs/evidence/checkpoint3/INDEX.md).
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\RUN_CHECKPOINT3.ps1 -Task 1
+# Tiếp tục lần lượt -Task 2, 3, 4, 5; dùng -Task 5 -Repeat để đối chiếu KPI.
+# -Task 6 (hoặc không truyền Task) chạy lại toàn chuỗi và đo baseline.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\RUN_CHECKPOINT3.ps1 -List
+```
+
+Báo cáo/JSON/log/plan nằm trong `docs/evidence/checkpoint3/taskXX_name/runs/<run_id>/`.
+CSV/schema nằm trong `artifacts/checkpoint3/taskXX_name/runs/<run_id>/` với cùng task và run ID.
+`latest.json` chỉ lần PASS gần nhất; `last_attempt.json` chỉ lần thử mới nhất, kể cả FAIL.
+Runner tự chốt đầu vào bước sau, lưu cấu hình từng lần và chặn dùng lại nhầm đầu ra sau khi chạy lại task trước.
+
+Kết quả cũ được giữ nguyên ở `G:\BigDATA\checkpoint3-results-backup-20261113`.
+Xem [bản ghi triển khai trước khi tổ chức](docs/CHECKPOINT3_HISTORY.md) để tra số liệu lịch sử.

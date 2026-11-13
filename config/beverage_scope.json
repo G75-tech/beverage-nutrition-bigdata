@@ -1,0 +1,137 @@
+{
+  "scope_version": "rtd_non_alcoholic_v2",
+  "groups": [
+    "Water",
+    "Soft drinks",
+    "Juice and fruit drinks",
+    "Ready-to-drink tea",
+    "Ready-to-drink coffee",
+    "Dairy milk",
+    "Plant-based milk",
+    "Sports and energy drinks"
+  ],
+  "category_groups": {
+    "Water": "Water",
+    "Plant Based Water": "Water",
+    "Packaged Water": "Water",
+    "Soda": "Soft drinks",
+    "Drinks - Soft Drinks": "Soft drinks",
+    "Fruit & Vegetable Juice, Nectars & Fruit Drinks": "Juice and fruit drinks",
+    "Fruit Juice - Ready to Drink (Shelf Stable)": "Juice and fruit drinks",
+    "Iced & Bottle Tea": "Ready-to-drink tea",
+    "Coffee": "Ready-to-drink coffee",
+    "Coffee/Coffee Substitutes": "Ready-to-drink coffee",
+    "Milk": "Dairy milk",
+    "Plant Based Milk": "Plant-based milk",
+    "Sport Drinks": "Sports and energy drinks",
+    "Energy, Protein & Muscle Recovery Drinks": "Sports and energy drinks",
+    "Drinks - Energy Drinks": "Sports and energy drinks",
+    "Other Drinks": null,
+    "Drinks": null,
+    "Coffee/Tea/Substitutes": null,
+    "Milk/Milk Substitutes": null,
+    "Milk/Cream - Shelf Stable": null,
+    "Milk/Cream": null,
+    "Breakfast Drinks": null,
+    "Drinks - Juices, Drinks and Cordials": null,
+    "Non Alcoholic Beverages  Ready to Drink": null,
+    "Non Alcoholic Beverages - Ready to Drink": null,
+    "Non Alcoholic Beverages – Ready to Drink": null,
+    "Drinks Flavoured - Ready to Drink": null,
+    "Ready To Drink": null
+  },
+  "rtd_categories": [
+    "Water",
+    "Plant Based Water",
+    "Packaged Water",
+    "Soda",
+    "Drinks - Soft Drinks",
+    "Fruit & Vegetable Juice, Nectars & Fruit Drinks",
+    "Fruit Juice - Ready to Drink (Shelf Stable)",
+    "Iced & Bottle Tea",
+    "Milk",
+    "Plant Based Milk",
+    "Sport Drinks",
+    "Drinks - Energy Drinks",
+    "Non Alcoholic Beverages  Ready to Drink",
+    "Non Alcoholic Beverages - Ready to Drink",
+    "Non Alcoholic Beverages – Ready to Drink",
+    "Drinks Flavoured - Ready to Drink",
+    "Ready To Drink"
+  ],
+  "excluded_categories": {
+    "Powdered Drinks": "category_requires_preparation",
+    "Drinks - Powdered": "category_requires_preparation",
+    "Frozen Fruit & Fruit Juice Concentrates": "category_requires_preparation",
+    "Fruit Juice - Not Ready to Drink (Frozen)": "category_requires_preparation",
+    "Non Alcoholic Beverages - Not Ready to Drink": "category_requires_preparation",
+    "Non Alcoholic Beverages  Not Ready to Drink": "category_requires_preparation",
+    "Non Alcoholic Beverages – Not Ready to Drink": "category_requires_preparation",
+    "Tea Bags": "category_requires_preparation",
+    "Tea and Infusions/Tisanes": "category_requires_preparation",
+    "Tea - Bags, Loose Leaf, Speciality": "category_requires_preparation",
+    "Coffee - Instant, Roast and Ground": "category_requires_preparation",
+    "Liquid Water Enhancer": "ingredient_or_additive",
+    "Milk Additives": "ingredient_or_additive",
+    "Cream": "ingredient_or_additive",
+    "Cream/Cream Substitutes": "ingredient_or_additive",
+    "Syrups & Molasses": "ingredient_or_additive",
+    "Alcoholic Beverages": "alcoholic_beverage",
+    "Baby/Infant  Foods/Beverages": "specialized_nutrition",
+    "Baby/Infant - Foods/Beverages": "specialized_nutrition",
+    "Baby/Infant – Foods/Beverages": "specialized_nutrition",
+    "Food/Beverage/Tobacco Variety Packs": "mixed_variety_pack"
+  },
+  "candidate_category_pattern": "\\b(drinks?|beverages?|water|juice|milk|coffee|tea|infusions?|cordials?)\\b",
+  "group_patterns": [
+    {
+      "group": "Ready-to-drink coffee",
+      "pattern": "\\b(coffee|espresso|cappuccino)\\b|\\b(?:cafe|caffe) latte\\b"
+    },
+    {
+      "group": "Ready-to-drink tea",
+      "pattern": "\\b(tea|matcha|chai)\\b"
+    },
+    {
+      "group": "Plant-based milk",
+      "pattern": "\\b(?:almond|soy|soya|oat|rice|cashew|hemp|coconut|pea|flax|plant)[ -]*(?:based[ -]*)?(?:milk|beverage|drink)\\b|\\bhorchata\\b"
+    },
+    {
+      "group": "Sports and energy drinks",
+      "pattern": "\\b(energy (?:juice )?(?:drink|beverage|shot)|sports? drink|electrolyte|isotonic)\\b"
+    },
+    {
+      "group": "Dairy milk",
+      "pattern": "\\bmilk\\b"
+    },
+    {
+      "group": "Soft drinks",
+      "pattern": "\\b(soda|soft drink|cola|root beer|ginger ale)\\b"
+    },
+    {
+      "group": "Juice and fruit drinks",
+      "pattern": "\\b(juice|juicedrink|nectar|fruit drink|lemonade|punch)\\b"
+    },
+    {
+      "group": "Water",
+      "pattern": "\\bwater\\b"
+    }
+  ],
+  "preparation_rules": {
+    "dry_pattern": "\\b(powder(?:ed)?|dry mix|whole beans?|ground coffee|coffee grounds|tea bags?|tea leaves|loose leaf|soluble coffee|instant coffee|k[ -]?cups?|pods?|sachets?)\\b",
+    "dry_serving_pattern": "\\b(scoops?|packets?|envelopes?|sachets?|pods?|k[ -]?cups?|tea bags?)\\b",
+    "excluded_product_pattern": "\\b(condensed|evaporated|creamers?|syrup|infant|toddler|baby formula|meal replacement|medical food|enteral|nutrition(?:al)? (?:shake|drink|beverage)|breakfast(?:\\s+\\w+){0,2}\\s+shakes?|alcoholic beverage|malt beverage|freezers?|freezer pops?|ice pops?|popsicles?|ice cream|frozen dessert)\\b|ready[ -]+to[ -]+drink meal|\\bprotein\\b.{0,30}\\b(liquids?|shakes?|drinks?|beverages?)\\b|\\b(shakes?|drinks?|beverages?)\\b.{0,20}\\bprotein\\b|\\b[0-9]+(?:\\.[0-9]+)?\\s*%\\s*abv\\b",
+    "ambiguous_product_pattern": "\\b(mix|mixes|frozen|purees?|sauces?|soups?|puddings?|dressings?|gels?|jell(?:y|ies)|bars?|cand(?:y|ies)|snacks?|cookies?|yog[hu]rt|baby|children|childrens|nutrition(?:al)?|supplements?)\\b|\\bcoconut (?:milk|cream)\\b|\\bbuttermilk blends?\\b",
+    "concentrate_exception_pattern": "\\b(?:not\\s+)?from\\s+(?:[a-z]+\\s+){0,6}concentrat(?:e|es|ed)\\b",
+    "concentrate_pattern": "\\b(concentrat(?:e|es|ed)|dilute|dilution|add water|mix with water)\\b",
+    "explicit_rtd_pattern": "\\bready[\\s-]+to[\\s-]+drink\\b",
+    "liquid_description_pattern": "\\b(drinks?|beverages?|iced coffee|cold brew|chilled coffee|lattes?|cappuccino|tea|milk|juice|juicedrink|water|energy shot|electrolyte)\\b"
+  },
+  "serving_unit_aliases": {
+    "g": "g",
+    "grm": "g",
+    "gm": "g",
+    "ml": "ml",
+    "mlt": "ml"
+  }
+}

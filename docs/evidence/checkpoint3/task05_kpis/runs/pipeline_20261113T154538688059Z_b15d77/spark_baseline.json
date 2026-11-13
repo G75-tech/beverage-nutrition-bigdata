@@ -1,0 +1,27 @@
+{
+  "python": "3.11.17",
+  "spark": "3.5.9",
+  "java": "17.0.20.1",
+  "java_vm": "OpenJDK 64-Bit Server VM",
+  "jvm_max_heap_bytes": 1073741824,
+  "master": "local[*]",
+  "default_parallelism": 12,
+  "sql_configuration": {
+    "spark.sql.shuffle.partitions": "200",
+    "spark.sql.adaptive.enabled": "true",
+    "spark.sql.adaptive.coalescePartitions.enabled": "true",
+    "spark.sql.files.maxPartitionBytes": "134217728b",
+    "spark.sql.csv.parser.columnPruning.enabled": "false",
+    "spark.sql.session.timeZone": "UTC"
+  },
+  "frames": {
+    "nutrition_kpis": {
+      "observed_at_utc": "2026-11-13T15:51:44.179825Z",
+      "partitions_observed": 1,
+      "column_count": 17,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/plans/nutrition_kpis.txt",
+      "explain_sha256": "7db85e2e4cb00602643712dc2d2f233cbeb382116953f72e2f9ac64f9f306e45",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    }
+  }
+}

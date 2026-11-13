@@ -1,0 +1,645 @@
+{
+  "status": "PASS",
+  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "started_at_utc": "2026-11-13T15:47:49.573922Z",
+  "duplicate_policy": "prefer valid over missing; smallest id for same value; quarantine conflicting valid values",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "input_handoff_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\docs\\evidence\\checkpoint3\\task02_beverages\\runs\\pipeline_20261113T154538688059Z_b15d77\\task3_input.json",
+  "input_handoff_sha256": "0fd3a7844a009541ff8741201b8f84cc3c933f0f064e2e7d80ffce31687debae",
+  "requested_nutrients": [
+    {
+      "id": 2000,
+      "name": "Total Sugars",
+      "unit_name": "G"
+    },
+    {
+      "id": 1008,
+      "name": "Energy",
+      "unit_name": "KCAL"
+    },
+    {
+      "id": 1093,
+      "name": "Sodium, Na",
+      "unit_name": "MG"
+    },
+    {
+      "id": 1003,
+      "name": "Protein",
+      "unit_name": "G"
+    },
+    {
+      "id": 1004,
+      "name": "Total lipid (fat)",
+      "unit_name": "G"
+    }
+  ],
+  "value_review_limits": {
+    "2000": 100.0,
+    "1003": 100.0,
+    "1004": 100.0,
+    "1008": 1000.0,
+    "1093": 10000.0
+  },
+  "environment": {
+    "python": "3.11.17",
+    "spark": "3.5.9",
+    "master": "local[*]"
+  },
+  "raw_check": {
+    "rows": 26027437,
+    "invalid_keys": 0
+  },
+  "classified_output": {
+    "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_classified.csv",
+    "sha256": "21972cf6bfa891d41ddf970be09e8bb4d0c9c76d851ecc6a026005e9ce88a690",
+    "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_classified_schema.json",
+    "schema_sha256": "dee9e4e6174524376f3410fd5eab6cd050ed684d6d8b03d5af71520e3af7b52f",
+    "row_count": 698525,
+    "column_count": 10,
+    "size_bytes": 43505544,
+    "readback_metrics": {
+      "row_count": 698525,
+      "null_counts": {
+        "fdc_id": 0,
+        "record_id_raw": 0,
+        "fdc_id_raw": 0,
+        "nutrient_id_raw": 0,
+        "amount_raw": 0,
+        "derivation_id": 0,
+        "id": 0,
+        "nutrient_id": 0,
+        "amount": 0,
+        "amount_status": 0
+      },
+      "null_key_counts": {
+        "id": 0,
+        "fdc_id": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "duplicate_summary": {
+    "duplicate_pairs": 0,
+    "conflicting_pairs": 0
+  },
+  "coverage": [
+    {
+      "id": 2000,
+      "name": "Total Sugars",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "no_source_record": 19973,
+      "valid": 132165,
+      "missing_amount": 0,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0
+    },
+    {
+      "id": 1008,
+      "name": "Energy",
+      "unit_name": "KCAL",
+      "expected_beverages": 152138,
+      "no_source_record": 9343,
+      "valid": 142795,
+      "missing_amount": 0,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0
+    },
+    {
+      "id": 1093,
+      "name": "Sodium, Na",
+      "unit_name": "MG",
+      "expected_beverages": 152138,
+      "no_source_record": 10538,
+      "valid": 141600,
+      "missing_amount": 0,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0
+    },
+    {
+      "id": 1003,
+      "name": "Protein",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "no_source_record": 9088,
+      "valid": 143050,
+      "missing_amount": 0,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0
+    },
+    {
+      "id": 1004,
+      "name": "Total lipid (fat)",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "no_source_record": 13223,
+      "valid": 138915,
+      "missing_amount": 0,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0
+    }
+  ],
+  "quarantine_output": {
+    "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_quarantine.csv",
+    "sha256": "cc6c90f653d8281761e1dda4df00cb453911115fd2e4d8336cbb7825db165e8c",
+    "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_quarantine_schema.json",
+    "schema_sha256": "adde367d7f38604b90f141be724d9bd0afa58f8473c80f7f7cd4c3840f738f32",
+    "row_count": 0,
+    "column_count": 16,
+    "size_bytes": 207,
+    "readback_metrics": {
+      "row_count": 0,
+      "null_counts": {
+        "fdc_id": 0,
+        "nutrient_id": 0,
+        "record_id_raw": 0,
+        "fdc_id_raw": 0,
+        "nutrient_id_raw": 0,
+        "amount_raw": 0,
+        "derivation_id": 0,
+        "id": 0,
+        "amount": 0,
+        "amount_status": 0,
+        "source_records": 0,
+        "distinct_valid_values": 0,
+        "valid_records": 0,
+        "missing_records": 0,
+        "pair_status": 0,
+        "quarantine_reason": 0
+      },
+      "null_key_counts": {
+        "id": 0,
+        "fdc_id": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "basis_reference": {
+    "archive_member": "FoodData_Central_branded_food_json_2026-04-30.json",
+    "total_json_foods": 455458,
+    "matched_beverages": 34424,
+    "beverages_not_in_json": 117714,
+    "reference_rows": 172120,
+    "relative_tolerance": 0.01,
+    "absolute_tolerance": 0.005,
+    "scope": "Export consistency check using label serving arithmetic; zero-only records have no numerical anchor",
+    "zip_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\datasets\\usda_branded_2026\\json\\FoodData_Central_branded_food_json_2026-04-30.zip",
+    "zip_sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+    "reference_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/label_reference.csv",
+    "reference_sha256": "78e3af916b3330a0d995e340536775b2540c9f068d12d9913788a905450bd64f"
+  },
+  "clean_output": {
+    "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_clean.csv",
+    "sha256": "d855395e45694137338dbc878ffbc06d86a409c5b14f1c855377c3a671fd75a3",
+    "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_clean_schema.json",
+    "schema_sha256": "1be4fbc63a59d00ed83ee894174007ada78b664982d8bb155089037626358a46",
+    "row_count": 698525,
+    "column_count": 34,
+    "size_bytes": 140225822,
+    "readback_metrics": {
+      "row_count": 698525,
+      "null_counts": {
+        "fdc_id": 0,
+        "nutrient_id": 0,
+        "record_id_raw": 0,
+        "fdc_id_raw": 0,
+        "nutrient_id_raw": 0,
+        "amount_raw": 0,
+        "derivation_id": 0,
+        "id": 0,
+        "amount": 0,
+        "amount_status": 0,
+        "source_records": 0,
+        "distinct_valid_values": 0,
+        "valid_records": 0,
+        "missing_records": 0,
+        "pair_status": 0,
+        "beverage_group": 0,
+        "serving_size": 0,
+        "serving_unit": 6316,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "json_amount": 530425,
+        "label_amount": 530425,
+        "json_serving_size": 530425,
+        "json_serving_unit": 531860,
+        "record_reference_status": 530425,
+        "scale_checks": 530425,
+        "scale_mismatches": 530425,
+        "basis_status": 0,
+        "measurement_basis_candidate": 6316,
+        "measurement_basis": 553991,
+        "value_review_limit": 0,
+        "value_review_required": 0,
+        "value_review_reason": 0,
+        "eligible_for_comparison": 0
+      },
+      "null_key_counts": {
+        "id": 0,
+        "fdc_id": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "value_review_output": {
+    "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_value_review.csv",
+    "sha256": "e721763beb7c3b947ebed91e272440772327c92f2b2307d50e8a8cebdc719a80",
+    "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_value_review_schema.json",
+    "schema_sha256": "2c751ce09eee2270e4c2aab22640d568a15f522dfa2cce68f1a4ab39e2e08372",
+    "row_count": 2074,
+    "column_count": 34,
+    "size_bytes": 442748,
+    "readback_metrics": {
+      "row_count": 2074,
+      "null_counts": {
+        "fdc_id": 0,
+        "nutrient_id": 0,
+        "record_id_raw": 0,
+        "fdc_id_raw": 0,
+        "nutrient_id_raw": 0,
+        "amount_raw": 0,
+        "derivation_id": 0,
+        "id": 0,
+        "amount": 0,
+        "amount_status": 0,
+        "source_records": 0,
+        "distinct_valid_values": 0,
+        "valid_records": 0,
+        "missing_records": 0,
+        "pair_status": 0,
+        "beverage_group": 0,
+        "serving_size": 0,
+        "serving_unit": 2,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "json_amount": 2021,
+        "label_amount": 2021,
+        "json_serving_size": 2021,
+        "json_serving_unit": 2022,
+        "record_reference_status": 2021,
+        "scale_checks": 2021,
+        "scale_mismatches": 2021,
+        "basis_status": 0,
+        "measurement_basis_candidate": 2,
+        "measurement_basis": 2022,
+        "value_review_limit": 0,
+        "value_review_required": 0,
+        "value_review_reason": 0,
+        "eligible_for_comparison": 0
+      },
+      "null_key_counts": {
+        "id": 0,
+        "fdc_id": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "basis_counts": [
+    {
+      "nutrient_id": 1003,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 1
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 389
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 28643
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 18
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 108854
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "no_positive_scaling_anchor",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 4856
+    },
+    {
+      "nutrient_id": 1003,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 289
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 1
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 1
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 28727
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 390
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 16
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 104718
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "no_positive_scaling_anchor",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 4772
+    },
+    {
+      "nutrient_id": 1004,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 290
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 12
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 28709
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 390
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 854
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 107736
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "no_positive_scaling_anchor",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 4805
+    },
+    {
+      "nutrient_id": 1008,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 289
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 2
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 388
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 28657
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 20
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 62
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 107435
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "no_positive_scaling_anchor",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 4747
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 288
+    },
+    {
+      "nutrient_id": 1093,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 1
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_g",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 375
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": true,
+      "value_review_required": false,
+      "count": 27814
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "corroborated_export_label_scaling",
+      "measurement_basis": "per_100_ml",
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 15
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": true,
+      "count": 1071
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "json_record_unavailable",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 99661
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "no_positive_scaling_anchor",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 2951
+    },
+    {
+      "nutrient_id": 2000,
+      "basis_status": "unrecognized_serving_unit",
+      "measurement_basis": null,
+      "eligible_for_comparison": false,
+      "value_review_required": false,
+      "count": 278
+    }
+  ],
+  "value_ranges": [
+    {
+      "nutrient_id": 1093,
+      "min_amount": 0.0,
+      "max_amount": 80000.0
+    },
+    {
+      "nutrient_id": 1008,
+      "min_amount": 0.0,
+      "max_amount": 9000.0
+    },
+    {
+      "nutrient_id": 1004,
+      "min_amount": 0.0,
+      "max_amount": 225.0
+    },
+    {
+      "nutrient_id": 2000,
+      "min_amount": 0.0,
+      "max_amount": 2300.0
+    },
+    {
+      "nutrient_id": 1003,
+      "min_amount": 0.0,
+      "max_amount": 187.5
+    }
+  ],
+  "redundant_non_conflicting_records_removed": 0,
+  "basis_audit_complete": true,
+  "eligible_nutrient_rows": 144482,
+  "all_valid_rows_basis_corroborated": false,
+  "raw_integrity_verified_before_and_after": true,
+  "finished_at_utc": "2026-11-13T15:49:48.414873Z",
+  "elapsed_seconds": 118.828
+}

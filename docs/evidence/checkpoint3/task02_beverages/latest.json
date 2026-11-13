@@ -1,0 +1,13 @@
+{
+  "task": "task2",
+  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "status": "PASS",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "result_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/filter_result.json",
+  "result_sha256": "a99de45d2f349c206a48feb74d056ca677784ea25b2d7f17dc30fbe880028e5a",
+  "report_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/filter_report.md",
+  "evidence_dir": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77",
+  "artifacts_dir": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77",
+  "console_log_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+  "finished_at_utc": "2026-11-13T15:47:49.446847Z"
+}

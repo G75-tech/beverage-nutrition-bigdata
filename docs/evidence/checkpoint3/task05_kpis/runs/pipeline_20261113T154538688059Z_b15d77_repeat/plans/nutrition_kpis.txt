@@ -1,0 +1,421 @@
+== Physical Plan ==
+AdaptiveSparkPlan (65)
++- == Final Plan ==
+   * Sort (48)
+   +- AQEShuffleRead (47)
+      +- ShuffleQueryStage (46), Statistics(sizeInBytes=16.4 KiB, rowCount=80)
+         +- Exchange (45)
+            +- * Project (44)
+               +- * Project (43)
+                  +- * BroadcastHashJoin LeftOuter BuildRight (42)
+                     :- AQEShuffleRead (28)
+                     :  +- ShuffleQueryStage (27), Statistics(sizeInBytes=10.1 KiB, rowCount=80)
+                     :     +- Exchange (26)
+                     :        +- * Generate (25)
+                     :           +- * Project (24)
+                     :              +- TableCacheQueryStage (23), Statistics(sizeInBytes=5.9 KiB, rowCount=40)
+                     :                 +- InMemoryTableScan (1)
+                     :                       +- InMemoryRelation (2)
+                     :                             +- AdaptiveSparkPlan (22)
+                                                   +- == Final Plan ==
+                                                      * Sort (15)
+                                                      +- ShuffleQueryStage (14), Statistics(sizeInBytes=7.2 KiB, rowCount=40)
+                                                         +- Exchange (13)
+                                                            +- * Project (12)
+                                                               +- * HashAggregate (11)
+                                                                  +- AQEShuffleRead (10)
+                                                                     +- ShuffleQueryStage (9), Statistics(sizeInBytes=6.6 KiB, rowCount=40)
+                                                                        +- Exchange (8)
+                                                                           +- * HashAggregate (7)
+                                                                              +- TableCacheQueryStage (6), Statistics(sizeInBytes=343.3 MiB, rowCount=7.61E+5)
+                                                                                 +- InMemoryTableScan (3)
+                                                                                       +- InMemoryRelation (4)
+                                                                                             +- Scan csv  (5)
+                                                   +- == Initial Plan ==
+                                                      Sort (21)
+                                                      +- Exchange (20)
+                                                         +- Project (19)
+                                                            +- HashAggregate (18)
+                                                               +- Exchange (17)
+                                                                  +- HashAggregate (16)
+                                                                     +- InMemoryTableScan (3)
+                                                                           +- InMemoryRelation (4)
+                                                                                 +- Scan csv  (5)
+                     +- BroadcastQueryStage (41), Statistics(sizeInBytes=2.0 MiB, rowCount=80)
+                        +- BroadcastExchange (40)
+                           +- * Project (39)
+                              +- ObjectHashAggregate (38)
+                                 +- AQEShuffleRead (37)
+                                    +- ShuffleQueryStage (36), Statistics(sizeInBytes=183.2 KiB, rowCount=80)
+                                       +- Exchange (35)
+                                          +- ObjectHashAggregate (34)
+                                             +- * Project (33)
+                                                +- * Filter (32)
+                                                   +- TableCacheQueryStage (31), Statistics(sizeInBytes=343.3 MiB, rowCount=7.61E+5)
+                                                      +- InMemoryTableScan (29)
+                                                            +- InMemoryRelation (30)
+                                                                  +- Scan csv  (5)
++- == Initial Plan ==
+   Sort (64)
+   +- Exchange (63)
+      +- Project (62)
+         +- Project (61)
+            +- SortMergeJoin LeftOuter (60)
+               :- Sort (52)
+               :  +- Exchange (51)
+               :     +- Generate (50)
+               :        +- Project (49)
+               :           +- InMemoryTableScan (1)
+               :                 +- InMemoryRelation (2)
+               :                       +- AdaptiveSparkPlan (22)
+                                       +- == Final Plan ==
+                                          * Sort (15)
+                                          +- ShuffleQueryStage (14), Statistics(sizeInBytes=7.2 KiB, rowCount=40)
+                                             +- Exchange (13)
+                                                +- * Project (12)
+                                                   +- * HashAggregate (11)
+                                                      +- AQEShuffleRead (10)
+                                                         +- ShuffleQueryStage (9), Statistics(sizeInBytes=6.6 KiB, rowCount=40)
+                                                            +- Exchange (8)
+                                                               +- * HashAggregate (7)
+                                                                  +- TableCacheQueryStage (6), Statistics(sizeInBytes=343.3 MiB, rowCount=7.61E+5)
+                                                                     +- InMemoryTableScan (3)
+                                                                           +- InMemoryRelation (4)
+                                                                                 +- Scan csv  (5)
+                                       +- == Initial Plan ==
+                                          Sort (21)
+                                          +- Exchange (20)
+                                             +- Project (19)
+                                                +- HashAggregate (18)
+                                                   +- Exchange (17)
+                                                      +- HashAggregate (16)
+                                                         +- InMemoryTableScan (3)
+                                                               +- InMemoryRelation (4)
+                                                                     +- Scan csv  (5)
+               +- Sort (59)
+                  +- Project (58)
+                     +- ObjectHashAggregate (57)
+                        +- Exchange (56)
+                           +- ObjectHashAggregate (55)
+                              +- Project (54)
+                                 +- Filter (53)
+                                    +- InMemoryTableScan (29)
+                                          +- InMemoryRelation (30)
+                                                +- Scan csv  (5)
+
+
+(1) InMemoryTableScan
+Output [7]: [beverage_group#6, eligible_for_comparison#7985L, expected_beverages#7965L, numeric_valid#7971L, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Arguments: [beverage_group#6, eligible_for_comparison#7985L, expected_beverages#7965L, numeric_valid#7971L, nutrient_id#14L, nutrient_name#15, unit_name#16]
+
+(2) InMemoryRelation
+Arguments: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@51f580fc,StorageLevel(disk, memory, 1 replicas),AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   *(3) Sort [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST], true, 0
+   +- ShuffleQueryStage 2
+      +- Exchange rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=712]
+         +- *(2) Project [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, round(((cast(numeric_valid#7971L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS numeric_coverage_pct#8001, round(((cast(eligible_for_comparison#7985L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS eligible_coverage_pct#8018]
+            +- *(2) HashAggregate(keys=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16], functions=[count(1), sum(cast(source_record_present#45 as bigint)), sum(cast(clean_record_present#44 as bigint)), sum(cast((amount_status#29 = valid) as bigint)), sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), sum(cast(value_review_required#41 as bigint)), sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), sum(cast(eligible_for_comparison#43 as bigint))], output=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L])
+               +- AQEShuffleRead coalesced
+                  +- ShuffleQueryStage 1
+                     +- Exchange hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, 200), ENSURE_REQUIREMENTS, [plan_id=678]
+                        +- *(1) HashAggregate(keys=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16], functions=[partial_count(1), partial_sum(cast(source_record_present#45 as bigint)), partial_sum(cast(clean_record_present#44 as bigint)), partial_sum(cast((amount_status#29 = valid) as bigint)), partial_sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), partial_sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), partial_sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), partial_sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), partial_sum(cast(value_review_required#41 as bigint)), partial_sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), partial_sum(cast(eligible_for_comparison#43 as bigint))], output=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L])
+                           +- TableCacheQueryStage 0
+                              +- InMemoryTableScan [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+                                    +- InMemoryRelation [fdc_id#0L, description#1, brand_owner#2, brand_name#3, gtin_upc#4, branded_food_category#5, beverage_group#6, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#9, serving_size_unit_status#10, preparation_status#11, food_publication_date#12, market_country#13, nutrient_id#14L, nutrient_name#15, unit_name#16, source_records#17L, distinct_valid_values#18L, valid_records#19L, missing_records#20L, nutrient_record_status#21, record_id_raw#22, fdc_id_raw#23, ... 22 more fields], StorageLevel(disk, memory, 1 replicas)
+                                          +- FileScan csv [fdc_id#0L,description#1,brand_owner#2,brand_name#3,gtin_upc#4,branded_food_category#5,beverage_group#6,serving_size#7,serving_size_unit#8,serving_size_unit_normalized#9,serving_size_unit_status#10,preparation_status#11,food_publication_date#12,market_country#13,nutrient_id#14L,nutrient_name#15,unit_name#16,source_records#17L,distinct_valid_values#18L,valid_records#19L,missing_records#20L,nutrient_record_status#21,record_id_raw#22,fdc_id_raw#23,... 22 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,description:string,brand_owner:string,brand_name:string,gtin_upc:string,bran...
++- == Initial Plan ==
+   Sort [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST], true, 0
+   +- Exchange rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=532]
+      +- Project [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, round(((cast(numeric_valid#7971L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS numeric_coverage_pct#8001, round(((cast(eligible_for_comparison#7985L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS eligible_coverage_pct#8018]
+         +- HashAggregate(keys=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16], functions=[count(1), sum(cast(source_record_present#45 as bigint)), sum(cast(clean_record_present#44 as bigint)), sum(cast((amount_status#29 = valid) as bigint)), sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), sum(cast(value_review_required#41 as bigint)), sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), sum(cast(eligible_for_comparison#43 as bigint))], output=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L])
+            +- Exchange hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, 200), ENSURE_REQUIREMENTS, [plan_id=528]
+               +- HashAggregate(keys=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16], functions=[partial_count(1), partial_sum(cast(source_record_present#45 as bigint)), partial_sum(cast(clean_record_present#44 as bigint)), partial_sum(cast((amount_status#29 = valid) as bigint)), partial_sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), partial_sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), partial_sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), partial_sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), partial_sum(cast(value_review_required#41 as bigint)), partial_sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), partial_sum(cast(eligible_for_comparison#43 as bigint))], output=[beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L])
+                  +- InMemoryTableScan [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+                        +- InMemoryRelation [fdc_id#0L, description#1, brand_owner#2, brand_name#3, gtin_upc#4, branded_food_category#5, beverage_group#6, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#9, serving_size_unit_status#10, preparation_status#11, food_publication_date#12, market_country#13, nutrient_id#14L, nutrient_name#15, unit_name#16, source_records#17L, distinct_valid_values#18L, valid_records#19L, missing_records#20L, nutrient_record_status#21, record_id_raw#22, fdc_id_raw#23, ... 22 more fields], StorageLevel(disk, memory, 1 replicas)
+                              +- FileScan csv [fdc_id#0L,description#1,brand_owner#2,brand_name#3,gtin_upc#4,branded_food_category#5,beverage_group#6,serving_size#7,serving_size_unit#8,serving_size_unit_normalized#9,serving_size_unit_status#10,preparation_status#11,food_publication_date#12,market_country#13,nutrient_id#14L,nutrient_name#15,unit_name#16,source_records#17L,distinct_valid_values#18L,valid_records#19L,missing_records#20L,nutrient_record_status#21,record_id_raw#22,fdc_id_raw#23,... 22 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,description:string,brand_owner:string,brand_name:string,gtin_upc:string,bran...
+,None), [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST]
+
+(3) InMemoryTableScan
+Output [11]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+Arguments: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+
+(4) InMemoryRelation
+Arguments: [fdc_id#0L, description#1, brand_owner#2, brand_name#3, gtin_upc#4, branded_food_category#5, beverage_group#6, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#9, serving_size_unit_status#10, preparation_status#11, food_publication_date#12, market_country#13, nutrient_id#14L, nutrient_name#15, unit_name#16, source_records#17L, distinct_valid_values#18L, valid_records#19L, missing_records#20L, nutrient_record_status#21, record_id_raw#22, fdc_id_raw#23, ... 22 more fields], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@51f580fc,StorageLevel(disk, memory, 1 replicas),FileScan csv [fdc_id#0L,description#1,brand_owner#2,brand_name#3,gtin_upc#4,branded_food_category#5,beverage_group#6,serving_size#7,serving_size_unit#8,serving_size_unit_normalized#9,serving_size_unit_status#10,preparation_status#11,food_publication_date#12,market_country#13,nutrient_id#14L,nutrient_name#15,unit_name#16,source_records#17L,distinct_valid_values#18L,valid_records#19L,missing_records#20L,nutrient_record_status#21,record_id_raw#22,fdc_id_raw#23,... 22 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,description:string,brand_owner:string,brand_name:string,gtin_upc:string,bran...
+,None)
+
+(5) Scan csv 
+Output [46]: [fdc_id#0L, description#1, brand_owner#2, brand_name#3, gtin_upc#4, branded_food_category#5, beverage_group#6, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#9, serving_size_unit_status#10, preparation_status#11, food_publication_date#12, market_country#13, nutrient_id#14L, nutrient_name#15, unit_name#16, source_records#17L, distinct_valid_values#18L, valid_records#19L, missing_records#20L, nutrient_record_status#21, record_id_raw#22, fdc_id_raw#23, nutrient_id_raw#24, amount_raw#25, derivation_id#26, food_nutrient_id#27L, amount#28, amount_status#29, json_amount#30, label_amount#31, json_serving_size#32, json_serving_unit#33, record_reference_status#34, scale_checks#35L, scale_mismatches#36L, basis_status#37, measurement_basis_candidate#38, measurement_basis#39, value_review_limit#40, value_review_required#41, value_review_reason#42, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients.csv]
+ReadSchema: struct<fdc_id:bigint,description:string,brand_owner:string,brand_name:string,gtin_upc:string,branded_food_category:string,beverage_group:string,serving_size:double,serving_size_unit:string,serving_size_unit_normalized:string,serving_size_unit_status:string,preparation_status:string,food_publication_date:string,market_country:string,nutrient_id:bigint,nutrient_name:string,unit_name:string,source_records:bigint,distinct_valid_values:bigint,valid_records:bigint,missing_records:bigint,nutrient_record_status:string,record_id_raw:string,fdc_id_raw:string,nutrient_id_raw:string,amount_raw:string,derivation_id:string,food_nutrient_id:bigint,amount:double,amount_status:string,json_amount:double,label_amount:double,json_serving_size:double,json_serving_unit:string,record_reference_status:string,scale_checks:bigint,scale_mismatches:bigint,basis_status:string,measurement_basis_candidate:string,measurement_basis:string,value_review_limit:double,value_review_required:boolean,value_review_reason:string,eligible_for_comparison:boolean,clean_record_present:boolean,source_record_present:boolean>
+
+(6) TableCacheQueryStage
+Output [11]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+Arguments: 0
+
+(7) HashAggregate [codegen id : 1]
+Input [11]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+Keys [4]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Functions [11]: [partial_count(1), partial_sum(cast(source_record_present#45 as bigint)), partial_sum(cast(clean_record_present#44 as bigint)), partial_sum(cast((amount_status#29 = valid) as bigint)), partial_sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), partial_sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), partial_sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), partial_sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), partial_sum(cast(value_review_required#41 as bigint)), partial_sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), partial_sum(cast(eligible_for_comparison#43 as bigint))]
+Aggregate Attributes [11]: [count#8726L, sum#8727L, sum#8728L, sum#8729L, sum#8730L, sum#8731L, sum#8732L, sum#8733L, sum#8734L, sum#8735L, sum#8736L]
+Results [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+
+(8) Exchange
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Arguments: hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, 200), ENSURE_REQUIREMENTS, [plan_id=678]
+
+(9) ShuffleQueryStage
+Output [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Arguments: 1
+
+(10) AQEShuffleRead
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Arguments: coalesced
+
+(11) HashAggregate [codegen id : 2]
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Keys [4]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Functions [11]: [count(1), sum(cast(source_record_present#45 as bigint)), sum(cast(clean_record_present#44 as bigint)), sum(cast((amount_status#29 = valid) as bigint)), sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), sum(cast(value_review_required#41 as bigint)), sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), sum(cast(eligible_for_comparison#43 as bigint))]
+Aggregate Attributes [11]: [count(1)#7964L, sum(cast(source_record_present#45 as bigint))#7966L, sum(cast(clean_record_present#44 as bigint))#7968L, sum(cast((amount_status#29 = valid) as bigint))#7970L, sum(cast((nutrient_record_status#21 = missing_amount) as bigint))#7972L, sum(cast((nutrient_record_status#21 = no_source_record) as bigint))#7974L, sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint))#7976L, sum(cast((nutrient_record_status#21 = invalid_only) as bigint))#7978L, sum(cast(value_review_required#41 as bigint))#7980L, sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint))#7982L, sum(cast(eligible_for_comparison#43 as bigint))#7984L]
+Results [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count(1)#7964L AS expected_beverages#7965L, sum(cast(source_record_present#45 as bigint))#7966L AS with_source_record#7967L, sum(cast(clean_record_present#44 as bigint))#7968L AS with_clean_record#7969L, sum(cast((amount_status#29 = valid) as bigint))#7970L AS numeric_valid#7971L, sum(cast((nutrient_record_status#21 = missing_amount) as bigint))#7972L AS missing_amount#7973L, sum(cast((nutrient_record_status#21 = no_source_record) as bigint))#7974L AS no_source_record#7975L, sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint))#7976L AS conflicting_duplicate#7977L, sum(cast((nutrient_record_status#21 = invalid_only) as bigint))#7978L AS invalid_only#7979L, sum(cast(value_review_required#41 as bigint))#7980L AS value_review_required#7981L, sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint))#7982L AS numeric_valid_basis_unconfirmed#7983L, sum(cast(eligible_for_comparison#43 as bigint))#7984L AS eligible_for_comparison#7985L]
+
+(12) Project [codegen id : 2]
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, round(((cast(numeric_valid#7971L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS numeric_coverage_pct#8001, round(((cast(eligible_for_comparison#7985L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS eligible_coverage_pct#8018]
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L]
+
+(13) Exchange
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=712]
+
+(14) ShuffleQueryStage
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: 2
+
+(15) Sort [codegen id : 3]
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST], true, 0
+
+(16) HashAggregate
+Input [11]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, nutrient_record_status#21, amount_status#29, measurement_basis#39, value_review_required#41, eligible_for_comparison#43, clean_record_present#44, source_record_present#45]
+Keys [4]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Functions [11]: [partial_count(1), partial_sum(cast(source_record_present#45 as bigint)), partial_sum(cast(clean_record_present#44 as bigint)), partial_sum(cast((amount_status#29 = valid) as bigint)), partial_sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), partial_sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), partial_sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), partial_sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), partial_sum(cast(value_review_required#41 as bigint)), partial_sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), partial_sum(cast(eligible_for_comparison#43 as bigint))]
+Aggregate Attributes [11]: [count#8726L, sum#8727L, sum#8728L, sum#8729L, sum#8730L, sum#8731L, sum#8732L, sum#8733L, sum#8734L, sum#8735L, sum#8736L]
+Results [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+
+(17) Exchange
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Arguments: hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, 200), ENSURE_REQUIREMENTS, [plan_id=528]
+
+(18) HashAggregate
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count#8737L, sum#8738L, sum#8739L, sum#8740L, sum#8741L, sum#8742L, sum#8743L, sum#8744L, sum#8745L, sum#8746L, sum#8747L]
+Keys [4]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Functions [11]: [count(1), sum(cast(source_record_present#45 as bigint)), sum(cast(clean_record_present#44 as bigint)), sum(cast((amount_status#29 = valid) as bigint)), sum(cast((nutrient_record_status#21 = missing_amount) as bigint)), sum(cast((nutrient_record_status#21 = no_source_record) as bigint)), sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint)), sum(cast((nutrient_record_status#21 = invalid_only) as bigint)), sum(cast(value_review_required#41 as bigint)), sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint)), sum(cast(eligible_for_comparison#43 as bigint))]
+Aggregate Attributes [11]: [count(1)#7964L, sum(cast(source_record_present#45 as bigint))#7966L, sum(cast(clean_record_present#44 as bigint))#7968L, sum(cast((amount_status#29 = valid) as bigint))#7970L, sum(cast((nutrient_record_status#21 = missing_amount) as bigint))#7972L, sum(cast((nutrient_record_status#21 = no_source_record) as bigint))#7974L, sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint))#7976L, sum(cast((nutrient_record_status#21 = invalid_only) as bigint))#7978L, sum(cast(value_review_required#41 as bigint))#7980L, sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint))#7982L, sum(cast(eligible_for_comparison#43 as bigint))#7984L]
+Results [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, count(1)#7964L AS expected_beverages#7965L, sum(cast(source_record_present#45 as bigint))#7966L AS with_source_record#7967L, sum(cast(clean_record_present#44 as bigint))#7968L AS with_clean_record#7969L, sum(cast((amount_status#29 = valid) as bigint))#7970L AS numeric_valid#7971L, sum(cast((nutrient_record_status#21 = missing_amount) as bigint))#7972L AS missing_amount#7973L, sum(cast((nutrient_record_status#21 = no_source_record) as bigint))#7974L AS no_source_record#7975L, sum(cast((nutrient_record_status#21 = conflicting_duplicate) as bigint))#7976L AS conflicting_duplicate#7977L, sum(cast((nutrient_record_status#21 = invalid_only) as bigint))#7978L AS invalid_only#7979L, sum(cast(value_review_required#41 as bigint))#7980L AS value_review_required#7981L, sum(cast(((amount_status#29 <=> valid) AND isnull(measurement_basis#39)) as bigint))#7982L AS numeric_valid_basis_unconfirmed#7983L, sum(cast(eligible_for_comparison#43 as bigint))#7984L AS eligible_for_comparison#7985L]
+
+(19) Project
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, round(((cast(numeric_valid#7971L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS numeric_coverage_pct#8001, round(((cast(eligible_for_comparison#7985L as double) * 100.0) / cast(expected_beverages#7965L as double)), 4) AS eligible_coverage_pct#8018]
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L]
+
+(20) Exchange
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=532]
+
+(21) Sort
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST], true, 0
+
+(22) AdaptiveSparkPlan
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L, with_source_record#7967L, with_clean_record#7969L, numeric_valid#7971L, missing_amount#7973L, no_source_record#7975L, conflicting_duplicate#7977L, invalid_only#7979L, value_review_required#7981L, numeric_valid_basis_unconfirmed#7983L, eligible_for_comparison#7985L, numeric_coverage_pct#8001, eligible_coverage_pct#8018]
+Arguments: isFinalPlan=true
+
+(23) TableCacheQueryStage
+Output [7]: [beverage_group#6, eligible_for_comparison#7985L, expected_beverages#7965L, numeric_valid#7971L, nutrient_id#14L, nutrient_name#15, unit_name#16]
+Arguments: 0
+
+(24) Project [codegen id : 1]
+Output [7]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L AS n_beverages_total#12172L, numeric_valid#7971L AS n_numeric_available#12173L, eligible_for_comparison#7985L AS n_eligible_any_basis#12174L]
+Input [7]: [beverage_group#6, eligible_for_comparison#7985L, expected_beverages#7965L, numeric_valid#7971L, nutrient_id#14L, nutrient_name#15, unit_name#16]
+
+(25) Generate [codegen id : 1]
+Input [7]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L]
+Arguments: explode([per_100_ml,per_100_g]), [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L], false, [measurement_basis#12183]
+
+(26) Exchange
+Input [8]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183]
+Arguments: hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, 200), ENSURE_REQUIREMENTS, [plan_id=1574]
+
+(27) ShuffleQueryStage
+Output [8]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183]
+Arguments: 2
+
+(28) AQEShuffleRead
+Input [8]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183]
+Arguments: local
+
+(29) InMemoryTableScan
+Output [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+Arguments: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208], [isnotnull(eligible_for_comparison#12235), eligible_for_comparison#12235, isnotnull(beverage_group#12198), isnotnull(nutrient_id#12206L), isnotnull(nutrient_name#12207), isnotnull(unit_name#12208), isnotnull(measurement_basis#12231)]
+
+(30) InMemoryRelation
+Arguments: [fdc_id#12192L, description#12193, brand_owner#12194, brand_name#12195, gtin_upc#12196, branded_food_category#12197, beverage_group#12198, serving_size#12199, serving_size_unit#12200, serving_size_unit_normalized#12201, serving_size_unit_status#12202, preparation_status#12203, food_publication_date#12204, market_country#12205, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, source_records#12209L, distinct_valid_values#12210L, valid_records#12211L, missing_records#12212L, nutrient_record_status#12213, record_id_raw#12214, fdc_id_raw#12215, ... 22 more fields], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@51f580fc,StorageLevel(disk, memory, 1 replicas),FileScan csv [fdc_id#0L,description#1,brand_owner#2,brand_name#3,gtin_upc#4,branded_food_category#5,beverage_group#6,serving_size#7,serving_size_unit#8,serving_size_unit_normalized#9,serving_size_unit_status#10,preparation_status#11,food_publication_date#12,market_country#13,nutrient_id#14L,nutrient_name#15,unit_name#16,source_records#17L,distinct_valid_values#18L,valid_records#19L,missing_records#20L,nutrient_record_status#21,record_id_raw#22,fdc_id_raw#23,... 22 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,description:string,brand_owner:string,brand_name:string,gtin_upc:string,bran...
+,None)
+
+(31) TableCacheQueryStage
+Output [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+Arguments: 1
+
+(32) Filter [codegen id : 2]
+Input [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+Condition : ((((((isnotnull(eligible_for_comparison#12235) AND eligible_for_comparison#12235) AND isnotnull(beverage_group#12198)) AND isnotnull(nutrient_id#12206L)) AND isnotnull(nutrient_name#12207)) AND isnotnull(unit_name#12208)) AND isnotnull(measurement_basis#12231))
+
+(33) Project [codegen id : 2]
+Output [6]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, amount#12220, measurement_basis#12231]
+Input [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+
+(34) ObjectHashAggregate
+Input [6]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, amount#12220, measurement_basis#12231]
+Keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Functions [5]: [partial_count(1), partial_avg(amount#12220), partial_min(amount#12220), partial_max(amount#12220), partial_percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)]
+Aggregate Attributes [6]: [count#13537L, sum#13538, count#13539L, min#13540, max#13541, buf#13542]
+Results [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+
+(35) Exchange
+Input [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Arguments: hashpartitioning(beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, 200), ENSURE_REQUIREMENTS, [plan_id=1589]
+
+(36) ShuffleQueryStage
+Output [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Arguments: 3
+
+(37) AQEShuffleRead
+Input [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Arguments: coalesced
+
+(38) ObjectHashAggregate
+Input [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Functions [5]: [count(1), avg(amount#12220), min(amount#12220), max(amount#12220), percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)]
+Aggregate Attributes [5]: [count(1)#12101L, avg(amount#12220)#12103, min(amount#12220)#12105, max(amount#12220)#12107, percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)#12109]
+Results [10]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count(1)#12101L AS n_compared#12102L, avg(amount#12220)#12103 AS mean_amount#12104, min(amount#12220)#12105 AS min_amount#12106, max(amount#12220)#12107 AS max_amount#12108, percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)#12109 AS _quantiles#12110]
+
+(39) Project [codegen id : 3]
+Output [12]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, _quantiles#12110[0] AS p25_amount#12121, _quantiles#12110[1] AS median_amount#12133, _quantiles#12110[2] AS p75_amount#12146]
+Input [10]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, _quantiles#12110]
+
+(40) BroadcastExchange
+Input [12]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+Arguments: HashedRelationBroadcastMode(List(input[0, string, true], input[1, bigint, true], input[2, string, true], input[3, string, true], input[4, string, true]),false), [plan_id=1694]
+
+(41) BroadcastQueryStage
+Output [12]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+Arguments: 4
+
+(42) BroadcastHashJoin [codegen id : 4]
+Left keys [5]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183]
+Right keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Join type: LeftOuter
+Join condition: None
+
+(43) Project [codegen id : 4]
+Output [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, coalesce(n_compared#12102L, 0) AS n_compared#12254L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+Input [20]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183, beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+
+(44) Project [codegen id : 4]
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, round(((cast(n_compared#12254L as double) * 100.0) / cast(n_beverages_total#12172L as double)), 4) AS coverage_pct_all_beverages#12270, round(mean_amount#12104, 6) AS mean_amount#12305, round(median_amount#12133, 6) AS median_amount#12323, round(min_amount#12106, 6) AS min_amount#12341, round(max_amount#12108, 6) AS max_amount#12359, round(p25_amount#12121, 6) AS p25_amount#12377, round(p75_amount#12146, 6) AS p75_amount#12395, CASE WHEN (n_compared#12254L > 0) THEN COMPUTED ELSE NO_ELIGIBLE_RECORDS END AS kpi_status#12287]
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+
+(45) Exchange
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, measurement_basis#12183 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=1749]
+
+(46) ShuffleQueryStage
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: 5
+
+(47) AQEShuffleRead
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: coalesced
+
+(48) Sort [codegen id : 5]
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, measurement_basis#12183 ASC NULLS FIRST], true, 0
+
+(49) Project
+Output [7]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, expected_beverages#7965L AS n_beverages_total#12172L, numeric_valid#7971L AS n_numeric_available#12173L, eligible_for_comparison#7985L AS n_eligible_any_basis#12174L]
+Input [7]: [beverage_group#6, eligible_for_comparison#7985L, expected_beverages#7965L, numeric_valid#7971L, nutrient_id#14L, nutrient_name#15, unit_name#16]
+
+(50) Generate
+Input [7]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L]
+Arguments: explode([per_100_ml,per_100_g]), [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L], false, [measurement_basis#12183]
+
+(51) Exchange
+Input [8]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183]
+Arguments: hashpartitioning(beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, 200), ENSURE_REQUIREMENTS, [plan_id=1441]
+
+(52) Sort
+Input [8]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183]
+Arguments: [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, nutrient_name#15 ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, measurement_basis#12183 ASC NULLS FIRST], false, 0
+
+(53) Filter
+Input [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+Condition : ((((((isnotnull(eligible_for_comparison#12235) AND eligible_for_comparison#12235) AND isnotnull(beverage_group#12198)) AND isnotnull(nutrient_id#12206L)) AND isnotnull(nutrient_name#12207)) AND isnotnull(unit_name#12208)) AND isnotnull(measurement_basis#12231))
+
+(54) Project
+Output [6]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, amount#12220, measurement_basis#12231]
+Input [7]: [amount#12220, beverage_group#12198, eligible_for_comparison#12235, measurement_basis#12231, nutrient_id#12206L, nutrient_name#12207, unit_name#12208]
+
+(55) ObjectHashAggregate
+Input [6]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, amount#12220, measurement_basis#12231]
+Keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Functions [5]: [partial_count(1), partial_avg(amount#12220), partial_min(amount#12220), partial_max(amount#12220), partial_percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)]
+Aggregate Attributes [6]: [count#13537L, sum#13538, count#13539L, min#13540, max#13541, buf#13542]
+Results [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+
+(56) Exchange
+Input [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Arguments: hashpartitioning(beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, 200), ENSURE_REQUIREMENTS, [plan_id=1436]
+
+(57) ObjectHashAggregate
+Input [11]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count#13543L, sum#13544, count#13545L, min#13546, max#13547, buf#13548]
+Keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Functions [5]: [count(1), avg(amount#12220), min(amount#12220), max(amount#12220), percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)]
+Aggregate Attributes [5]: [count(1)#12101L, avg(amount#12220)#12103, min(amount#12220)#12105, max(amount#12220)#12107, percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)#12109]
+Results [10]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, count(1)#12101L AS n_compared#12102L, avg(amount#12220)#12103 AS mean_amount#12104, min(amount#12220)#12105 AS min_amount#12106, max(amount#12220)#12107 AS max_amount#12108, percentile(amount#12220, [0.25,0.5,0.75], 1, 0, 0, false)#12109 AS _quantiles#12110]
+
+(58) Project
+Output [12]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, _quantiles#12110[0] AS p25_amount#12121, _quantiles#12110[1] AS median_amount#12133, _quantiles#12110[2] AS p75_amount#12146]
+Input [10]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, _quantiles#12110]
+
+(59) Sort
+Input [12]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+Arguments: [beverage_group#12198 ASC NULLS FIRST, nutrient_id#12206L ASC NULLS FIRST, nutrient_name#12207 ASC NULLS FIRST, unit_name#12208 ASC NULLS FIRST, measurement_basis#12231 ASC NULLS FIRST], false, 0
+
+(60) SortMergeJoin
+Left keys [5]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183]
+Right keys [5]: [beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231]
+Join type: LeftOuter
+Join condition: None
+
+(61) Project
+Output [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, coalesce(n_compared#12102L, 0) AS n_compared#12254L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+Input [20]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, measurement_basis#12183, beverage_group#12198, nutrient_id#12206L, nutrient_name#12207, unit_name#12208, measurement_basis#12231, n_compared#12102L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+
+(62) Project
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, round(((cast(n_compared#12254L as double) * 100.0) / cast(n_beverages_total#12172L as double)), 4) AS coverage_pct_all_beverages#12270, round(mean_amount#12104, 6) AS mean_amount#12305, round(median_amount#12133, 6) AS median_amount#12323, round(min_amount#12106, 6) AS min_amount#12341, round(max_amount#12108, 6) AS max_amount#12359, round(p25_amount#12121, 6) AS p25_amount#12377, round(p75_amount#12146, 6) AS p75_amount#12395, CASE WHEN (n_compared#12254L > 0) THEN COMPUTED ELSE NO_ELIGIBLE_RECORDS END AS kpi_status#12287]
+Input [15]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, mean_amount#12104, min_amount#12106, max_amount#12108, p25_amount#12121, median_amount#12133, p75_amount#12146]
+
+(63) Exchange
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: rangepartitioning(beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, measurement_basis#12183 ASC NULLS FIRST, 200), ENSURE_REQUIREMENTS, [plan_id=1448]
+
+(64) Sort
+Input [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: [beverage_group#6 ASC NULLS FIRST, nutrient_id#14L ASC NULLS FIRST, unit_name#16 ASC NULLS FIRST, measurement_basis#12183 ASC NULLS FIRST], true, 0
+
+(65) AdaptiveSparkPlan
+Output [17]: [beverage_group#6, nutrient_id#14L, nutrient_name#15, unit_name#16, measurement_basis#12183, n_beverages_total#12172L, n_numeric_available#12173L, n_eligible_any_basis#12174L, n_compared#12254L, coverage_pct_all_beverages#12270, mean_amount#12305, median_amount#12323, min_amount#12341, max_amount#12359, p25_amount#12377, p75_amount#12395, kpi_status#12287]
+Arguments: isFinalPlan=true
+
+

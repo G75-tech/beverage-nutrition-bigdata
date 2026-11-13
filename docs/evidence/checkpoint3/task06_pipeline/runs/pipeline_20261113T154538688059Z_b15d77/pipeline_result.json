@@ -1,0 +1,1089 @@
+{
+  "status": "PASS",
+  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "started_at_utc": "2026-11-13T15:45:38.769014Z",
+  "stages": [
+    {
+      "name": "task1",
+      "module": "src.input_contract",
+      "status": "PASS",
+      "wall_seconds": 36.011,
+      "reported_runtime_seconds": 35.902,
+      "result_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/input_contract.json",
+      "result_sha256": "9ced3d5a330ae4fa53e8c8477cc5f2a4c264154b7b6b6c5402ffe574a8b405fa",
+      "log_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/spark_baseline.json",
+      "spark_baseline_sha256": "c8dbb87c9fb761fd5c56dfe2922b37bf97f7e7a4d511c7072d9c3acf2be19aee",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "branded_food": {
+            "observed_at_utc": "2026-11-13T15:45:49.561727Z",
+            "partitions_observed": 1,
+            "column_count": 21,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/plans/branded_food.txt",
+            "explain_sha256": "c8e5bc65c4fa4ab54986237063400c7c3c1720dd30bd22fb96e71abc4be41aeb",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          },
+          "food": {
+            "observed_at_utc": "2026-11-13T15:45:56.303223Z",
+            "partitions_observed": 1,
+            "column_count": 8,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/plans/food.txt",
+            "explain_sha256": "4d61b4b177581d294dda80349872093a5c1aa7944961d278afed8cee483d33e8",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          },
+          "food_nutrient": {
+            "observed_at_utc": "2026-11-13T15:45:58.838740Z",
+            "partitions_observed": 1,
+            "column_count": 11,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/plans/food_nutrient.txt",
+            "explain_sha256": "d4e801e91f3e22d3e2797d030673312d648473b937cd891d8b5b2cc4f51c473f",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          },
+          "nutrient": {
+            "observed_at_utc": "2026-11-13T15:46:14.313305Z",
+            "partitions_observed": 1,
+            "column_count": 5,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/plans/nutrient.txt",
+            "explain_sha256": "e560fc16a05a4ec8aa14d8fd622e409c5cce8c98f7c9763b162634cd43f89652",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    },
+    {
+      "name": "task2",
+      "module": "src.filter_beverages",
+      "status": "PASS",
+      "wall_seconds": 91.568,
+      "reported_runtime_seconds": 91.452,
+      "result_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/filter_result.json",
+      "result_sha256": "a99de45d2f349c206a48feb74d056ca677784ea25b2d7f17dc30fbe880028e5a",
+      "log_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/spark_baseline.json",
+      "spark_baseline_sha256": "85b6b9ed471d09a644e5af39a436bacaf574842ce6cad06d2d1444910ecc4c65",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "beverage_filter": {
+            "observed_at_utc": "2026-11-13T15:46:47.882520Z",
+            "partitions_observed": 13,
+            "column_count": 31,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/plans/beverage_filter.txt",
+            "explain_sha256": "e0927f134812bbd3fcdbb49514f0cab8d8691cc49fcc30a1b932d4d1c27454a6",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    },
+    {
+      "name": "task3",
+      "module": "src.clean_nutrients",
+      "status": "PASS",
+      "wall_seconds": 118.943,
+      "reported_runtime_seconds": 118.828,
+      "result_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrient_result.json",
+      "result_sha256": "6bb617603c59bc5ea460bb6169c6bb6d6c86b47ae15c0f7ac6dfcd3de1ce6bfd",
+      "log_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/spark_baseline.json",
+      "spark_baseline_sha256": "8470c6c918051da412702c2ca834acb5660cb34b297eeff65b0649d1a5532eae",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "nutrient_scope": {
+            "observed_at_utc": "2026-11-13T15:48:16.498422Z",
+            "partitions_observed": 1,
+            "column_count": 10,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/plans/nutrient_scope.txt",
+            "explain_sha256": "d53ef23ba5fa24157d35131389e23df65ad03e96d962b96117ddfc2fd8f804e2",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          },
+          "nutrition_clean": {
+            "observed_at_utc": "2026-11-13T15:49:20.100458Z",
+            "partitions_observed": 13,
+            "column_count": 34,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/plans/nutrition_clean.txt",
+            "explain_sha256": "f264eb34aaa6bd8dad059b177400e96f2afd919f46f03a44ff40a7f96fc64144",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    },
+    {
+      "name": "task4",
+      "module": "src.join_beverage_nutrients",
+      "status": "PASS",
+      "wall_seconds": 93.715,
+      "reported_runtime_seconds": 93.603,
+      "result_path": "docs/evidence/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/join_result.json",
+      "result_sha256": "798a1dfdf11e3613d67e27fc40ad256dbc0327ba8fad262a3f04b4b94207308a",
+      "log_path": "docs/evidence/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/spark_baseline.json",
+      "spark_baseline_sha256": "3f774c352da9565f65aa38e370dc62b5bda6694529e8e3f88d844aaa2a1a04fd",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "beverage_nutrient_join": {
+            "observed_at_utc": "2026-11-13T15:50:32.772903Z",
+            "partitions_observed": 200,
+            "column_count": 46,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/plans/beverage_nutrient_join.txt",
+            "explain_sha256": "f65b82dd15618280b4d97f0947e343298f2d7f184c4c9752bacff60c2926b1b3",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    },
+    {
+      "name": "task5",
+      "module": "src.aggregate_nutrition_kpis",
+      "status": "PASS",
+      "wall_seconds": 25.069,
+      "reported_runtime_seconds": 24.927,
+      "result_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/kpi_result.json",
+      "result_sha256": "258b7585db8f730104ef98f99229dbaf55fcf732dbd40aca9bf5ec4d4de02948",
+      "log_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/spark_baseline.json",
+      "spark_baseline_sha256": "ad5532d735cc13404bf931d62e5fb15c5654212cd3ec5d0fc9defde0241375cb",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "nutrition_kpis": {
+            "observed_at_utc": "2026-11-13T15:51:44.179825Z",
+            "partitions_observed": 1,
+            "column_count": 17,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/plans/nutrition_kpis.txt",
+            "explain_sha256": "7db85e2e4cb00602643712dc2d2f233cbeb382116953f72e2f9ac64f9f306e45",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    },
+    {
+      "name": "task5_repeat",
+      "module": "src.aggregate_nutrition_kpis",
+      "status": "PASS",
+      "wall_seconds": 25.055,
+      "reported_runtime_seconds": 24.918,
+      "result_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_result.json",
+      "result_sha256": "5d8049ab877a4803ec44a0bbbd3f0d17b1ee9209b6ac372d1f5f654f1bdd5963",
+      "log_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/console.log",
+      "spark_baseline_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/spark_baseline.json",
+      "spark_baseline_sha256": "e789206fcd85597217188ca99b77969b8961bbe1b703a730ff362da2d0e0e1ef",
+      "spark": {
+        "python": "3.11.17",
+        "spark": "3.5.9",
+        "java": "17.0.20.1",
+        "java_vm": "OpenJDK 64-Bit Server VM",
+        "jvm_max_heap_bytes": 1073741824,
+        "master": "local[*]",
+        "default_parallelism": 12,
+        "sql_configuration": {
+          "spark.sql.shuffle.partitions": "200",
+          "spark.sql.adaptive.enabled": "true",
+          "spark.sql.adaptive.coalescePartitions.enabled": "true",
+          "spark.sql.files.maxPartitionBytes": "134217728b",
+          "spark.sql.csv.parser.columnPruning.enabled": "false",
+          "spark.sql.session.timeZone": "UTC"
+        },
+        "frames": {
+          "nutrition_kpis": {
+            "observed_at_utc": "2026-11-13T15:52:08.850864Z",
+            "partitions_observed": 1,
+            "column_count": 17,
+            "explain_formatted_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/plans/nutrition_kpis.txt",
+            "explain_sha256": "dfa7a27076e16116996a6c157afc7849679e485d978c0b0659fb5f31196e5f70",
+            "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+          }
+        }
+      }
+    }
+  ],
+  "scope": "Full-data Task 1–5 plus independent KPI repeat; Checkpoint 2 ingestion excluded",
+  "environment": {
+    "python": "3.11.17",
+    "os": "Windows-10-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+    "logical_cpus": 12,
+    "free_disk_bytes_before": 114627883008
+  },
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "source_task_config_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\config\\checkpoint3.json",
+  "source_task_config_sha256": "007bc16038aa33563b7e4b182518a5e22bc5ff308df57f68dfe377e88f47e523",
+  "source_sha256": {
+    "RUN_CHECKPOINT3.ps1": "1c83968aa8ff651aae26ebc2f3db188b7301ee54a98d6a2ef6dbdb9426eb3747",
+    "src/common.py": "2d274da3d6319406731c9b48ba7c813e0cee0cb01d54ffb3946edf6a4196ce62",
+    "src/checkpoint3_pipeline.py": "6fb2cd0f08e3e396554c98575ef9eb192188b74587cdef3baf65240575b41b27",
+    "src/input_contract.py": "f193851a54c99bf2ad177f280212abd44c91e3a31e2ff5853bf08cc6fc509379",
+    "src/filter_beverages.py": "d08a519870abfb0e830984db764986fe07ff1a428c4067503ce77f5227f3efe7",
+    "src/clean_nutrients.py": "adc2b81adb78f9d64d590d3aee8669d90cdd2cc285be56a2b38f0fddb7ef7282",
+    "src/measurement_basis.py": "543c19675c9c46ea462a7252ed547fc20dead1907277876c179f3fd98c501cf0",
+    "src/join_beverage_nutrients.py": "1ab2d3cb647aa4cdcb056a9ae3a7275caa829698cd962781cf15ab0729d4fab4",
+    "src/aggregate_nutrition_kpis.py": "be5599073a4719b33e27df626fb47d4b1d26e7cf2699bc4cbc4011e3a5df279c",
+    "src/run_storage.py": "d5496ad275d07c9940aea138b13005b9d0ec987a49565d1886257c8e7cea7b4b",
+    "src/checkpoint3_task.py": "7ef3d2cb069e620add2818590a84751e284fdd9382bd61013b53cff4bcd39021",
+    "config/project.json": "192ad5502c148ea5aff48e325d5a263cc9d8714d512adfec00676db1d9380a1e"
+  },
+  "inputs": {
+    "raw_csv_bytes": 2825968318,
+    "raw_tables": [
+      {
+        "file_name": "branded_food.csv",
+        "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/branded_food.csv",
+        "size_bytes": 954002257,
+        "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+        "format": "CSV",
+        "grain": "One branded food record per fdc_id",
+        "primary_key": [
+          "fdc_id"
+        ],
+        "join_keys": [
+          "fdc_id"
+        ],
+        "checked_keys": [
+          "fdc_id"
+        ],
+        "primary_key_uniqueness_checked": false,
+        "schema_declaration": {
+          "columns": [
+            "fdc_id",
+            "brand_owner",
+            "brand_name",
+            "subbrand_name",
+            "gtin_upc",
+            "ingredients",
+            "not_a_significant_source_of",
+            "serving_size",
+            "serving_size_unit",
+            "household_serving_fulltext",
+            "branded_food_category",
+            "data_source",
+            "package_weight",
+            "modified_date",
+            "available_date",
+            "market_country",
+            "discontinued_date",
+            "preparation_state_code",
+            "trade_channel",
+            "short_description",
+            "material_code"
+          ],
+          "types": {
+            "fdc_id": "long",
+            "serving_size": "double"
+          },
+          "required_values": [
+            "fdc_id"
+          ]
+        }
+      },
+      {
+        "file_name": "food.csv",
+        "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food.csv",
+        "size_bytes": 375881194,
+        "sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+        "format": "CSV",
+        "grain": "One food record per fdc_id",
+        "primary_key": [
+          "fdc_id"
+        ],
+        "join_keys": [
+          "fdc_id"
+        ],
+        "checked_keys": [
+          "fdc_id"
+        ],
+        "primary_key_uniqueness_checked": false,
+        "schema_declaration": {
+          "columns": [
+            "fdc_id",
+            "data_type",
+            "description",
+            "food_category_id",
+            "publication_date",
+            "market_country",
+            "trade_channel",
+            "microbe_data"
+          ],
+          "types": {
+            "fdc_id": "long",
+            "food_category_id": "long"
+          },
+          "required_values": [
+            "fdc_id"
+          ]
+        }
+      },
+      {
+        "file_name": "food_nutrient.csv",
+        "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food_nutrient.csv",
+        "size_bytes": 1496063311,
+        "sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+        "format": "CSV",
+        "grain": "One nutrient-value record per id; a food can have multiple nutrient records",
+        "primary_key": [
+          "id"
+        ],
+        "join_keys": [
+          "fdc_id",
+          "nutrient_id"
+        ],
+        "checked_keys": [
+          "id",
+          "fdc_id",
+          "nutrient_id"
+        ],
+        "primary_key_uniqueness_checked": false,
+        "schema_declaration": {
+          "columns": [
+            "id",
+            "fdc_id",
+            "nutrient_id",
+            "amount",
+            "data_points",
+            "derivation_id",
+            "min",
+            "max",
+            "median",
+            "footnote",
+            "min_year_acquired"
+          ],
+          "types": {
+            "id": "long",
+            "fdc_id": "long",
+            "nutrient_id": "long",
+            "amount": "double",
+            "data_points": "long",
+            "derivation_id": "long",
+            "min": "double",
+            "max": "double",
+            "median": "double",
+            "min_year_acquired": "long"
+          },
+          "required_values": [
+            "id",
+            "fdc_id",
+            "nutrient_id"
+          ]
+        }
+      },
+      {
+        "file_name": "nutrient.csv",
+        "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv",
+        "size_bytes": 21556,
+        "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+        "format": "CSV",
+        "grain": "One nutrient definition per id",
+        "primary_key": [
+          "id"
+        ],
+        "join_keys": [
+          "id"
+        ],
+        "checked_keys": [
+          "id"
+        ],
+        "primary_key_uniqueness_checked": false,
+        "schema_declaration": {
+          "columns": [
+            "id",
+            "name",
+            "unit_name",
+            "nutrient_nbr",
+            "rank"
+          ],
+          "types": {
+            "id": "long",
+            "rank": "double"
+          },
+          "required_values": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "reference_zip_path": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+    "reference_zip_bytes": 204270542,
+    "reference_zip_sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256"
+  },
+  "active_stage": null,
+  "outputs": [
+    {
+      "path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/beverages.csv",
+      "schema_path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/output_schema.json",
+      "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+      "sha256": "dee45d28875dbb0b480759cbf57956b8603b488d086747ebd1c118c27c0b1adb",
+      "size_bytes": 72385203,
+      "row_count": 152138,
+      "distinct_fdc_ids": 152138,
+      "column_count": 30,
+      "format": "CSV",
+      "writer": "Python csv.writer from Spark toLocalIterator",
+      "write_mode": "new directory per run; partial renamed after validation",
+      "readback_metrics": {
+        "row_count": 152138,
+        "null_counts": {
+          "fdc_id": 0,
+          "brand_owner": 1408,
+          "brand_name": 41616,
+          "subbrand_name": 142474,
+          "gtin_upc": 0,
+          "ingredients": 358,
+          "not_a_significant_source_of": 127351,
+          "serving_size": 1014,
+          "serving_size_unit": 1781,
+          "household_serving_fulltext": 2828,
+          "branded_food_category": 0,
+          "data_source": 0,
+          "package_weight": 87699,
+          "modified_date": 1,
+          "available_date": 0,
+          "market_country": 0,
+          "discontinued_date": 151958,
+          "preparation_state_code": 149707,
+          "trade_channel": 151539,
+          "short_description": 149710,
+          "material_code": 152138,
+          "description": 0,
+          "food_publication_date": 0,
+          "category_normalized": 0,
+          "beverage_group": 0,
+          "serving_size_unit_normalized": 2303,
+          "serving_size_unit_status": 0,
+          "selection_reason": 0,
+          "selection_status": 0,
+          "preparation_status": 0
+        },
+        "null_key_counts": {
+          "fdc_id": 0
+        }
+      },
+      "producer_stage": "task2"
+    },
+    {
+      "path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/review.csv",
+      "schema_path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/review_schema.json",
+      "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+      "sha256": "b7ee2e7bf9d6b5e8fc5f06f7ca43eaac8f3a364d1e3caa06f1c535b08a6d805a",
+      "size_bytes": 17996271,
+      "row_count": 34138,
+      "distinct_fdc_ids": 34138,
+      "column_count": 30,
+      "format": "CSV",
+      "writer": "Python csv.writer from Spark toLocalIterator",
+      "write_mode": "new directory per run; partial renamed after validation",
+      "readback_metrics": {
+        "row_count": 34138,
+        "null_counts": {
+          "fdc_id": 0,
+          "brand_owner": 3083,
+          "brand_name": 14891,
+          "subbrand_name": 31410,
+          "gtin_upc": 0,
+          "ingredients": 25,
+          "not_a_significant_source_of": 31824,
+          "serving_size": 126,
+          "serving_size_unit": 360,
+          "household_serving_fulltext": 3877,
+          "branded_food_category": 10373,
+          "data_source": 0,
+          "package_weight": 21591,
+          "modified_date": 2058,
+          "available_date": 0,
+          "market_country": 0,
+          "discontinued_date": 33876,
+          "preparation_state_code": 29249,
+          "trade_channel": 32580,
+          "short_description": 29247,
+          "material_code": 34138,
+          "description": 0,
+          "food_publication_date": 0,
+          "category_normalized": 10373,
+          "beverage_group": 25015,
+          "serving_size_unit_normalized": 466,
+          "serving_size_unit_status": 0,
+          "selection_reason": 0,
+          "selection_status": 0,
+          "preparation_status": 0
+        },
+        "null_key_counts": {
+          "fdc_id": 0
+        }
+      },
+      "producer_stage": "task2"
+    },
+    {
+      "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_classified.csv",
+      "sha256": "21972cf6bfa891d41ddf970be09e8bb4d0c9c76d851ecc6a026005e9ce88a690",
+      "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_classified_schema.json",
+      "schema_sha256": "dee9e4e6174524376f3410fd5eab6cd050ed684d6d8b03d5af71520e3af7b52f",
+      "row_count": 698525,
+      "column_count": 10,
+      "size_bytes": 43505544,
+      "readback_metrics": {
+        "row_count": 698525,
+        "null_counts": {
+          "fdc_id": 0,
+          "record_id_raw": 0,
+          "fdc_id_raw": 0,
+          "nutrient_id_raw": 0,
+          "amount_raw": 0,
+          "derivation_id": 0,
+          "id": 0,
+          "nutrient_id": 0,
+          "amount": 0,
+          "amount_status": 0
+        },
+        "null_key_counts": {
+          "id": 0,
+          "fdc_id": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task3"
+    },
+    {
+      "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_quarantine.csv",
+      "sha256": "cc6c90f653d8281761e1dda4df00cb453911115fd2e4d8336cbb7825db165e8c",
+      "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_quarantine_schema.json",
+      "schema_sha256": "adde367d7f38604b90f141be724d9bd0afa58f8473c80f7f7cd4c3840f738f32",
+      "row_count": 0,
+      "column_count": 16,
+      "size_bytes": 207,
+      "readback_metrics": {
+        "row_count": 0,
+        "null_counts": {
+          "fdc_id": 0,
+          "nutrient_id": 0,
+          "record_id_raw": 0,
+          "fdc_id_raw": 0,
+          "nutrient_id_raw": 0,
+          "amount_raw": 0,
+          "derivation_id": 0,
+          "id": 0,
+          "amount": 0,
+          "amount_status": 0,
+          "source_records": 0,
+          "distinct_valid_values": 0,
+          "valid_records": 0,
+          "missing_records": 0,
+          "pair_status": 0,
+          "quarantine_reason": 0
+        },
+        "null_key_counts": {
+          "id": 0,
+          "fdc_id": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task3"
+    },
+    {
+      "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_clean.csv",
+      "sha256": "d855395e45694137338dbc878ffbc06d86a409c5b14f1c855377c3a671fd75a3",
+      "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_clean_schema.json",
+      "schema_sha256": "1be4fbc63a59d00ed83ee894174007ada78b664982d8bb155089037626358a46",
+      "row_count": 698525,
+      "column_count": 34,
+      "size_bytes": 140225822,
+      "readback_metrics": {
+        "row_count": 698525,
+        "null_counts": {
+          "fdc_id": 0,
+          "nutrient_id": 0,
+          "record_id_raw": 0,
+          "fdc_id_raw": 0,
+          "nutrient_id_raw": 0,
+          "amount_raw": 0,
+          "derivation_id": 0,
+          "id": 0,
+          "amount": 0,
+          "amount_status": 0,
+          "source_records": 0,
+          "distinct_valid_values": 0,
+          "valid_records": 0,
+          "missing_records": 0,
+          "pair_status": 0,
+          "beverage_group": 0,
+          "serving_size": 0,
+          "serving_unit": 6316,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "json_amount": 530425,
+          "label_amount": 530425,
+          "json_serving_size": 530425,
+          "json_serving_unit": 531860,
+          "record_reference_status": 530425,
+          "scale_checks": 530425,
+          "scale_mismatches": 530425,
+          "basis_status": 0,
+          "measurement_basis_candidate": 6316,
+          "measurement_basis": 553991,
+          "value_review_limit": 0,
+          "value_review_required": 0,
+          "value_review_reason": 0,
+          "eligible_for_comparison": 0
+        },
+        "null_key_counts": {
+          "id": 0,
+          "fdc_id": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task3"
+    },
+    {
+      "path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_value_review.csv",
+      "sha256": "e721763beb7c3b947ebed91e272440772327c92f2b2307d50e8a8cebdc719a80",
+      "schema_path": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_value_review_schema.json",
+      "schema_sha256": "2c751ce09eee2270e4c2aab22640d568a15f522dfa2cce68f1a4ab39e2e08372",
+      "row_count": 2074,
+      "column_count": 34,
+      "size_bytes": 442748,
+      "readback_metrics": {
+        "row_count": 2074,
+        "null_counts": {
+          "fdc_id": 0,
+          "nutrient_id": 0,
+          "record_id_raw": 0,
+          "fdc_id_raw": 0,
+          "nutrient_id_raw": 0,
+          "amount_raw": 0,
+          "derivation_id": 0,
+          "id": 0,
+          "amount": 0,
+          "amount_status": 0,
+          "source_records": 0,
+          "distinct_valid_values": 0,
+          "valid_records": 0,
+          "missing_records": 0,
+          "pair_status": 0,
+          "beverage_group": 0,
+          "serving_size": 0,
+          "serving_unit": 2,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "json_amount": 2021,
+          "label_amount": 2021,
+          "json_serving_size": 2021,
+          "json_serving_unit": 2022,
+          "record_reference_status": 2021,
+          "scale_checks": 2021,
+          "scale_mismatches": 2021,
+          "basis_status": 0,
+          "measurement_basis_candidate": 2,
+          "measurement_basis": 2022,
+          "value_review_limit": 0,
+          "value_review_required": 0,
+          "value_review_reason": 0,
+          "eligible_for_comparison": 0
+        },
+        "null_key_counts": {
+          "id": 0,
+          "fdc_id": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task3"
+    },
+    {
+      "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients.csv",
+      "sha256": "d514275fcdf623f5b5818112eae9a4f9eba74912b10d82eb3dbdaf4cad17d14f",
+      "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients_schema.json",
+      "schema_sha256": "8e1e6fa576e9ced55765392414b726b9284bf898c8a6cd9ab729338babac96e0",
+      "row_count": 760690,
+      "column_count": 46,
+      "size_bytes": 277695171,
+      "readback_metrics": {
+        "row_count": 760690,
+        "null_counts": {
+          "fdc_id": 0,
+          "description": 0,
+          "brand_owner": 7040,
+          "brand_name": 208080,
+          "gtin_upc": 0,
+          "branded_food_category": 0,
+          "beverage_group": 0,
+          "serving_size": 5070,
+          "serving_size_unit": 8905,
+          "serving_size_unit_normalized": 11515,
+          "serving_size_unit_status": 0,
+          "preparation_status": 0,
+          "food_publication_date": 0,
+          "market_country": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "source_records": 0,
+          "distinct_valid_values": 62165,
+          "valid_records": 62165,
+          "missing_records": 62165,
+          "nutrient_record_status": 0,
+          "record_id_raw": 62165,
+          "fdc_id_raw": 62165,
+          "nutrient_id_raw": 62165,
+          "amount_raw": 62165,
+          "derivation_id": 62165,
+          "food_nutrient_id": 62165,
+          "amount": 62165,
+          "amount_status": 0,
+          "json_amount": 592590,
+          "label_amount": 592590,
+          "json_serving_size": 592590,
+          "json_serving_unit": 594025,
+          "record_reference_status": 592590,
+          "scale_checks": 592590,
+          "scale_mismatches": 592590,
+          "basis_status": 0,
+          "measurement_basis_candidate": 68481,
+          "measurement_basis": 616156,
+          "value_review_limit": 62165,
+          "value_review_required": 0,
+          "value_review_reason": 0,
+          "eligible_for_comparison": 0,
+          "clean_record_present": 0,
+          "source_record_present": 0
+        },
+        "null_key_counts": {
+          "fdc_id": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task4"
+    },
+    {
+      "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_nutrient.csv",
+      "sha256": "2c984007bebb637ce1ea54eb5b724623db55d13d06620308aa263e4e1b93e135",
+      "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_nutrient_schema.json",
+      "schema_sha256": "bd083dc68fd3e48b4283730cf8087a46f5e80562d2ff5007ef6662cec9342a94",
+      "row_count": 5,
+      "column_count": 16,
+      "size_bytes": 759,
+      "readback_metrics": {
+        "row_count": 5,
+        "null_counts": {
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "expected_beverages": 0,
+          "with_source_record": 0,
+          "with_clean_record": 0,
+          "numeric_valid": 0,
+          "missing_amount": 0,
+          "no_source_record": 0,
+          "conflicting_duplicate": 0,
+          "invalid_only": 0,
+          "value_review_required": 0,
+          "numeric_valid_basis_unconfirmed": 0,
+          "eligible_for_comparison": 0,
+          "numeric_coverage_pct": 0,
+          "eligible_coverage_pct": 0
+        },
+        "null_key_counts": {
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task4"
+    },
+    {
+      "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_group.csv",
+      "sha256": "f7f11208250f37ec7045bb4b350b3e3f9f840a79627ce682a90760556e3c1316",
+      "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_group_schema.json",
+      "schema_sha256": "2740451cb2e7cf64ed6b3fe530334aa249afbb00a61a5aa306c6d118613a5882",
+      "row_count": 40,
+      "column_count": 17,
+      "size_bytes": 4271,
+      "readback_metrics": {
+        "row_count": 40,
+        "null_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "expected_beverages": 0,
+          "with_source_record": 0,
+          "with_clean_record": 0,
+          "numeric_valid": 0,
+          "missing_amount": 0,
+          "no_source_record": 0,
+          "conflicting_duplicate": 0,
+          "invalid_only": 0,
+          "value_review_required": 0,
+          "numeric_valid_basis_unconfirmed": 0,
+          "eligible_for_comparison": 0,
+          "numeric_coverage_pct": 0,
+          "eligible_coverage_pct": 0
+        },
+        "null_key_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task4"
+    },
+    {
+      "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/nutrition_kpis.csv",
+      "sha256": "ad77394b5de8f4682a64d4c735b29f0229b60609d943529afec59b5d6f479954",
+      "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/nutrition_kpis_schema.json",
+      "schema_sha256": "63d791447401779217eb130045310947f1c89ead9a9b6239e466dc32b7ae26e8",
+      "row_count": 80,
+      "column_count": 17,
+      "size_bytes": 9638,
+      "readback_metrics": {
+        "row_count": 80,
+        "null_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "measurement_basis": 0,
+          "n_beverages_total": 0,
+          "n_numeric_available": 0,
+          "n_eligible_any_basis": 0,
+          "n_compared": 0,
+          "coverage_pct_all_beverages": 0,
+          "mean_amount": 0,
+          "median_amount": 0,
+          "min_amount": 0,
+          "max_amount": 0,
+          "p25_amount": 0,
+          "p75_amount": 0,
+          "kpi_status": 0
+        },
+        "null_key_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "unit_name": 0,
+          "measurement_basis": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task5"
+    },
+    {
+      "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/kpi_coverage.csv",
+      "sha256": "35392c6ad39d2e830c4b862f19eb2a89d9c8be0b47c74fbc20ef3fc3030a9df7",
+      "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77/kpi_coverage_schema.json",
+      "schema_sha256": "5bf3707ac7ebf559f3a414a2a8f2b23b45249f3a366970d007986f024f140f1b",
+      "row_count": 40,
+      "column_count": 19,
+      "size_bytes": 4624,
+      "readback_metrics": {
+        "row_count": 40,
+        "null_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "expected_beverages": 0,
+          "with_source_record": 0,
+          "with_clean_record": 0,
+          "numeric_valid": 0,
+          "missing_amount": 0,
+          "no_source_record": 0,
+          "conflicting_duplicate": 0,
+          "invalid_only": 0,
+          "value_review_required": 0,
+          "numeric_valid_basis_unconfirmed": 0,
+          "eligible_for_comparison": 0,
+          "numeric_coverage_pct": 0,
+          "eligible_coverage_pct": 0,
+          "n_compared_per_100_ml": 0,
+          "n_compared_per_100_g": 0
+        },
+        "null_key_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task5"
+    },
+    {
+      "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/nutrition_kpis.csv",
+      "sha256": "ad77394b5de8f4682a64d4c735b29f0229b60609d943529afec59b5d6f479954",
+      "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/nutrition_kpis_schema.json",
+      "schema_sha256": "63d791447401779217eb130045310947f1c89ead9a9b6239e466dc32b7ae26e8",
+      "row_count": 80,
+      "column_count": 17,
+      "size_bytes": 9638,
+      "readback_metrics": {
+        "row_count": 80,
+        "null_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "measurement_basis": 0,
+          "n_beverages_total": 0,
+          "n_numeric_available": 0,
+          "n_eligible_any_basis": 0,
+          "n_compared": 0,
+          "coverage_pct_all_beverages": 0,
+          "mean_amount": 0,
+          "median_amount": 0,
+          "min_amount": 0,
+          "max_amount": 0,
+          "p25_amount": 0,
+          "p75_amount": 0,
+          "kpi_status": 0
+        },
+        "null_key_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "unit_name": 0,
+          "measurement_basis": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task5_repeat"
+    },
+    {
+      "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_coverage.csv",
+      "sha256": "35392c6ad39d2e830c4b862f19eb2a89d9c8be0b47c74fbc20ef3fc3030a9df7",
+      "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_coverage_schema.json",
+      "schema_sha256": "5bf3707ac7ebf559f3a414a2a8f2b23b45249f3a366970d007986f024f140f1b",
+      "row_count": 40,
+      "column_count": 19,
+      "size_bytes": 4624,
+      "readback_metrics": {
+        "row_count": 40,
+        "null_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0,
+          "nutrient_name": 0,
+          "unit_name": 0,
+          "expected_beverages": 0,
+          "with_source_record": 0,
+          "with_clean_record": 0,
+          "numeric_valid": 0,
+          "missing_amount": 0,
+          "no_source_record": 0,
+          "conflicting_duplicate": 0,
+          "invalid_only": 0,
+          "value_review_required": 0,
+          "numeric_valid_basis_unconfirmed": 0,
+          "eligible_for_comparison": 0,
+          "numeric_coverage_pct": 0,
+          "eligible_coverage_pct": 0,
+          "n_compared_per_100_ml": 0,
+          "n_compared_per_100_g": 0
+        },
+        "null_key_counts": {
+          "beverage_group": 0,
+          "nutrient_id": 0
+        }
+      },
+      "format": "CSV",
+      "write_mode": "new directory per run",
+      "producer_stage": "task5_repeat"
+    }
+  ],
+  "quality": {
+    "selected_beverages": 152138,
+    "review_beverages": 34138,
+    "clean_nutrient_records": 698525,
+    "joined_slots": 760690,
+    "missing_source_slots": 62165,
+    "value_review_records": 2074,
+    "eligible_nutrient_records": 144482,
+    "kpi_rows": 80,
+    "coverage_rows": 40,
+    "independent_kpi_repeat": "PASS"
+  },
+  "inputs_outputs_verified": true,
+  "run_config_sha256": "1fa256294ffc7ac0e8a52b279c7f6ca41f20efcf409944db427600ad9941d754",
+  "free_disk_bytes_after": 114064834560,
+  "finished_at_utc": "2026-11-13T15:52:15.517796Z",
+  "elapsed_seconds": 396.752,
+  "stage_wall_seconds": 390.361,
+  "orchestration_seconds": 6.391
+}

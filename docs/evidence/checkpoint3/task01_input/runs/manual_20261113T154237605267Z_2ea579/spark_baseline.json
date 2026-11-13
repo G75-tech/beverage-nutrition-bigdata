@@ -1,0 +1,51 @@
+{
+  "python": "3.11.17",
+  "spark": "3.5.9",
+  "java": "17.0.20.1",
+  "java_vm": "OpenJDK 64-Bit Server VM",
+  "jvm_max_heap_bytes": 1073741824,
+  "master": "local[*]",
+  "default_parallelism": 12,
+  "sql_configuration": {
+    "spark.sql.shuffle.partitions": "200",
+    "spark.sql.adaptive.enabled": "true",
+    "spark.sql.adaptive.coalescePartitions.enabled": "true",
+    "spark.sql.files.maxPartitionBytes": "134217728b",
+    "spark.sql.csv.parser.columnPruning.enabled": "false",
+    "spark.sql.session.timeZone": "UTC"
+  },
+  "frames": {
+    "branded_food": {
+      "observed_at_utc": "2026-11-13T15:42:44.895712Z",
+      "partitions_observed": 1,
+      "column_count": 21,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T154237605267Z_2ea579/plans/branded_food.txt",
+      "explain_sha256": "c8e5bc65c4fa4ab54986237063400c7c3c1720dd30bd22fb96e71abc4be41aeb",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    },
+    "food": {
+      "observed_at_utc": "2026-11-13T15:42:51.441809Z",
+      "partitions_observed": 1,
+      "column_count": 8,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T154237605267Z_2ea579/plans/food.txt",
+      "explain_sha256": "4d61b4b177581d294dda80349872093a5c1aa7944961d278afed8cee483d33e8",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    },
+    "food_nutrient": {
+      "observed_at_utc": "2026-11-13T15:42:53.902673Z",
+      "partitions_observed": 1,
+      "column_count": 11,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T154237605267Z_2ea579/plans/food_nutrient.txt",
+      "explain_sha256": "d4e801e91f3e22d3e2797d030673312d648473b937cd891d8b5b2cc4f51c473f",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    },
+    "nutrient": {
+      "observed_at_utc": "2026-11-13T15:43:09.341710Z",
+      "partitions_observed": 1,
+      "column_count": 5,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T154237605267Z_2ea579/plans/nutrient.txt",
+      "explain_sha256": "e560fc16a05a4ec8aa14d8fd622e409c5cce8c98f7c9763b162634cd43f89652",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    }
+  }
+}

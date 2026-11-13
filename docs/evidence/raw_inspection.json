@@ -1,10 +1,10 @@
 {
-  "started_at_utc": "2026-10-23T16:27:39.997354Z",
+  "started_at_utc": "2026-10-24T00:55:19.396090Z",
   "status": "PASS",
   "file_name": "branded_food.csv",
   "spark": "3.5.9",
   "master": "local[*]",
-  "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-23/run_id=checkpoint2_20261023T062747094486Z_1/branded_food.csv",
+  "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/branded_food.csv",
   "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
   "schema": {
     "type": "struct",
@@ -259,5 +259,5 @@
   "row_count": null,
   "full_dataset_validated": false,
   "note": "Explicit schema and first rows only; no filtering or ETL; no full row count claimed",
-  "finished_at_utc": "2026-10-23T16:27:47.845455Z"
+  "finished_at_utc": "2026-10-24T00:55:32.322210Z"
 }

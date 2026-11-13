@@ -1,0 +1,603 @@
+== Physical Plan ==
+AdaptiveSparkPlan (96)
++- == Final Plan ==
+   * Project (68)
+   +- * Project (67)
+      +- * SortMergeJoin LeftOuter (66)
+         :- * Project (41)
+         :  +- * SortMergeJoin LeftOuter (40)
+         :     :- * Sort (14)
+         :     :  +- ShuffleQueryStage (13), Statistics(sizeInBytes=273.2 MiB, rowCount=7.61E+5)
+         :     :     +- Exchange (12)
+         :     :        +- * BroadcastNestedLoopJoin Cross BuildRight (11)
+         :     :           :- TableCacheQueryStage (5), Statistics(sizeInBytes=32.7 MiB, rowCount=1.52E+5)
+         :     :           :  +- InMemoryTableScan (1)
+         :     :           :        +- InMemoryRelation (2)
+         :     :           :              +- * Project (4)
+         :     :           :                 +- Scan csv  (3)
+         :     :           +- BroadcastQueryStage (10), Statistics(sizeInBytes=272.0 B, rowCount=5)
+         :     :              +- BroadcastExchange (9)
+         :     :                 +- * Project (8)
+         :     :                    +- * Filter (7)
+         :     :                       +- Scan csv  (6)
+         :     +- * Sort (39)
+         :        +- * Project (38)
+         :           +- * Filter (37)
+         :              +- TableCacheQueryStage (36), Statistics(sizeInBytes=38.0 MiB, rowCount=6.99E+5)
+         :                 +- InMemoryTableScan (15)
+         :                       +- InMemoryRelation (16)
+         :                             +- AdaptiveSparkPlan (35)
+                                       +- == Final Plan ==
+                                          * Project (27)
+                                          +- * HashAggregate (26)
+                                             +- ShuffleQueryStage (25), Statistics(sizeInBytes=37.3 MiB, rowCount=6.99E+5)
+                                                +- Exchange (24)
+                                                   +- * HashAggregate (23)
+                                                      +- * HashAggregate (22)
+                                                         +- AQEShuffleRead (21)
+                                                            +- ShuffleQueryStage (20), Statistics(sizeInBytes=37.3 MiB, rowCount=6.99E+5)
+                                                               +- Exchange (19)
+                                                                  +- * HashAggregate (18)
+                                                                     +- Scan csv  (17)
+                                       +- == Initial Plan ==
+                                          Project (34)
+                                          +- HashAggregate (33)
+                                             +- Exchange (32)
+                                                +- HashAggregate (31)
+                                                   +- HashAggregate (30)
+                                                      +- Exchange (29)
+                                                         +- HashAggregate (28)
+                                                            +- Scan csv  (17)
+         +- * Sort (65)
+            +- ShuffleQueryStage (64), Statistics(sizeInBytes=216.6 MiB, rowCount=6.99E+5)
+               +- Exchange (63)
+                  +- * Project (62)
+                     +- * BroadcastHashJoin LeftOuter BuildRight (61)
+                        :- * Project (54)
+                        :  +- * BroadcastHashJoin LeftOuter BuildRight (53)
+                        :     :- * Project (47)
+                        :     :  +- * Filter (46)
+                        :     :     +- TableCacheQueryStage (45), Statistics(sizeInBytes=193.3 MiB, rowCount=6.99E+5)
+                        :     :        +- InMemoryTableScan (42)
+                        :     :              +- InMemoryRelation (43)
+                        :     :                    +- Scan csv  (44)
+                        :     +- BroadcastQueryStage (52), Statistics(sizeInBytes=1031.8 KiB, rowCount=5)
+                        :        +- BroadcastExchange (51)
+                        :           +- * Project (50)
+                        :              +- * Filter (49)
+                        :                 +- Scan csv  (48)
+                        +- BroadcastQueryStage (60), Statistics(sizeInBytes=12.0 MiB, rowCount=1.52E+5)
+                           +- BroadcastExchange (59)
+                              +- * Filter (58)
+                                 +- TableCacheQueryStage (57), Statistics(sizeInBytes=32.7 MiB, rowCount=1.52E+5)
+                                    +- InMemoryTableScan (55)
+                                          +- InMemoryRelation (56)
+                                                +- * Project (4)
+                                                   +- Scan csv  (3)
++- == Initial Plan ==
+   Project (95)
+   +- Project (94)
+      +- SortMergeJoin LeftOuter (93)
+         :- Project (79)
+         :  +- SortMergeJoin LeftOuter (78)
+         :     :- Sort (74)
+         :     :  +- Exchange (73)
+         :     :     +- BroadcastNestedLoopJoin Cross BuildRight (72)
+         :     :        :- InMemoryTableScan (1)
+         :     :        :     +- InMemoryRelation (2)
+         :     :        :           +- * Project (4)
+         :     :        :              +- Scan csv  (3)
+         :     :        +- BroadcastExchange (71)
+         :     :           +- Project (70)
+         :     :              +- Filter (69)
+         :     :                 +- Scan csv  (6)
+         :     +- Sort (77)
+         :        +- Project (76)
+         :           +- Filter (75)
+         :              +- InMemoryTableScan (15)
+         :                    +- InMemoryRelation (16)
+         :                          +- AdaptiveSparkPlan (35)
+                                    +- == Final Plan ==
+                                       * Project (27)
+                                       +- * HashAggregate (26)
+                                          +- ShuffleQueryStage (25), Statistics(sizeInBytes=37.3 MiB, rowCount=6.99E+5)
+                                             +- Exchange (24)
+                                                +- * HashAggregate (23)
+                                                   +- * HashAggregate (22)
+                                                      +- AQEShuffleRead (21)
+                                                         +- ShuffleQueryStage (20), Statistics(sizeInBytes=37.3 MiB, rowCount=6.99E+5)
+                                                            +- Exchange (19)
+                                                               +- * HashAggregate (18)
+                                                                  +- Scan csv  (17)
+                                    +- == Initial Plan ==
+                                       Project (34)
+                                       +- HashAggregate (33)
+                                          +- Exchange (32)
+                                             +- HashAggregate (31)
+                                                +- HashAggregate (30)
+                                                   +- Exchange (29)
+                                                      +- HashAggregate (28)
+                                                         +- Scan csv  (17)
+         +- Sort (92)
+            +- Exchange (91)
+               +- Project (90)
+                  +- BroadcastHashJoin LeftOuter BuildRight (89)
+                     :- Project (86)
+                     :  +- BroadcastHashJoin LeftOuter BuildRight (85)
+                     :     :- Project (81)
+                     :     :  +- Filter (80)
+                     :     :     +- InMemoryTableScan (42)
+                     :     :           +- InMemoryRelation (43)
+                     :     :                 +- Scan csv  (44)
+                     :     +- BroadcastExchange (84)
+                     :        +- Project (83)
+                     :           +- Filter (82)
+                     :              +- Scan csv  (48)
+                     +- BroadcastExchange (88)
+                        +- Filter (87)
+                           +- InMemoryTableScan (55)
+                                 +- InMemoryRelation (56)
+                                       +- * Project (4)
+                                          +- Scan csv  (3)
+
+
+(1) InMemoryTableScan
+Output [14]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
+Arguments: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
+
+(2) InMemoryRelation
+Arguments: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@168db153,StorageLevel(disk, memory, 1 replicas),*(1) Project [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
++- FileScan csv [fdc_id#0L,brand_owner#1,brand_name#2,gtin_upc#4,serving_size#7,serving_size_unit#8,branded_food_category#10,market_country#15,description#21,food_publication_date#22,beverage_group#24,serving_size_unit_normalized#25,serving_size_unit_status#26,preparation_status#29] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,brand_owner:string,brand_name:string,gtin_upc:string,serving_size:double,ser...
+,None)
+
+(3) Scan csv 
+Output [14]: [fdc_id#0L, brand_owner#1, brand_name#2, gtin_upc#4, serving_size#7, serving_size_unit#8, branded_food_category#10, market_country#15, description#21, food_publication_date#22, beverage_group#24, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task02_beverages/runs/pipeline_20261113T154538688059Z_b15d77/beverages.csv]
+ReadSchema: struct<fdc_id:bigint,brand_owner:string,brand_name:string,gtin_upc:string,serving_size:double,serving_size_unit:string,branded_food_category:string,market_country:string,description:string,food_publication_date:string,beverage_group:string,serving_size_unit_normalized:string,serving_size_unit_status:string,preparation_status:string>
+
+(4) Project [codegen id : 1]
+Output [14]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
+Input [14]: [fdc_id#0L, brand_owner#1, brand_name#2, gtin_upc#4, serving_size#7, serving_size_unit#8, branded_food_category#10, market_country#15, description#21, food_publication_date#22, beverage_group#24, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29]
+
+(5) TableCacheQueryStage
+Output [14]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
+Arguments: 0
+
+(6) Scan csv 
+Output [3]: [id#1674L, name#1675, unit_name#1676]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv]
+PushedFilters: [In(id, [1003,1004,1008,1093,2000])]
+ReadSchema: struct<id:bigint,name:string,unit_name:string>
+
+(7) Filter [codegen id : 1]
+Input [3]: [id#1674L, name#1675, unit_name#1676]
+Condition : id#1674L IN (2000,1008,1093,1003,1004)
+
+(8) Project [codegen id : 1]
+Output [3]: [id#1674L AS nutrient_id#1736L, name#1675 AS nutrient_name#1737, unit_name#1676]
+Input [3]: [id#1674L, name#1675, unit_name#1676]
+
+(9) BroadcastExchange
+Input [3]: [nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: IdentityBroadcastMode, [plan_id=8617]
+
+(10) BroadcastQueryStage
+Output [3]: [nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: 1
+
+(11) BroadcastNestedLoopJoin [codegen id : 4]
+Join type: Cross
+Join condition: None
+
+(12) Exchange
+Input [17]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: hashpartitioning(fdc_id#0L, nutrient_id#1736L, 200), ENSURE_REQUIREMENTS, [plan_id=8961]
+
+(13) ShuffleQueryStage
+Output [17]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: 7
+
+(14) Sort [codegen id : 6]
+Input [17]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: [fdc_id#0L ASC NULLS FIRST, nutrient_id#1736L ASC NULLS FIRST], false, 0
+
+(15) InMemoryTableScan
+Output [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+Arguments: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L], [nutrient_id#1410L IN (2000,1008,1093,1003,1004), isnotnull(fdc_id#1403L), isnotnull(nutrient_id#1410L)]
+
+(16) InMemoryRelation
+Arguments: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, pair_status#1543], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@168db153,StorageLevel(disk, memory, 1 replicas),AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   *(3) Project [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, CASE WHEN (distinct_valid_values#1531L > 1) THEN conflicting_duplicate WHEN (valid_records#1533L > 0) THEN valid WHEN (missing_records#1535L > 0) THEN missing_amount ELSE invalid_only END AS pair_status#1543]
+   +- *(3) HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L], functions=[count(1), sum(cast((amount_status#1412 = valid) as bigint)), sum(cast((amount_status#1412 = missing_amount) as bigint)), count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)], output=[fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L])
+      +- ShuffleQueryStage 1
+         +- Exchange hashpartitioning(fdc_id#1403L, nutrient_id#1410L, 200), ENSURE_REQUIREMENTS, [plan_id=798]
+            +- *(2) HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L], functions=[merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint)), partial_count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)], output=[fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L])
+               +- *(2) HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628], functions=[merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint))], output=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L])
+                  +- AQEShuffleRead coalesced
+                     +- ShuffleQueryStage 0
+                        +- Exchange hashpartitioning(fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, 200), ENSURE_REQUIREMENTS, [plan_id=767]
+                           +- *(1) HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L, knownfloatingpointnormalized(normalizenanandzero(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)) AS CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628], functions=[partial_count(1), partial_sum(cast((amount_status#1412 = valid) as bigint)), partial_sum(cast((amount_status#1412 = missing_amount) as bigint))], output=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L])
+                              +- FileScan csv [fdc_id#1403L,nutrient_id#1410L,amount#1411,amount_status#1412] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,nutrient_id:bigint,amount:double,amount_status:string>
++- == Initial Plan ==
+   Project [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, CASE WHEN (distinct_valid_values#1531L > 1) THEN conflicting_duplicate WHEN (valid_records#1533L > 0) THEN valid WHEN (missing_records#1535L > 0) THEN missing_amount ELSE invalid_only END AS pair_status#1543]
+   +- HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L], functions=[count(1), sum(cast((amount_status#1412 = valid) as bigint)), sum(cast((amount_status#1412 = missing_amount) as bigint)), count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)], output=[fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L])
+      +- Exchange hashpartitioning(fdc_id#1403L, nutrient_id#1410L, 200), ENSURE_REQUIREMENTS, [plan_id=313]
+         +- HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L], functions=[merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint)), partial_count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)], output=[fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L])
+            +- HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628], functions=[merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint))], output=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L])
+               +- Exchange hashpartitioning(fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, 200), ENSURE_REQUIREMENTS, [plan_id=309]
+                  +- HashAggregate(keys=[fdc_id#1403L, nutrient_id#1410L, knownfloatingpointnormalized(normalizenanandzero(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)) AS CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628], functions=[partial_count(1), partial_sum(cast((amount_status#1412 = valid) as bigint)), partial_sum(cast((amount_status#1412 = missing_amount) as bigint))], output=[fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L])
+                     +- FileScan csv [fdc_id#1403L,nutrient_id#1410L,amount#1411,amount_status#1412] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,nutrient_id:bigint,amount:double,amount_status:string>
+,None)
+
+(17) Scan csv 
+Output [4]: [fdc_id#1403L, nutrient_id#1410L, amount#1411, amount_status#1412]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_classified.csv]
+ReadSchema: struct<fdc_id:bigint,nutrient_id:bigint,amount:double,amount_status:string>
+
+(18) HashAggregate [codegen id : 1]
+Input [4]: [fdc_id#1403L, nutrient_id#1410L, amount#1411, amount_status#1412]
+Keys [3]: [fdc_id#1403L, nutrient_id#1410L, knownfloatingpointnormalized(normalizenanandzero(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)) AS CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628]
+Functions [3]: [partial_count(1), partial_sum(cast((amount_status#1412 = valid) as bigint)), partial_sum(cast((amount_status#1412 = missing_amount) as bigint))]
+Aggregate Attributes [3]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+
+(19) Exchange
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Arguments: hashpartitioning(fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, 200), ENSURE_REQUIREMENTS, [plan_id=767]
+
+(20) ShuffleQueryStage
+Output [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Arguments: 0
+
+(21) AQEShuffleRead
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Arguments: coalesced
+
+(22) HashAggregate [codegen id : 2]
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Keys [3]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628]
+Functions [3]: [merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint))]
+Aggregate Attributes [3]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+
+(23) HashAggregate [codegen id : 2]
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Functions [4]: [merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint)), partial_count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)]
+Aggregate Attributes [4]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+
+(24) Exchange
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+Arguments: hashpartitioning(fdc_id#1403L, nutrient_id#1410L, 200), ENSURE_REQUIREMENTS, [plan_id=798]
+
+(25) ShuffleQueryStage
+Output [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+Arguments: 1
+
+(26) HashAggregate [codegen id : 3]
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+Keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Functions [4]: [count(1), sum(cast((amount_status#1412 = valid) as bigint)), sum(cast((amount_status#1412 = missing_amount) as bigint)), count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)]
+Aggregate Attributes [4]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, count(1)#1529L AS source_records#1530L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L AS distinct_valid_values#1531L, sum(cast((amount_status#1412 = valid) as bigint))#1532L AS valid_records#1533L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L AS missing_records#1535L]
+
+(27) Project [codegen id : 3]
+Output [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, CASE WHEN (distinct_valid_values#1531L > 1) THEN conflicting_duplicate WHEN (valid_records#1533L > 0) THEN valid WHEN (missing_records#1535L > 0) THEN missing_amount ELSE invalid_only END AS pair_status#1543]
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L]
+
+(28) HashAggregate
+Input [4]: [fdc_id#1403L, nutrient_id#1410L, amount#1411, amount_status#1412]
+Keys [3]: [fdc_id#1403L, nutrient_id#1410L, knownfloatingpointnormalized(normalizenanandzero(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)) AS CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628]
+Functions [3]: [partial_count(1), partial_sum(cast((amount_status#1412 = valid) as bigint)), partial_sum(cast((amount_status#1412 = missing_amount) as bigint))]
+Aggregate Attributes [3]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+
+(29) Exchange
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Arguments: hashpartitioning(fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, 200), ENSURE_REQUIREMENTS, [plan_id=309]
+
+(30) HashAggregate
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Keys [3]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628]
+Functions [3]: [merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint))]
+Aggregate Attributes [3]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+
+(31) HashAggregate
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628, count#1630L, sum#1632L, sum#1634L]
+Keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Functions [4]: [merge_count(1), merge_sum(cast((amount_status#1412 = valid) as bigint)), merge_sum(cast((amount_status#1412 = missing_amount) as bigint)), partial_count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)]
+Aggregate Attributes [4]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+
+(32) Exchange
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+Arguments: hashpartitioning(fdc_id#1403L, nutrient_id#1410L, 200), ENSURE_REQUIREMENTS, [plan_id=313]
+
+(33) HashAggregate
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, count#1630L, sum#1632L, sum#1634L, count#1637L]
+Keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Functions [4]: [count(1), sum(cast((amount_status#1412 = valid) as bigint)), sum(cast((amount_status#1412 = missing_amount) as bigint)), count(distinct CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END#1628)]
+Aggregate Attributes [4]: [count(1)#1529L, sum(cast((amount_status#1412 = valid) as bigint))#1532L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L]
+Results [6]: [fdc_id#1403L, nutrient_id#1410L, count(1)#1529L AS source_records#1530L, count(CASE WHEN (amount_status#1412 = valid) THEN amount#1411 END)#1536L AS distinct_valid_values#1531L, sum(cast((amount_status#1412 = valid) as bigint))#1532L AS valid_records#1533L, sum(cast((amount_status#1412 = missing_amount) as bigint))#1534L AS missing_records#1535L]
+
+(34) Project
+Output [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, CASE WHEN (distinct_valid_values#1531L > 1) THEN conflicting_duplicate WHEN (valid_records#1533L > 0) THEN valid WHEN (missing_records#1535L > 0) THEN missing_amount ELSE invalid_only END AS pair_status#1543]
+Input [6]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L]
+
+(35) AdaptiveSparkPlan
+Output [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, pair_status#1543]
+Arguments: isFinalPlan=true
+
+(36) TableCacheQueryStage
+Output [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+Arguments: 2
+
+(37) Filter [codegen id : 7]
+Input [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+Condition : ((nutrient_id#1410L IN (2000,1008,1093,1003,1004) AND isnotnull(fdc_id#1403L)) AND isnotnull(nutrient_id#1410L))
+
+(38) Project [codegen id : 7]
+Output [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, pair_status#1543 AS nutrient_record_status#16308]
+Input [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+
+(39) Sort [codegen id : 7]
+Input [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#16308]
+Arguments: [fdc_id#1403L ASC NULLS FIRST, nutrient_id#1410L ASC NULLS FIRST], false, 0
+
+(40) SortMergeJoin [codegen id : 8]
+Left keys [2]: [fdc_id#0L, nutrient_id#1736L]
+Right keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Join type: LeftOuter
+Join condition: None
+
+(41) Project [codegen id : 8]
+Output [22]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, coalesce(nutrient_record_status#16308, no_source_record) AS nutrient_record_status#18666]
+Input [24]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676, fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#16308]
+
+(42) InMemoryTableScan
+Output [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+Arguments: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884], [nutrient_id#854L IN (2000,1008,1093,1003,1004), isnotnull(fdc_id#853L), isnotnull(nutrient_id#854L)]
+
+(43) InMemoryRelation
+Arguments: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, id#860L, amount#861, amount_status#862, source_records#863L, distinct_valid_values#864L, valid_records#865L, missing_records#866L, pair_status#867, beverage_group#868, serving_size#869, serving_unit#870, nutrient_name#871, unit_name#872, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, ... 10 more fields], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@168db153,StorageLevel(disk, memory, 1 replicas),FileScan csv [fdc_id#853L,nutrient_id#854L,record_id_raw#855,fdc_id_raw#856,nutrient_id_raw#857,amount_raw#858,derivation_id#859,id#860L,amount#861,amount_status#862,source_records#863L,distinct_valid_values#864L,valid_records#865L,missing_records#866L,pair_status#867,beverage_group#868,serving_size#869,serving_unit#870,nutrient_name#871,unit_name#872,json_amount#873,label_amount#874,json_serving_size#875,json_serving_unit#876,... 10 more fields] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,nutrient_id:bigint,record_id_raw:string,fdc_id_raw:string,nutrient_id_raw:st...
+,None)
+
+(44) Scan csv 
+Output [34]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, id#860L, amount#861, amount_status#862, source_records#863L, distinct_valid_values#864L, valid_records#865L, missing_records#866L, pair_status#867, beverage_group#868, serving_size#869, serving_unit#870, nutrient_name#871, unit_name#872, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrients_clean.csv]
+ReadSchema: struct<fdc_id:bigint,nutrient_id:bigint,record_id_raw:string,fdc_id_raw:string,nutrient_id_raw:string,amount_raw:string,derivation_id:string,id:bigint,amount:double,amount_status:string,source_records:bigint,distinct_valid_values:bigint,valid_records:bigint,missing_records:bigint,pair_status:string,beverage_group:string,serving_size:double,serving_unit:string,nutrient_name:string,unit_name:string,json_amount:double,label_amount:double,json_serving_size:double,json_serving_unit:string,record_reference_status:string,scale_checks:bigint,scale_mismatches:bigint,basis_status:string,measurement_basis_candidate:string,measurement_basis:string,value_review_limit:double,value_review_required:boolean,value_review_reason:string,eligible_for_comparison:boolean>
+
+(45) TableCacheQueryStage
+Output [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+Arguments: 3
+
+(46) Filter [codegen id : 5]
+Input [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+Condition : ((nutrient_id#854L IN (2000,1008,1093,1003,1004) AND isnotnull(fdc_id#853L)) AND isnotnull(nutrient_id#854L))
+
+(47) Project [codegen id : 5]
+Output [24]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, id#860L AS food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886]
+Input [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+
+(48) Scan csv 
+Output [1]: [id#20622L]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv]
+PushedFilters: [In(id, [1003,1004,1008,1093,2000]), IsNotNull(id)]
+ReadSchema: struct<id:bigint>
+
+(49) Filter [codegen id : 2]
+Input [1]: [id#20622L]
+Condition : (id#20622L IN (2000,1008,1093,1003,1004) AND isnotnull(id#20622L))
+
+(50) Project [codegen id : 2]
+Output [1]: [id#20622L AS nutrient_id#1736L]
+Input [1]: [id#20622L]
+
+(51) BroadcastExchange
+Input [1]: [nutrient_id#1736L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, true]),false), [plan_id=8667]
+
+(52) BroadcastQueryStage
+Output [1]: [nutrient_id#1736L]
+Arguments: 4
+
+(53) BroadcastHashJoin [codegen id : 5]
+Left keys [1]: [nutrient_id#854L]
+Right keys [1]: [nutrient_id#1736L]
+Join type: LeftOuter
+Join condition: None
+
+(54) Project [codegen id : 5]
+Output [24]: [nutrient_id#854L, fdc_id#853L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886]
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, nutrient_id#1736L]
+
+(55) InMemoryTableScan
+Output [1]: [fdc_id#20627L]
+Arguments: [fdc_id#20627L], [isnotnull(fdc_id#20627L)]
+
+(56) InMemoryRelation
+Arguments: [fdc_id#20627L, description#20648, brand_owner#20628, brand_name#20629, gtin_upc#20631, branded_food_category#20637, beverage_group#20651, serving_size#20634, serving_size_unit#20635, serving_size_unit_normalized#20652, serving_size_unit_status#20653, preparation_status#20656, food_publication_date#20649, market_country#20642], CachedRDDBuilder(org.apache.spark.sql.execution.columnar.DefaultCachedBatchSerializer@168db153,StorageLevel(disk, memory, 1 replicas),*(1) Project [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15]
++- FileScan csv [fdc_id#0L,brand_owner#1,brand_name#2,gtin_upc#4,serving_size#7,serving_size_unit#8,branded_food_category#10,market_country#15,description#21,food_publication_date#22,beverage_group#24,serving_size_unit_normalized#25,serving_size_unit_status#26,preparation_status#29] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<fdc_id:bigint,brand_owner:string,brand_name:string,gtin_upc:string,serving_size:double,ser...
+,None)
+
+(57) TableCacheQueryStage
+Output [1]: [fdc_id#20627L]
+Arguments: 5
+
+(58) Filter [codegen id : 3]
+Input [1]: [fdc_id#20627L]
+Condition : isnotnull(fdc_id#20627L)
+
+(59) BroadcastExchange
+Input [1]: [fdc_id#20627L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=8830]
+
+(60) BroadcastQueryStage
+Output [1]: [fdc_id#20627L]
+Arguments: 6
+
+(61) BroadcastHashJoin [codegen id : 5]
+Left keys [1]: [fdc_id#853L]
+Right keys [1]: [fdc_id#20627L]
+Join type: LeftOuter
+Join condition: None
+
+(62) Project [codegen id : 5]
+Output [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, true AS clean_record_present#18689]
+Input [25]: [nutrient_id#854L, fdc_id#853L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, fdc_id#20627L]
+
+(63) Exchange
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+Arguments: hashpartitioning(fdc_id#853L, nutrient_id#854L, 200), ENSURE_REQUIREMENTS, [plan_id=9033]
+
+(64) ShuffleQueryStage
+Output [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+Arguments: 8
+
+(65) Sort [codegen id : 9]
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+Arguments: [fdc_id#853L ASC NULLS FIRST, nutrient_id#854L ASC NULLS FIRST], false, 0
+
+(66) SortMergeJoin [codegen id : 10]
+Left keys [2]: [fdc_id#0L, nutrient_id#1736L]
+Right keys [2]: [fdc_id#853L, nutrient_id#854L]
+Join type: LeftOuter
+Join condition: None
+
+(67) Project [codegen id : 10]
+Output [46]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, coalesce(source_records#1530L, 0) AS source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, coalesce(value_review_required#884, false) AS value_review_required#26079, value_review_reason#885, coalesce(eligible_for_comparison#886, false) AS eligible_for_comparison#26032, coalesce(clean_record_present#18689, false) AS clean_record_present#25892, NOT (nutrient_record_status#18666 = no_source_record) AS source_record_present#25938]
+Input [47]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+
+(68) Project [codegen id : 10]
+Output [46]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676, source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, CASE WHEN NOT clean_record_present#25892 THEN nutrient_record_status#18666 ELSE amount_status#862 END AS amount_status#26126, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, CASE WHEN NOT clean_record_present#25892 THEN no_clean_record ELSE basis_status#880 END AS basis_status#26173, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#26079, CASE WHEN NOT clean_record_present#25892 THEN no_clean_record ELSE value_review_reason#885 END AS value_review_reason#26220, eligible_for_comparison#26032, clean_record_present#25892, source_record_present#25938]
+Input [46]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#26079, value_review_reason#885, eligible_for_comparison#26032, clean_record_present#25892, source_record_present#25938]
+
+(69) Filter
+Input [3]: [id#1674L, name#1675, unit_name#1676]
+Condition : id#1674L IN (2000,1008,1093,1003,1004)
+
+(70) Project
+Output [3]: [id#1674L AS nutrient_id#1736L, name#1675 AS nutrient_name#1737, unit_name#1676]
+Input [3]: [id#1674L, name#1675, unit_name#1676]
+
+(71) BroadcastExchange
+Input [3]: [nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: IdentityBroadcastMode, [plan_id=8579]
+
+(72) BroadcastNestedLoopJoin
+Join type: Cross
+Join condition: None
+
+(73) Exchange
+Input [17]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: hashpartitioning(fdc_id#0L, nutrient_id#1736L, 200), ENSURE_REQUIREMENTS, [plan_id=8583]
+
+(74) Sort
+Input [17]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676]
+Arguments: [fdc_id#0L ASC NULLS FIRST, nutrient_id#1736L ASC NULLS FIRST], false, 0
+
+(75) Filter
+Input [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+Condition : ((nutrient_id#1410L IN (2000,1008,1093,1003,1004) AND isnotnull(fdc_id#1403L)) AND isnotnull(nutrient_id#1410L))
+
+(76) Project
+Output [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, pair_status#1543 AS nutrient_record_status#16308]
+Input [7]: [distinct_valid_values#1531L, fdc_id#1403L, missing_records#1535L, nutrient_id#1410L, pair_status#1543, source_records#1530L, valid_records#1533L]
+
+(77) Sort
+Input [7]: [fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#16308]
+Arguments: [fdc_id#1403L ASC NULLS FIRST, nutrient_id#1410L ASC NULLS FIRST], false, 0
+
+(78) SortMergeJoin
+Left keys [2]: [fdc_id#0L, nutrient_id#1736L]
+Right keys [2]: [fdc_id#1403L, nutrient_id#1410L]
+Join type: LeftOuter
+Join condition: None
+
+(79) Project
+Output [22]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, coalesce(nutrient_record_status#16308, no_source_record) AS nutrient_record_status#18666]
+Input [24]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676, fdc_id#1403L, nutrient_id#1410L, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#16308]
+
+(80) Filter
+Input [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+Condition : ((nutrient_id#854L IN (2000,1008,1093,1003,1004) AND isnotnull(fdc_id#853L)) AND isnotnull(nutrient_id#854L))
+
+(81) Project
+Output [24]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, id#860L AS food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886]
+Input [24]: [amount#861, amount_raw#858, amount_status#862, basis_status#880, derivation_id#859, eligible_for_comparison#886, fdc_id#853L, fdc_id_raw#856, id#860L, json_amount#873, json_serving_size#875, json_serving_unit#876, label_amount#874, measurement_basis#882, measurement_basis_candidate#881, nutrient_id#854L, nutrient_id_raw#857, record_id_raw#855, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, value_review_limit#883, value_review_reason#885, value_review_required#884]
+
+(82) Filter
+Input [1]: [id#20622L]
+Condition : (id#20622L IN (2000,1008,1093,1003,1004) AND isnotnull(id#20622L))
+
+(83) Project
+Output [1]: [id#20622L AS nutrient_id#1736L]
+Input [1]: [id#20622L]
+
+(84) BroadcastExchange
+Input [1]: [nutrient_id#1736L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, true]),false), [plan_id=8588]
+
+(85) BroadcastHashJoin
+Left keys [1]: [nutrient_id#854L]
+Right keys [1]: [nutrient_id#1736L]
+Join type: LeftOuter
+Join condition: None
+
+(86) Project
+Output [24]: [nutrient_id#854L, fdc_id#853L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886]
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, nutrient_id#1736L]
+
+(87) Filter
+Input [1]: [fdc_id#20627L]
+Condition : isnotnull(fdc_id#20627L)
+
+(88) BroadcastExchange
+Input [1]: [fdc_id#20627L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=8592]
+
+(89) BroadcastHashJoin
+Left keys [1]: [fdc_id#853L]
+Right keys [1]: [fdc_id#20627L]
+Join type: LeftOuter
+Join condition: None
+
+(90) Project
+Output [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, true AS clean_record_present#18689]
+Input [25]: [nutrient_id#854L, fdc_id#853L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, fdc_id#20627L]
+
+(91) Exchange
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+Arguments: hashpartitioning(fdc_id#853L, nutrient_id#854L, 200), ENSURE_REQUIREMENTS, [plan_id=8597]
+
+(92) Sort
+Input [25]: [fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+Arguments: [fdc_id#853L ASC NULLS FIRST, nutrient_id#854L ASC NULLS FIRST], false, 0
+
+(93) SortMergeJoin
+Left keys [2]: [fdc_id#0L, nutrient_id#1736L]
+Right keys [2]: [fdc_id#853L, nutrient_id#854L]
+Join type: LeftOuter
+Join condition: None
+
+(94) Project
+Output [46]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, coalesce(source_records#1530L, 0) AS source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, coalesce(value_review_required#884, false) AS value_review_required#26079, value_review_reason#885, coalesce(eligible_for_comparison#886, false) AS eligible_for_comparison#26032, coalesce(clean_record_present#18689, false) AS clean_record_present#25892, NOT (nutrient_record_status#18666 = no_source_record) AS source_record_present#25938]
+Input [47]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#1530L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, fdc_id#853L, nutrient_id#854L, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#884, value_review_reason#885, eligible_for_comparison#886, clean_record_present#18689]
+
+(95) Project
+Output [46]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676, source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, CASE WHEN NOT clean_record_present#25892 THEN nutrient_record_status#18666 ELSE amount_status#862 END AS amount_status#26126, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, CASE WHEN NOT clean_record_present#25892 THEN no_clean_record ELSE basis_status#880 END AS basis_status#26173, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#26079, CASE WHEN NOT clean_record_present#25892 THEN no_clean_record ELSE value_review_reason#885 END AS value_review_reason#26220, eligible_for_comparison#26032, clean_record_present#25892, source_record_present#25938]
+Input [46]: [fdc_id#0L, nutrient_id#1736L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_name#1737, unit_name#1676, source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#862, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#880, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#26079, value_review_reason#885, eligible_for_comparison#26032, clean_record_present#25892, source_record_present#25938]
+
+(96) AdaptiveSparkPlan
+Output [46]: [fdc_id#0L, description#21, brand_owner#1, brand_name#2, gtin_upc#4, branded_food_category#10, beverage_group#24, serving_size#7, serving_size_unit#8, serving_size_unit_normalized#25, serving_size_unit_status#26, preparation_status#29, food_publication_date#22, market_country#15, nutrient_id#1736L, nutrient_name#1737, unit_name#1676, source_records#25985L, distinct_valid_values#1531L, valid_records#1533L, missing_records#1535L, nutrient_record_status#18666, record_id_raw#855, fdc_id_raw#856, nutrient_id_raw#857, amount_raw#858, derivation_id#859, food_nutrient_id#7124L, amount#861, amount_status#26126, json_amount#873, label_amount#874, json_serving_size#875, json_serving_unit#876, record_reference_status#877, scale_checks#878L, scale_mismatches#879L, basis_status#26173, measurement_basis_candidate#881, measurement_basis#882, value_review_limit#883, value_review_required#26079, value_review_reason#26220, eligible_for_comparison#26032, clean_record_present#25892, source_record_present#25938]
+Arguments: isFinalPlan=true
+
+

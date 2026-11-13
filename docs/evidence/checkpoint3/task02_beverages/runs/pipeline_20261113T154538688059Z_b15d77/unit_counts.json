@@ -1,0 +1,422 @@
+[
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 74
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 9
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 23
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 83
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 7
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 1265
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 151
+  },
+  {
+    "beverage_group": "Dairy milk",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 17996
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 371
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 6
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 55
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 42
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 155
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 3632
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 622
+  },
+  {
+    "beverage_group": "Juice and fruit drinks",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 38861
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 37
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 7
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 12
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 8
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 4
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 651
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 142
+  },
+  {
+    "beverage_group": "Plant-based milk",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 5733
+  },
+  {
+    "beverage_group": "Ready-to-drink coffee",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 18
+  },
+  {
+    "beverage_group": "Ready-to-drink coffee",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 457
+  },
+  {
+    "beverage_group": "Ready-to-drink coffee",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 3309
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 225
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 1
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 4
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 12
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "MC",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 1
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 30
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 1063
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 123
+  },
+  {
+    "beverage_group": "Ready-to-drink tea",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 9646
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 841
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 6
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 10
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 22
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 50
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 3369
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 109
+  },
+  {
+    "beverage_group": "Soft drinks",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 29574
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 73
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 1
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 10
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 52
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 563
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 11
+  },
+  {
+    "beverage_group": "Sports and energy drinks",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 3055
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": null,
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "missing",
+    "count": 160
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "GM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 7
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "GRM",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 23
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "IU",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 24
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "MC",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 8
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "MG",
+    "serving_size_unit_normalized": null,
+    "serving_size_unit_status": "unrecognized",
+    "count": 24
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "MLT",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 2394
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "g",
+    "serving_size_unit_normalized": "g",
+    "serving_size_unit_status": "recognized",
+    "count": 89
+  },
+  {
+    "beverage_group": "Water",
+    "serving_size_unit": "ml",
+    "serving_size_unit_normalized": "ml",
+    "serving_size_unit_status": "recognized",
+    "count": 26828
+  }
+]

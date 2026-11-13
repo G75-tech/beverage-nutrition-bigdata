@@ -1,0 +1,347 @@
+{
+  "status": "READY_FOR_TASK3",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "task2_result_path": "docs/evidence/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/filter_result.json",
+  "task2_result_sha256": "caf5f3ce65fed61deee2c6749594a3d825dfaa847556e2a08d8eb0bc9ae5f1ab",
+  "input_contract_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\docs\\evidence\\checkpoint3\\task01_input\\runs\\manual_20261113T154237605267Z_2ea579\\input_contract.json",
+  "input_contract_sha256": "380b52c7bf1655e87fd58624360a5af7fb308a0d6ce8f0d90fe7bc2d28de30b6",
+  "beverages": {
+    "path": "artifacts/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/beverages.csv",
+    "schema_path": "artifacts/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/output_schema.json",
+    "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+    "sha256": "dee45d28875dbb0b480759cbf57956b8603b488d086747ebd1c118c27c0b1adb",
+    "size_bytes": 72385203,
+    "row_count": 152138,
+    "distinct_fdc_ids": 152138,
+    "column_count": 30,
+    "format": "CSV",
+    "writer": "Python csv.writer from Spark toLocalIterator",
+    "write_mode": "new directory per run; partial renamed after validation",
+    "readback_metrics": {
+      "row_count": 152138,
+      "null_counts": {
+        "fdc_id": 0,
+        "brand_owner": 1408,
+        "brand_name": 41616,
+        "subbrand_name": 142474,
+        "gtin_upc": 0,
+        "ingredients": 358,
+        "not_a_significant_source_of": 127351,
+        "serving_size": 1014,
+        "serving_size_unit": 1781,
+        "household_serving_fulltext": 2828,
+        "branded_food_category": 0,
+        "data_source": 0,
+        "package_weight": 87699,
+        "modified_date": 1,
+        "available_date": 0,
+        "market_country": 0,
+        "discontinued_date": 151958,
+        "preparation_state_code": 149707,
+        "trade_channel": 151539,
+        "short_description": 149710,
+        "material_code": 152138,
+        "description": 0,
+        "food_publication_date": 0,
+        "category_normalized": 0,
+        "beverage_group": 0,
+        "serving_size_unit_normalized": 2303,
+        "serving_size_unit_status": 0,
+        "selection_reason": 0,
+        "selection_status": 0,
+        "preparation_status": 0
+      },
+      "null_key_counts": {
+        "fdc_id": 0
+      }
+    }
+  },
+  "review": {
+    "path": "artifacts/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/review.csv",
+    "schema_path": "artifacts/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/review_schema.json",
+    "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+    "sha256": "b7ee2e7bf9d6b5e8fc5f06f7ca43eaac8f3a364d1e3caa06f1c535b08a6d805a",
+    "size_bytes": 17996271,
+    "row_count": 34138,
+    "distinct_fdc_ids": 34138,
+    "column_count": 30,
+    "format": "CSV",
+    "writer": "Python csv.writer from Spark toLocalIterator",
+    "write_mode": "new directory per run; partial renamed after validation",
+    "readback_metrics": {
+      "row_count": 34138,
+      "null_counts": {
+        "fdc_id": 0,
+        "brand_owner": 3083,
+        "brand_name": 14891,
+        "subbrand_name": 31410,
+        "gtin_upc": 0,
+        "ingredients": 25,
+        "not_a_significant_source_of": 31824,
+        "serving_size": 126,
+        "serving_size_unit": 360,
+        "household_serving_fulltext": 3877,
+        "branded_food_category": 10373,
+        "data_source": 0,
+        "package_weight": 21591,
+        "modified_date": 2058,
+        "available_date": 0,
+        "market_country": 0,
+        "discontinued_date": 33876,
+        "preparation_state_code": 29249,
+        "trade_channel": 32580,
+        "short_description": 29247,
+        "material_code": 34138,
+        "description": 0,
+        "food_publication_date": 0,
+        "category_normalized": 10373,
+        "beverage_group": 25015,
+        "serving_size_unit_normalized": 466,
+        "serving_size_unit_status": 0,
+        "selection_reason": 0,
+        "selection_status": 0,
+        "preparation_status": 0
+      },
+      "null_key_counts": {
+        "fdc_id": 0
+      }
+    }
+  },
+  "food_nutrient_raw": {
+    "file_name": "food_nutrient.csv",
+    "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food_nutrient.csv",
+    "size_bytes": 1496063311,
+    "sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+    "format": "CSV",
+    "grain": "One nutrient-value record per id; a food can have multiple nutrient records",
+    "primary_key": [
+      "id"
+    ],
+    "join_keys": [
+      "fdc_id",
+      "nutrient_id"
+    ],
+    "checked_keys": [
+      "id",
+      "fdc_id",
+      "nutrient_id"
+    ],
+    "primary_key_uniqueness_checked": false,
+    "schema_declaration": {
+      "columns": [
+        "id",
+        "fdc_id",
+        "nutrient_id",
+        "amount",
+        "data_points",
+        "derivation_id",
+        "min",
+        "max",
+        "median",
+        "footnote",
+        "min_year_acquired"
+      ],
+      "types": {
+        "id": "long",
+        "fdc_id": "long",
+        "nutrient_id": "long",
+        "amount": "double",
+        "data_points": "long",
+        "derivation_id": "long",
+        "min": "double",
+        "max": "double",
+        "median": "double",
+        "min_year_acquired": "long"
+      },
+      "required_values": [
+        "id",
+        "fdc_id",
+        "nutrient_id"
+      ]
+    },
+    "schema": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "id",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "fdc_id",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "nutrient_id",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "amount",
+          "type": "double",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "data_points",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "derivation_id",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "min",
+          "type": "double",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "max",
+          "type": "double",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "median",
+          "type": "double",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "footnote",
+          "type": "string",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "min_year_acquired",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        }
+      ]
+    },
+    "schema_tree": "root\n |-- id: long (nullable = true)\n |-- fdc_id: long (nullable = true)\n |-- nutrient_id: long (nullable = true)\n |-- amount: double (nullable = true)\n |-- data_points: long (nullable = true)\n |-- derivation_id: long (nullable = true)\n |-- min: double (nullable = true)\n |-- max: double (nullable = true)\n |-- median: double (nullable = true)\n |-- footnote: string (nullable = true)\n |-- min_year_acquired: long (nullable = true)\n",
+    "partitions_observed": 1,
+    "row_count": 26027437,
+    "null_counts": {
+      "id": 0,
+      "fdc_id": 0,
+      "nutrient_id": 0,
+      "amount": 0,
+      "data_points": 26027437,
+      "derivation_id": 16924,
+      "min": 26027437,
+      "max": 26027437,
+      "median": 26027437,
+      "footnote": 26027437,
+      "min_year_acquired": 26027437
+    },
+    "null_key_counts": {
+      "id": 0,
+      "fdc_id": 0,
+      "nutrient_id": 0
+    },
+    "elapsed_seconds": 15.441
+  },
+  "nutrient_raw": {
+    "file_name": "nutrient.csv",
+    "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv",
+    "size_bytes": 21556,
+    "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+    "format": "CSV",
+    "grain": "One nutrient definition per id",
+    "primary_key": [
+      "id"
+    ],
+    "join_keys": [
+      "id"
+    ],
+    "checked_keys": [
+      "id"
+    ],
+    "primary_key_uniqueness_checked": false,
+    "schema_declaration": {
+      "columns": [
+        "id",
+        "name",
+        "unit_name",
+        "nutrient_nbr",
+        "rank"
+      ],
+      "types": {
+        "id": "long",
+        "rank": "double"
+      },
+      "required_values": [
+        "id"
+      ]
+    },
+    "schema": {
+      "type": "struct",
+      "fields": [
+        {
+          "name": "id",
+          "type": "long",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "unit_name",
+          "type": "string",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "nutrient_nbr",
+          "type": "string",
+          "nullable": true,
+          "metadata": {}
+        },
+        {
+          "name": "rank",
+          "type": "double",
+          "nullable": true,
+          "metadata": {}
+        }
+      ]
+    },
+    "schema_tree": "root\n |-- id: long (nullable = true)\n |-- name: string (nullable = true)\n |-- unit_name: string (nullable = true)\n |-- nutrient_nbr: string (nullable = true)\n |-- rank: double (nullable = true)\n",
+    "partitions_observed": 1,
+    "row_count": 477,
+    "null_counts": {
+      "id": 0,
+      "name": 0,
+      "unit_name": 0,
+      "nutrient_nbr": 12,
+      "rank": 11
+    },
+    "null_key_counts": {
+      "id": 0
+    },
+    "elapsed_seconds": 0.254
+  },
+  "measurement_basis_verified": false,
+  "nutrition_values_cleaned": false,
+  "next_checks": [
+    "choose nutrient IDs from nutrient.csv",
+    "missing/invalid/negative/nonfinite amounts",
+    "duplicate (fdc_id, nutrient_id) records",
+    "verify measurement basis before comparing"
+  ]
+}

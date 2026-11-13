@@ -1,0 +1,547 @@
+{
+  "status": "PASS",
+  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "started_at_utc": "2026-11-13T15:49:48.561286Z",
+  "grain": [
+    "fdc_id",
+    "nutrient_id"
+  ],
+  "missing_value_policy": "retain null and explicit source/clean presence flags",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "task3_result_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrient_result.json",
+  "task3_result_sha256": "6bb617603c59bc5ea460bb6169c6bb6d6c86b47ae15c0f7ac6dfcd3de1ce6bfd",
+  "input_handoff_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\docs\\evidence\\checkpoint3\\task02_beverages\\runs\\pipeline_20261113T154538688059Z_b15d77\\task3_input.json",
+  "input_handoff_sha256": "0fd3a7844a009541ff8741201b8f84cc3c933f0f064e2e7d80ffce31687debae",
+  "requested_nutrients": [
+    {
+      "id": 2000,
+      "name": "Total Sugars",
+      "unit_name": "G"
+    },
+    {
+      "id": 1008,
+      "name": "Energy",
+      "unit_name": "KCAL"
+    },
+    {
+      "id": 1093,
+      "name": "Sodium, Na",
+      "unit_name": "MG"
+    },
+    {
+      "id": 1003,
+      "name": "Protein",
+      "unit_name": "G"
+    },
+    {
+      "id": 1004,
+      "name": "Total lipid (fat)",
+      "unit_name": "G"
+    }
+  ],
+  "food_description_lineage": "Reused Task 2 food.csv left join, verified through pinned Task 2 output and handoff",
+  "environment": {
+    "python": "3.11.17",
+    "spark": "3.5.9",
+    "master": "local[*]"
+  },
+  "nutrient_dictionary_keys": {
+    "row_count": 477,
+    "distinct_key_tuples": 477,
+    "null_key_rows": 0,
+    "duplicate_keys": 0,
+    "duplicate_extra_rows": 0,
+    "key_types": {
+      "id": "bigint"
+    }
+  },
+  "join_audit": {
+    "grid": {
+      "row_count": 760690,
+      "distinct_key_tuples": 760690,
+      "null_key_rows": 0,
+      "duplicate_keys": 0,
+      "duplicate_extra_rows": 0,
+      "key_types": {
+        "fdc_id": "bigint",
+        "nutrient_id": "bigint"
+      }
+    },
+    "joins": [
+      {
+        "name": "clean_to_nutrient",
+        "join_type": "left",
+        "keys": [
+          "nutrient_id"
+        ],
+        "left": {
+          "row_count": 698525,
+          "distinct_key_tuples": 5,
+          "null_key_rows": 0,
+          "duplicate_keys": 5,
+          "duplicate_extra_rows": 698520,
+          "key_types": {
+            "nutrient_id": "bigint"
+          }
+        },
+        "right": {
+          "row_count": 5,
+          "distinct_key_tuples": 5,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "nutrient_id": "bigint"
+          }
+        },
+        "output_rows": 698525,
+        "matched_left_rows": 698525,
+        "unmatched_left_rows": 0,
+        "matched_left_keys": 5,
+        "unmatched_right_keys": 0
+      },
+      {
+        "name": "clean_to_beverage",
+        "join_type": "left",
+        "keys": [
+          "fdc_id"
+        ],
+        "left": {
+          "row_count": 698525,
+          "distinct_key_tuples": 144067,
+          "null_key_rows": 0,
+          "duplicate_keys": 143852,
+          "duplicate_extra_rows": 554458,
+          "key_types": {
+            "fdc_id": "bigint"
+          }
+        },
+        "right": {
+          "row_count": 152138,
+          "distinct_key_tuples": 152138,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "fdc_id": "bigint"
+          }
+        },
+        "output_rows": 698525,
+        "matched_left_rows": 698525,
+        "unmatched_left_rows": 0,
+        "matched_left_keys": 144067,
+        "unmatched_right_keys": 8071
+      },
+      {
+        "name": "slots_to_source_pair_status",
+        "join_type": "left",
+        "keys": [
+          "fdc_id",
+          "nutrient_id"
+        ],
+        "left": {
+          "row_count": 760690,
+          "distinct_key_tuples": 760690,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "fdc_id": "bigint",
+            "nutrient_id": "bigint"
+          }
+        },
+        "right": {
+          "row_count": 698525,
+          "distinct_key_tuples": 698525,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "fdc_id": "bigint",
+            "nutrient_id": "bigint"
+          }
+        },
+        "output_rows": 760690,
+        "matched_left_rows": 698525,
+        "unmatched_left_rows": 62165,
+        "matched_left_keys": 698525,
+        "unmatched_right_keys": 0
+      },
+      {
+        "name": "slots_to_clean_nutrient",
+        "join_type": "left",
+        "keys": [
+          "fdc_id",
+          "nutrient_id"
+        ],
+        "left": {
+          "row_count": 760690,
+          "distinct_key_tuples": 760690,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "fdc_id": "bigint",
+            "nutrient_id": "bigint"
+          }
+        },
+        "right": {
+          "row_count": 698525,
+          "distinct_key_tuples": 698525,
+          "null_key_rows": 0,
+          "duplicate_keys": 0,
+          "duplicate_extra_rows": 0,
+          "key_types": {
+            "fdc_id": "bigint",
+            "nutrient_id": "bigint"
+          }
+        },
+        "output_rows": 760690,
+        "matched_left_rows": 698525,
+        "unmatched_left_rows": 62165,
+        "matched_left_keys": 698525,
+        "unmatched_right_keys": 0
+      }
+    ]
+  },
+  "output": {
+    "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients.csv",
+    "sha256": "d514275fcdf623f5b5818112eae9a4f9eba74912b10d82eb3dbdaf4cad17d14f",
+    "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients_schema.json",
+    "schema_sha256": "8e1e6fa576e9ced55765392414b726b9284bf898c8a6cd9ab729338babac96e0",
+    "row_count": 760690,
+    "column_count": 46,
+    "size_bytes": 277695171,
+    "readback_metrics": {
+      "row_count": 760690,
+      "null_counts": {
+        "fdc_id": 0,
+        "description": 0,
+        "brand_owner": 7040,
+        "brand_name": 208080,
+        "gtin_upc": 0,
+        "branded_food_category": 0,
+        "beverage_group": 0,
+        "serving_size": 5070,
+        "serving_size_unit": 8905,
+        "serving_size_unit_normalized": 11515,
+        "serving_size_unit_status": 0,
+        "preparation_status": 0,
+        "food_publication_date": 0,
+        "market_country": 0,
+        "nutrient_id": 0,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "source_records": 0,
+        "distinct_valid_values": 62165,
+        "valid_records": 62165,
+        "missing_records": 62165,
+        "nutrient_record_status": 0,
+        "record_id_raw": 62165,
+        "fdc_id_raw": 62165,
+        "nutrient_id_raw": 62165,
+        "amount_raw": 62165,
+        "derivation_id": 62165,
+        "food_nutrient_id": 62165,
+        "amount": 62165,
+        "amount_status": 0,
+        "json_amount": 592590,
+        "label_amount": 592590,
+        "json_serving_size": 592590,
+        "json_serving_unit": 594025,
+        "record_reference_status": 592590,
+        "scale_checks": 592590,
+        "scale_mismatches": 592590,
+        "basis_status": 0,
+        "measurement_basis_candidate": 68481,
+        "measurement_basis": 616156,
+        "value_review_limit": 62165,
+        "value_review_required": 0,
+        "value_review_reason": 0,
+        "eligible_for_comparison": 0,
+        "clean_record_present": 0,
+        "source_record_present": 0
+      },
+      "null_key_counts": {
+        "fdc_id": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "output_metrics": {
+    "key_profile": {
+      "row_count": 760690,
+      "distinct_key_tuples": 760690,
+      "null_key_rows": 0,
+      "duplicate_keys": 0,
+      "duplicate_extra_rows": 0,
+      "key_types": {
+        "fdc_id": "bigint",
+        "nutrient_id": "bigint"
+      }
+    },
+    "beverages": 152138,
+    "clean_records": 698525,
+    "eligible_records": 144482,
+    "no_source_record": 62165,
+    "value_review_records": 2074
+  },
+  "coverage_by_nutrient": [
+    {
+      "nutrient_id": 1003,
+      "nutrient_name": "Protein",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "with_source_record": 143050,
+      "with_clean_record": 143050,
+      "numeric_valid": 143050,
+      "missing_amount": 0,
+      "no_source_record": 9088,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0,
+      "value_review_required": 19,
+      "numeric_valid_basis_unconfirmed": 114017,
+      "eligible_for_comparison": 29032,
+      "numeric_coverage_pct": 94.0265,
+      "eligible_coverage_pct": 19.0827
+    },
+    {
+      "nutrient_id": 1004,
+      "nutrient_name": "Total lipid (fat)",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "with_source_record": 138915,
+      "with_clean_record": 138915,
+      "numeric_valid": 138915,
+      "missing_amount": 0,
+      "no_source_record": 13223,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0,
+      "value_review_required": 18,
+      "numeric_valid_basis_unconfirmed": 109796,
+      "eligible_for_comparison": 29117,
+      "numeric_coverage_pct": 91.3085,
+      "eligible_coverage_pct": 19.1385
+    },
+    {
+      "nutrient_id": 1008,
+      "nutrient_name": "Energy",
+      "unit_name": "KCAL",
+      "expected_beverages": 152138,
+      "with_source_record": 142795,
+      "with_clean_record": 142795,
+      "numeric_valid": 142795,
+      "missing_amount": 0,
+      "no_source_record": 9343,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0,
+      "value_review_required": 866,
+      "numeric_valid_basis_unconfirmed": 113684,
+      "eligible_for_comparison": 29099,
+      "numeric_coverage_pct": 93.8589,
+      "eligible_coverage_pct": 19.1267
+    },
+    {
+      "nutrient_id": 1093,
+      "nutrient_name": "Sodium, Na",
+      "unit_name": "MG",
+      "expected_beverages": 152138,
+      "with_source_record": 141600,
+      "with_clean_record": 141600,
+      "numeric_valid": 141600,
+      "missing_amount": 0,
+      "no_source_record": 10538,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0,
+      "value_review_required": 85,
+      "numeric_valid_basis_unconfirmed": 112533,
+      "eligible_for_comparison": 29045,
+      "numeric_coverage_pct": 93.0734,
+      "eligible_coverage_pct": 19.0912
+    },
+    {
+      "nutrient_id": 2000,
+      "nutrient_name": "Total Sugars",
+      "unit_name": "G",
+      "expected_beverages": 152138,
+      "with_source_record": 132165,
+      "with_clean_record": 132165,
+      "numeric_valid": 132165,
+      "missing_amount": 0,
+      "no_source_record": 19973,
+      "conflicting_duplicate": 0,
+      "invalid_only": 0,
+      "value_review_required": 1086,
+      "numeric_valid_basis_unconfirmed": 103961,
+      "eligible_for_comparison": 28189,
+      "numeric_coverage_pct": 86.8718,
+      "eligible_coverage_pct": 18.5286
+    }
+  ],
+  "coverage_output": {
+    "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_nutrient.csv",
+    "sha256": "2c984007bebb637ce1ea54eb5b724623db55d13d06620308aa263e4e1b93e135",
+    "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_nutrient_schema.json",
+    "schema_sha256": "bd083dc68fd3e48b4283730cf8087a46f5e80562d2ff5007ef6662cec9342a94",
+    "row_count": 5,
+    "column_count": 16,
+    "size_bytes": 759,
+    "readback_metrics": {
+      "row_count": 5,
+      "null_counts": {
+        "nutrient_id": 0,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "expected_beverages": 0,
+        "with_source_record": 0,
+        "with_clean_record": 0,
+        "numeric_valid": 0,
+        "missing_amount": 0,
+        "no_source_record": 0,
+        "conflicting_duplicate": 0,
+        "invalid_only": 0,
+        "value_review_required": 0,
+        "numeric_valid_basis_unconfirmed": 0,
+        "eligible_for_comparison": 0,
+        "numeric_coverage_pct": 0,
+        "eligible_coverage_pct": 0
+      },
+      "null_key_counts": {
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "group_coverage_output": {
+    "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_group.csv",
+    "sha256": "f7f11208250f37ec7045bb4b350b3e3f9f840a79627ce682a90760556e3c1316",
+    "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/coverage_by_group_schema.json",
+    "schema_sha256": "2740451cb2e7cf64ed6b3fe530334aa249afbb00a61a5aa306c6d118613a5882",
+    "row_count": 40,
+    "column_count": 17,
+    "size_bytes": 4271,
+    "readback_metrics": {
+      "row_count": 40,
+      "null_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "expected_beverages": 0,
+        "with_source_record": 0,
+        "with_clean_record": 0,
+        "numeric_valid": 0,
+        "missing_amount": 0,
+        "no_source_record": 0,
+        "conflicting_duplicate": 0,
+        "invalid_only": 0,
+        "value_review_required": 0,
+        "numeric_valid_basis_unconfirmed": 0,
+        "eligible_for_comparison": 0,
+        "numeric_coverage_pct": 0,
+        "eligible_coverage_pct": 0
+      },
+      "null_key_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "product_coverage_distribution": [
+    {
+      "source_nutrients": 0,
+      "eligible_nutrients": 0,
+      "count": 8071
+    },
+    {
+      "source_nutrients": 1,
+      "eligible_nutrients": 0,
+      "count": 211
+    },
+    {
+      "source_nutrients": 1,
+      "eligible_nutrients": 1,
+      "count": 4
+    },
+    {
+      "source_nutrients": 2,
+      "eligible_nutrients": 0,
+      "count": 688
+    },
+    {
+      "source_nutrients": 2,
+      "eligible_nutrients": 2,
+      "count": 15
+    },
+    {
+      "source_nutrients": 3,
+      "eligible_nutrients": 0,
+      "count": 1799
+    },
+    {
+      "source_nutrients": 3,
+      "eligible_nutrients": 2,
+      "count": 1
+    },
+    {
+      "source_nutrients": 3,
+      "eligible_nutrients": 3,
+      "count": 80
+    },
+    {
+      "source_nutrients": 4,
+      "eligible_nutrients": 0,
+      "count": 13798
+    },
+    {
+      "source_nutrients": 4,
+      "eligible_nutrients": 4,
+      "count": 1283
+    },
+    {
+      "source_nutrients": 5,
+      "eligible_nutrients": 0,
+      "count": 98363
+    },
+    {
+      "source_nutrients": 5,
+      "eligible_nutrients": 2,
+      "count": 2
+    },
+    {
+      "source_nutrients": 5,
+      "eligible_nutrients": 3,
+      "count": 10
+    },
+    {
+      "source_nutrients": 5,
+      "eligible_nutrients": 4,
+      "count": 25
+    },
+    {
+      "source_nutrients": 5,
+      "eligible_nutrients": 5,
+      "count": 27788
+    }
+  ],
+  "joined_metadata_null_counts": {
+    "description": 0,
+    "brand_name": 208080,
+    "brand_owner": 7040,
+    "beverage_group": 0
+  },
+  "beverage_metadata_null_counts": {
+    "description": 0,
+    "brand_name": 41616,
+    "brand_owner": 1408,
+    "beverage_group": 0
+  },
+  "input_integrity_verified_before_and_after": true,
+  "finished_at_utc": "2026-11-13T15:51:22.161911Z",
+  "elapsed_seconds": 93.603
+}
