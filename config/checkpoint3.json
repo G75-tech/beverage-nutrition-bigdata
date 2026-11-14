@@ -43,6 +43,7 @@
     "scope_policy_path": "config/beverage_scope.json"
   },
   "task3": {
+    "basis_mode": "csv",
     "nutrients": [
       {
         "id": 2000,

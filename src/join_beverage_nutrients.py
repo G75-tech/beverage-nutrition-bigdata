@@ -13,6 +13,7 @@ from src.run_storage import create_run
 from src.common import add_stage_arguments, publish_stage_result, record_spark_baseline
 from src.clean_nutrients import load_handoff, resolve_pairs, save_frame
 from src.input_contract import CSV_OPTIONS, measure_input, read_locked_csv, verify_raw
+from src.measurement_basis import basis_mode
 
 
 KEYS = ["fdc_id", "nutrient_id"]
@@ -52,6 +53,8 @@ def load_inputs(task_config, project_config, root=ROOT):
         raise ValueError("Task 3 belongs to another raw snapshot")
     if result["requested_nutrients"] != task_config["task3"]["nutrients"]:
         raise ValueError("Requested nutrients changed after the pinned Task 3 run")
+    if basis_mode(result) != basis_mode(task_config["task3"]):
+        raise ValueError("Task 3 measurement basis mode differs from the join configuration")
     for key in ("clean_output", "classified_output"):
         verify_artifact(result[key], root)
     return path, result, handoff, task2, contract
@@ -271,7 +274,7 @@ def main(argv=None):
         evidence.update(snapshot_run_id=contract["snapshot_run_id"],
                         task3_result_path=task3_path.relative_to(ROOT).as_posix(), task3_result_sha256=sha256(task3_path),
                         input_handoff_path=task3["input_handoff_path"], input_handoff_sha256=task3["input_handoff_sha256"],
-                        requested_nutrients=task3["requested_nutrients"],
+                        requested_nutrients=task3["requested_nutrients"], basis_mode=basis_mode(task3),
                         food_description_lineage="Reused Task 2 food.csv left join, verified through pinned Task 2 output and handoff")
         spark = start_spark("beverage-checkpoint3-join")
         spark.sparkContext.setLogLevel("ERROR")

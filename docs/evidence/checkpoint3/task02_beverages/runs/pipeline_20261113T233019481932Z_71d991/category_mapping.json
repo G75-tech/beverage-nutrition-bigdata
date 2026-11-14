@@ -1,0 +1,6937 @@
+[
+  {
+    "branded_food_category": null,
+    "category_normalized": "",
+    "candidate": true,
+    "count": 10630,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 257,
+      "review": 10373
+    },
+    "reason_counts": {
+      "product_outside_scope": 96,
+      "requires_preparation": 161,
+      "missing_category": 10373
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Plant-based milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Sports and energy drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Alcohol",
+    "category_normalized": "alcohol",
+    "candidate": false,
+    "count": 3783,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3783,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3783
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Alcoholic Beverages",
+    "category_normalized": "alcoholic beverages",
+    "candidate": false,
+    "count": 78,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 78,
+      "review": 0
+    },
+    "reason_counts": {
+      "alcoholic_beverage": 78
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "All Noodles",
+    "category_normalized": "all noodles",
+    "candidate": false,
+    "count": 4221,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4221,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4221
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Amino Acid Supplements",
+    "category_normalized": "amino acid supplements",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Antioxidant Supplements",
+    "category_normalized": "antioxidant supplements",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Antipasto",
+    "category_normalized": "antipasto",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Aquatic Invertebrates/Fish/Shellfish/Seafood Combination",
+    "category_normalized": "aquatic invertebrates/fish/shellfish/seafood combination",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ayurvedic Supplements",
+    "category_normalized": "ayurvedic supplements",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baby/Infant - Foods/Beverages",
+    "category_normalized": "baby/infant - foods/beverages",
+    "candidate": false,
+    "count": 38,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 38,
+      "review": 0
+    },
+    "reason_counts": {
+      "specialized_nutrition": 38
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baby/Infant  Foods/Beverages",
+    "category_normalized": "baby/infant foods/beverages",
+    "candidate": false,
+    "count": 153,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 153,
+      "review": 0
+    },
+    "reason_counts": {
+      "specialized_nutrition": 153
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baby/Infant – Foods/Beverages",
+    "category_normalized": "baby/infant – foods/beverages",
+    "candidate": false,
+    "count": 16,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 16,
+      "review": 0
+    },
+    "reason_counts": {
+      "specialized_nutrition": 16
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bacon",
+    "category_normalized": "bacon",
+    "candidate": false,
+    "count": 13,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bacon, Sausages & Ribs",
+    "category_normalized": "bacon, sausages & ribs",
+    "candidate": false,
+    "count": 6737,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6737,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6737
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking",
+    "category_normalized": "baking",
+    "candidate": false,
+    "count": 106,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 106,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 106
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking Accessories",
+    "category_normalized": "baking accessories",
+    "candidate": false,
+    "count": 33,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 33,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 33
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking Additives & Extracts",
+    "category_normalized": "baking additives & extracts",
+    "candidate": false,
+    "count": 3787,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3787,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3787
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking Decorations & Dessert Toppings",
+    "category_normalized": "baking decorations & dessert toppings",
+    "candidate": false,
+    "count": 17438,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17438,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17438
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking Needs",
+    "category_normalized": "baking needs",
+    "candidate": false,
+    "count": 26,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 26,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 26
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Mixes (Frozen)",
+    "category_normalized": "baking/cooking mixes (frozen)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Mixes (Perishable)",
+    "category_normalized": "baking/cooking mixes (perishable)",
+    "candidate": false,
+    "count": 28,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 28,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 28
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Mixes (Shelf Stable)",
+    "category_normalized": "baking/cooking mixes (shelf stable)",
+    "candidate": false,
+    "count": 73,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 73,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 73
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Mixes/Supplies",
+    "category_normalized": "baking/cooking mixes/supplies",
+    "candidate": false,
+    "count": 5935,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5935,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5935
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Mixes/Supplies Variety Packs",
+    "category_normalized": "baking/cooking mixes/supplies variety packs",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Baking/Cooking Supplies (Shelf Stable)",
+    "category_normalized": "baking/cooking supplies (shelf stable)",
+    "candidate": false,
+    "count": 39,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 39,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 39
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Beef - Prepared/Processed",
+    "category_normalized": "beef - prepared/processed",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Beef Sausages - Prepared/Processed",
+    "category_normalized": "beef sausages - prepared/processed",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Beer",
+    "category_normalized": "beer",
+    "candidate": false,
+    "count": 13,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Berries/Small Fruit",
+    "category_normalized": "berries/small fruit",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits Chocolate",
+    "category_normalized": "biscuits chocolate",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits Cracker",
+    "category_normalized": "biscuits cracker",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits Kids",
+    "category_normalized": "biscuits kids",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits Plain/Sweet",
+    "category_normalized": "biscuits plain/sweet",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits/Cookies",
+    "category_normalized": "biscuits/cookies",
+    "candidate": false,
+    "count": 10382,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10382,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10382
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits/Cookies (Frozen)",
+    "category_normalized": "biscuits/cookies (frozen)",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Biscuits/Cookies (Shelf Stable)",
+    "category_normalized": "biscuits/cookies (shelf stable)",
+    "candidate": false,
+    "count": 1048,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1048,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1048
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread",
+    "category_normalized": "bread",
+    "candidate": false,
+    "count": 4604,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4604,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4604
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread & Muffin Mixes",
+    "category_normalized": "bread & muffin mixes",
+    "candidate": false,
+    "count": 4903,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4903,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4903
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread (Frozen)",
+    "category_normalized": "bread (frozen)",
+    "candidate": false,
+    "count": 215,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 215,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 215
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread (Shelf Stable)",
+    "category_normalized": "bread (shelf stable)",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread - Incl. Buns And Rolls",
+    "category_normalized": "bread - incl. buns and rolls",
+    "candidate": false,
+    "count": 16,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 16,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 16
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Bread/Bakery Products Variety Packs",
+    "category_normalized": "bread/bakery products variety packs",
+    "candidate": false,
+    "count": 310,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 310,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 310
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Breads & Buns",
+    "category_normalized": "breads & buns",
+    "candidate": false,
+    "count": 46923,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 46923,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 46923
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Breakfast Cereals - Hot And Cold",
+    "category_normalized": "breakfast cereals - hot and cold",
+    "candidate": false,
+    "count": 32,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 32,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 32
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Breakfast Drinks",
+    "category_normalized": "breakfast drinks",
+    "candidate": true,
+    "count": 430,
+    "decision_counts": {
+      "include": 2,
+      "exclude": 402,
+      "review": 26
+    },
+    "reason_counts": {
+      "product_outside_scope": 386,
+      "requires_preparation": 16,
+      "liquid_serving_and_beverage_description": 2,
+      "ambiguous_product_description": 7,
+      "insufficient_preparation_evidence": 2,
+      "unresolved_group": 17
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Plant-based milk",
+      "Ready-to-drink coffee"
+    ]
+  },
+  {
+    "branded_food_category": "Breakfast Foods",
+    "category_normalized": "breakfast foods",
+    "candidate": false,
+    "count": 70,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 70,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 70
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Breakfast Sandwiches, Biscuits & Meals",
+    "category_normalized": "breakfast sandwiches, biscuits & meals",
+    "candidate": false,
+    "count": 1134,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1134,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1134
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Butter & Spread",
+    "category_normalized": "butter & spread",
+    "candidate": false,
+    "count": 8311,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8311,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8311
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Butter/Butter Substitutes",
+    "category_normalized": "butter/butter substitutes",
+    "candidate": false,
+    "count": 302,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 302,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 302
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cake, Cookie & Cupcake Mixes",
+    "category_normalized": "cake, cookie & cupcake mixes",
+    "candidate": false,
+    "count": 14624,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 14624,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 14624
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cakes - Sweet (Frozen)",
+    "category_normalized": "cakes - sweet (frozen)",
+    "candidate": false,
+    "count": 156,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 156,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 156
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cakes - Sweet (Shelf Stable)",
+    "category_normalized": "cakes - sweet (shelf stable)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cakes and Slices",
+    "category_normalized": "cakes and slices",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cakes, Cupcakes, Snack Cakes",
+    "category_normalized": "cakes, cupcakes, snack cakes",
+    "candidate": false,
+    "count": 37584,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 37584,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 37584
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cakes/Slices/Biscuits",
+    "category_normalized": "cakes/slices/biscuits",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Candy",
+    "category_normalized": "candy",
+    "candidate": false,
+    "count": 88810,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 88810,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 88810
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned & Bottled Beans",
+    "category_normalized": "canned & bottled beans",
+    "candidate": false,
+    "count": 14892,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 14892,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 14892
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Condensed Soup",
+    "category_normalized": "canned condensed soup",
+    "candidate": false,
+    "count": 4340,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4340,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4340
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Fish and Meat",
+    "category_normalized": "canned fish and meat",
+    "candidate": false,
+    "count": 61,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 61,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 61
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Fruit",
+    "category_normalized": "canned fruit",
+    "candidate": false,
+    "count": 15031,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15031,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15031
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Meat",
+    "category_normalized": "canned meat",
+    "candidate": false,
+    "count": 3564,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3564,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3564
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Seafood",
+    "category_normalized": "canned seafood",
+    "candidate": false,
+    "count": 5635,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5635,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5635
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Soup",
+    "category_normalized": "canned soup",
+    "candidate": false,
+    "count": 10700,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10700,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10700
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Tuna",
+    "category_normalized": "canned tuna",
+    "candidate": false,
+    "count": 4781,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4781,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4781
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned Vegetables",
+    "category_normalized": "canned vegetables",
+    "candidate": false,
+    "count": 20523,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20523,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20523
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Canned/Dried Veges",
+    "category_normalized": "canned/dried veges",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cereal",
+    "category_normalized": "cereal",
+    "candidate": false,
+    "count": 36411,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 36411,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 36411
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cereal Products - Ready to Eat (Perishable)",
+    "category_normalized": "cereal products - ready to eat (perishable)",
+    "candidate": false,
+    "count": 9,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cereal/Muesli Bars",
+    "category_normalized": "cereal/muesli bars",
+    "candidate": false,
+    "count": 469,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 469,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 469
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cereals Products - Not Ready to Eat (Shelf Stable)",
+    "category_normalized": "cereals products - not ready to eat (shelf stable)",
+    "candidate": false,
+    "count": 20,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cereals Products - Ready to Eat (Shelf Stable)",
+    "category_normalized": "cereals products - ready to eat (shelf stable)",
+    "candidate": false,
+    "count": 512,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 512,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 512
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cheese",
+    "category_normalized": "cheese",
+    "candidate": false,
+    "count": 80757,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 80757,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 80757
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cheese - Block",
+    "category_normalized": "cheese - block",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cheese - Speciality ",
+    "category_normalized": "cheese - speciality",
+    "candidate": false,
+    "count": 27,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 27,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 27
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cheese/Cheese Substitutes",
+    "category_normalized": "cheese/cheese substitutes",
+    "candidate": false,
+    "count": 825,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 825,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 825
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chewing Gum & Mints",
+    "category_normalized": "chewing gum & mints",
+    "candidate": false,
+    "count": 6492,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6492,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6492
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chicken - Prepared/Processed",
+    "category_normalized": "chicken - prepared/processed",
+    "candidate": false,
+    "count": 114,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 114,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 114
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chicken - Unprepared/Unprocessed",
+    "category_normalized": "chicken - unprepared/unprocessed",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chickpeas",
+    "category_normalized": "chickpeas",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Childcare",
+    "category_normalized": "childcare",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Children's Natural Remedies",
+    "category_normalized": "children's natural remedies",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Children's Nutritional Supplements",
+    "category_normalized": "children's nutritional supplements",
+    "candidate": false,
+    "count": 58,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 58,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 58
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chili & Stew",
+    "category_normalized": "chili & stew",
+    "candidate": false,
+    "count": 5295,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5295,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5295
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chips, Pretzels & Snacks",
+    "category_normalized": "chips, pretzels & snacks",
+    "candidate": false,
+    "count": 50638,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 50638,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 50638
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chips/Crisps/Snack Mixes - Natural/Extruded (Shelf Stable)",
+    "category_normalized": "chips/crisps/snack mixes - natural/extruded (shelf stable)",
+    "candidate": false,
+    "count": 322,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 322,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 322
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chocolate",
+    "category_normalized": "chocolate",
+    "candidate": false,
+    "count": 41448,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 41448,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 41448
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Chocolate and Chocolate/Sugar Candy Combinations - Confectionery",
+    "category_normalized": "chocolate and chocolate/sugar candy combinations - confectionery",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Coffee",
+    "category_normalized": "coffee",
+    "candidate": true,
+    "count": 1660,
+    "decision_counts": {
+      "include": 84,
+      "exclude": 1059,
+      "review": 517
+    },
+    "reason_counts": {
+      "product_outside_scope": 29,
+      "requires_preparation": 1030,
+      "liquid_serving_and_beverage_description": 84,
+      "ambiguous_product_description": 105,
+      "insufficient_preparation_evidence": 412
+    },
+    "observed_groups": [
+      "Ready-to-drink coffee"
+    ]
+  },
+  {
+    "branded_food_category": "Coffee - Instant, Roast and Ground",
+    "category_normalized": "coffee - instant, roast and ground",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Coffee/Coffee Substitutes",
+    "category_normalized": "coffee/coffee substitutes",
+    "candidate": true,
+    "count": 39,
+    "decision_counts": {
+      "include": 26,
+      "exclude": 3,
+      "review": 10
+    },
+    "reason_counts": {
+      "product_outside_scope": 2,
+      "requires_preparation": 1,
+      "explicit_ready_to_drink": 22,
+      "liquid_serving_and_beverage_description": 4,
+      "ambiguous_product_description": 2,
+      "insufficient_preparation_evidence": 4,
+      "other_preparation_code": 1,
+      "unprepared_code_requires_review": 3
+    },
+    "observed_groups": [
+      "Ready-to-drink coffee"
+    ]
+  },
+  {
+    "branded_food_category": "Coffee/Tea/Substitutes",
+    "category_normalized": "coffee/tea/substitutes",
+    "candidate": true,
+    "count": 380,
+    "decision_counts": {
+      "include": 328,
+      "exclude": 0,
+      "review": 52
+    },
+    "reason_counts": {
+      "liquid_serving_and_beverage_description": 328,
+      "ambiguous_product_description": 2,
+      "insufficient_preparation_evidence": 14,
+      "unresolved_group": 36
+    },
+    "observed_groups": [
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea"
+    ]
+  },
+  {
+    "branded_food_category": "Condiments, Oils & Dressing",
+    "category_normalized": "condiments, oils & dressing",
+    "candidate": false,
+    "count": 54,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 54,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 54
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Confection & Snacks",
+    "category_normalized": "confection & snacks",
+    "candidate": false,
+    "count": 65,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 65,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 65
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Confectionery",
+    "category_normalized": "confectionery",
+    "candidate": false,
+    "count": 86,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 86,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 86
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Confectionery Products",
+    "category_normalized": "confectionery products",
+    "candidate": false,
+    "count": 2132,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2132,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2132
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cooked & Prepared",
+    "category_normalized": "cooked & prepared",
+    "candidate": false,
+    "count": 5225,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5225,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5225
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cookies & Biscuits",
+    "category_normalized": "cookies & biscuits",
+    "candidate": false,
+    "count": 53275,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 53275,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 53275
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cooking Oils and Fats",
+    "category_normalized": "cooking oils and fats",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Crackers & Biscotti",
+    "category_normalized": "crackers & biscotti",
+    "candidate": false,
+    "count": 17264,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17264,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17264
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cream",
+    "category_normalized": "cream",
+    "candidate": false,
+    "count": 7761,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7761,
+      "review": 0
+    },
+    "reason_counts": {
+      "ingredient_or_additive": 7761
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Cream/Cream Substitutes",
+    "category_normalized": "cream/cream substitutes",
+    "candidate": false,
+    "count": 350,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 350,
+      "review": 0
+    },
+    "reason_counts": {
+      "ingredient_or_additive": 350
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Croissants, Sweet Rolls, Muffins & Other Pastries",
+    "category_normalized": "croissants, sweet rolls, muffins & other pastries",
+    "candidate": false,
+    "count": 11647,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11647,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11647
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Crusts & Dough",
+    "category_normalized": "crusts & dough",
+    "candidate": false,
+    "count": 6353,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6353,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6353
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dairy Foods/Yoghurts",
+    "category_normalized": "dairy foods/yoghurts",
+    "candidate": false,
+    "count": 34,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 34,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 34
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dairy/Egg Based Products / Meals",
+    "category_normalized": "dairy/egg based products / meals",
+    "candidate": false,
+    "count": 82,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 82,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 82
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Deli and Chilled Foods",
+    "category_normalized": "deli and chilled foods",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Deli Salads",
+    "category_normalized": "deli salads",
+    "candidate": false,
+    "count": 5241,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5241,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5241
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Desserts & Custard",
+    "category_normalized": "desserts & custard",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Desserts (Frozen)",
+    "category_normalized": "desserts (frozen)",
+    "candidate": false,
+    "count": 28,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 28,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 28
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Desserts (Shelf Stable)",
+    "category_normalized": "desserts (shelf stable)",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Desserts/Dessert Sauces/Toppings",
+    "category_normalized": "desserts/dessert sauces/toppings",
+    "candidate": false,
+    "count": 2319,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2319,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2319
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Digestive & Fiber Supplements",
+    "category_normalized": "digestive & fiber supplements",
+    "candidate": false,
+    "count": 86,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 86,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 86
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dips & Salsa",
+    "category_normalized": "dips & salsa",
+    "candidate": false,
+    "count": 30255,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 30255,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 30255
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dips - Shelf Stable",
+    "category_normalized": "dips - shelf stable",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dips/Hummus/Pate",
+    "category_normalized": "dips/hummus/pate",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Doodles/ Puffs",
+    "category_normalized": "doodles/ puffs",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dough Based Products / Meals",
+    "category_normalized": "dough based products / meals",
+    "candidate": false,
+    "count": 3966,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3966,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3966
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dough Based Products / Meals - Not Ready to Eat - Savoury (Frozen)",
+    "category_normalized": "dough based products / meals - not ready to eat - savoury (frozen)",
+    "candidate": false,
+    "count": 37,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 37,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 37
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dough Based Products / Meals - Not Ready to Eat - Savoury (Shelf Stable)",
+    "category_normalized": "dough based products / meals - not ready to eat - savoury (shelf stable)",
+    "candidate": false,
+    "count": 52,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 52,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 52
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dressings/Dips (Shelf Stable)",
+    "category_normalized": "dressings/dips (shelf stable)",
+    "candidate": false,
+    "count": 18,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 18,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 18
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Dried Breads (Shelf Stable)",
+    "category_normalized": "dried breads (shelf stable)",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Drinks",
+    "category_normalized": "drinks",
+    "candidate": true,
+    "count": 9,
+    "decision_counts": {
+      "include": 1,
+      "exclude": 4,
+      "review": 4
+    },
+    "reason_counts": {
+      "requires_preparation": 4,
+      "liquid_serving_and_beverage_description": 1,
+      "insufficient_preparation_evidence": 4
+    },
+    "observed_groups": [
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea"
+    ]
+  },
+  {
+    "branded_food_category": "Drinks - Energy Drinks",
+    "category_normalized": "drinks - energy drinks",
+    "candidate": true,
+    "count": 2,
+    "decision_counts": {
+      "include": 2,
+      "exclude": 0,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_without_preparation_marker": 2
+    },
+    "observed_groups": [
+      "Sports and energy drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Drinks - Juices, Drinks and Cordials",
+    "category_normalized": "drinks - juices, drinks and cordials",
+    "candidate": true,
+    "count": 26,
+    "decision_counts": {
+      "include": 9,
+      "exclude": 0,
+      "review": 17
+    },
+    "reason_counts": {
+      "liquid_serving_and_beverage_description": 9,
+      "ambiguous_product_description": 1,
+      "insufficient_preparation_evidence": 5,
+      "unresolved_group": 11
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Drinks - Powdered",
+    "category_normalized": "drinks - powdered",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Drinks - Soft Drinks",
+    "category_normalized": "drinks - soft drinks",
+    "candidate": true,
+    "count": 10,
+    "decision_counts": {
+      "include": 10,
+      "exclude": 0,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_without_preparation_marker": 10
+    },
+    "observed_groups": [
+      "Soft drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Drinks Flavoured - Ready to Drink",
+    "category_normalized": "drinks flavoured - ready to drink",
+    "candidate": true,
+    "count": 89,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 78,
+      "review": 11
+    },
+    "reason_counts": {
+      "product_outside_scope": 36,
+      "requires_preparation": 42,
+      "unresolved_group": 11
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea"
+    ]
+  },
+  {
+    "branded_food_category": "Egg Based Products / Meals - Not Ready to Eat (Frozen)",
+    "category_normalized": "egg based products / meals - not ready to eat (frozen)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Eggs",
+    "category_normalized": "eggs",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Eggs & Egg Substitutes",
+    "category_normalized": "eggs & egg substitutes",
+    "candidate": false,
+    "count": 3632,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3632,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3632
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Eggs Products/Substitutes",
+    "category_normalized": "eggs products/substitutes",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Eggs/Eggs Substitutes",
+    "category_normalized": "eggs/eggs substitutes",
+    "candidate": false,
+    "count": 91,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 91,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 91
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Energy, Protein & Muscle Recovery Drinks",
+    "category_normalized": "energy, protein & muscle recovery drinks",
+    "candidate": true,
+    "count": 10488,
+    "decision_counts": {
+      "include": 344,
+      "exclude": 8927,
+      "review": 1217
+    },
+    "reason_counts": {
+      "product_outside_scope": 5618,
+      "requires_preparation": 3309,
+      "liquid_serving_and_beverage_description": 344,
+      "ambiguous_product_description": 660,
+      "insufficient_preparation_evidence": 557
+    },
+    "observed_groups": [
+      "Sports and energy drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Entrees, Sides & Small Meals",
+    "category_normalized": "entrees, sides & small meals",
+    "candidate": false,
+    "count": 6210,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6210,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6210
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Extracts/Salt/Meat Tenderisers (Shelf Stable)",
+    "category_normalized": "extracts/salt/meat tenderisers (shelf stable)",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fats Edible",
+    "category_normalized": "fats edible",
+    "candidate": false,
+    "count": 97,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 97,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 97
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fatty Acid Supplements",
+    "category_normalized": "fatty acid supplements",
+    "candidate": false,
+    "count": 20,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish & Seafood",
+    "category_normalized": "fish & seafood",
+    "candidate": false,
+    "count": 5040,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5040,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5040
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish - Prepared/Processed",
+    "category_normalized": "fish - prepared/processed",
+    "candidate": false,
+    "count": 134,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 134,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 134
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish  Prepared/Processed",
+    "category_normalized": "fish prepared/processed",
+    "candidate": false,
+    "count": 269,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 269,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 269
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish Substitutes",
+    "category_normalized": "fish substitutes",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish  Unprepared/Unprocessed",
+    "category_normalized": "fish unprepared/unprocessed",
+    "candidate": false,
+    "count": 1091,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1091,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1091
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish – Prepared/Processed",
+    "category_normalized": "fish – prepared/processed",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fish – Unprepared/Unprocessed",
+    "category_normalized": "fish – unprepared/unprocessed",
+    "candidate": false,
+    "count": 545,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 545,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 545
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Flavored Rice Dishes",
+    "category_normalized": "flavored rice dishes",
+    "candidate": false,
+    "count": 3715,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3715,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3715
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Flavored Snack Crackers",
+    "category_normalized": "flavored snack crackers",
+    "candidate": false,
+    "count": 3176,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3176,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3176
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Flour - Cereal/Pulse (Shelf Stable)",
+    "category_normalized": "flour - cereal/pulse (shelf stable)",
+    "candidate": false,
+    "count": 17,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Flours & Corn Meal",
+    "category_normalized": "flours & corn meal",
+    "candidate": false,
+    "count": 6003,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6003,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6003
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Food/Beverage/Tobacco Variety Packs",
+    "category_normalized": "food/beverage/tobacco variety packs",
+    "candidate": false,
+    "count": 28,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 28,
+      "review": 0
+    },
+    "reason_counts": {
+      "mixed_variety_pack": 28
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "French Fries, Potatoes & Onion Rings",
+    "category_normalized": "french fries, potatoes & onion rings",
+    "candidate": false,
+    "count": 4264,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4264,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4264
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Chicken - Portions",
+    "category_normalized": "fresh chicken - portions",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Chicken - Processed",
+    "category_normalized": "fresh chicken - processed",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Chicken - Whole",
+    "category_normalized": "fresh chicken - whole",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Fruit and Vegetables",
+    "category_normalized": "fresh fruit and vegetables",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Meat",
+    "category_normalized": "fresh meat",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Meat, Poultry and Seafood",
+    "category_normalized": "fresh meat, poultry and seafood",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fresh Pasta",
+    "category_normalized": "fresh pasta",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Appetizers & Hors D'oeuvres",
+    "category_normalized": "frozen appetizers & hors d'oeuvres",
+    "candidate": false,
+    "count": 21962,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 21962,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 21962
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Bacon, Sausages & Ribs",
+    "category_normalized": "frozen bacon, sausages & ribs",
+    "candidate": false,
+    "count": 1881,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1881,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1881
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Bread & Dough",
+    "category_normalized": "frozen bread & dough",
+    "candidate": false,
+    "count": 4961,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4961,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4961
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Breakfast Sandwiches, Biscuits & Meals",
+    "category_normalized": "frozen breakfast sandwiches, biscuits & meals",
+    "candidate": false,
+    "count": 4788,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4788,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4788
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Chicken - Portions",
+    "category_normalized": "frozen chicken - portions",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Chicken - Processed",
+    "category_normalized": "frozen chicken - processed",
+    "candidate": false,
+    "count": 17,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Desserts",
+    "category_normalized": "frozen desserts",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Dinners & Entrees",
+    "category_normalized": "frozen dinners & entrees",
+    "candidate": false,
+    "count": 26375,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 26375,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 26375
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Fish & Seafood",
+    "category_normalized": "frozen fish & seafood",
+    "candidate": false,
+    "count": 16833,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 16833,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 16833
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Fish/Seafood",
+    "category_normalized": "frozen fish/seafood",
+    "candidate": false,
+    "count": 104,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 104,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 104
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Foods",
+    "category_normalized": "frozen foods",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Fruit",
+    "category_normalized": "frozen fruit",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Fruit & Fruit Juice Concentrates",
+    "category_normalized": "frozen fruit & fruit juice concentrates",
+    "candidate": false,
+    "count": 11180,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11180,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 11180
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Meals",
+    "category_normalized": "frozen meals",
+    "candidate": false,
+    "count": 17,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Meat",
+    "category_normalized": "frozen meat",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Pancakes, Waffles, French Toast & Crepes",
+    "category_normalized": "frozen pancakes, waffles, french toast & crepes",
+    "candidate": false,
+    "count": 4583,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4583,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4583
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Patties and Burgers",
+    "category_normalized": "frozen patties and burgers",
+    "candidate": false,
+    "count": 5311,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5311,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5311
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Pies/Savouries",
+    "category_normalized": "frozen pies/savouries",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Potato",
+    "category_normalized": "frozen potato",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Poultry, Chicken & Turkey",
+    "category_normalized": "frozen poultry, chicken & turkey",
+    "candidate": false,
+    "count": 1814,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1814,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1814
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Prepared Sides",
+    "category_normalized": "frozen prepared sides",
+    "candidate": false,
+    "count": 3836,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3836,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3836
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Sausages, Hotdogs & Brats",
+    "category_normalized": "frozen sausages, hotdogs & brats",
+    "candidate": false,
+    "count": 1125,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1125,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1125
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Snack",
+    "category_normalized": "frozen snack",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Frozen Vegetables",
+    "category_normalized": "frozen vegetables",
+    "candidate": false,
+    "count": 20839,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20839,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20839
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit",
+    "category_normalized": "fruit",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit & Vegetable Juice, Nectars & Fruit Drinks",
+    "category_normalized": "fruit & vegetable juice, nectars & fruit drinks",
+    "candidate": true,
+    "count": 41036,
+    "decision_counts": {
+      "include": 39866,
+      "exclude": 684,
+      "review": 486
+    },
+    "reason_counts": {
+      "product_outside_scope": 28,
+      "requires_preparation": 656,
+      "category_without_preparation_marker": 39866,
+      "ambiguous_product_description": 486
+    },
+    "observed_groups": [
+      "Juice and fruit drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Fruit - Prepared/Processed",
+    "category_normalized": "fruit - prepared/processed",
+    "candidate": false,
+    "count": 695,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 695,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 695
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit - Prepared/Processed (Frozen)",
+    "category_normalized": "fruit - prepared/processed (frozen)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit - Prepared/Processed (Shelf Stable)",
+    "category_normalized": "fruit - prepared/processed (shelf stable)",
+    "candidate": false,
+    "count": 194,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 194,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 194
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit Juice - Not Ready to Drink (Frozen)",
+    "category_normalized": "fruit juice - not ready to drink (frozen)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit Juice - Ready to Drink (Shelf Stable)",
+    "category_normalized": "fruit juice - ready to drink (shelf stable)",
+    "candidate": true,
+    "count": 1,
+    "decision_counts": {
+      "include": 1,
+      "exclude": 0,
+      "review": 0
+    },
+    "reason_counts": {
+      "explicit_ready_to_drink": 1
+    },
+    "observed_groups": [
+      "Juice and fruit drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Fruit  Prepared/Processed",
+    "category_normalized": "fruit prepared/processed",
+    "candidate": false,
+    "count": 1532,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1532,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1532
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit – Prepared/Processed",
+    "category_normalized": "fruit – prepared/processed",
+    "candidate": false,
+    "count": 44,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 44,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 44
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit/Nuts/Seeds Combination",
+    "category_normalized": "fruit/nuts/seeds combination",
+    "candidate": false,
+    "count": 110,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 110,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 110
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruit/Nuts/Seeds Mixes - Prepared/Processed (Shelf Stable)",
+    "category_normalized": "fruit/nuts/seeds mixes - prepared/processed (shelf stable)",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits - Unprepared/Unprocessed (Frozen)",
+    "category_normalized": "fruits - unprepared/unprocessed (frozen)",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits - Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "fruits - unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 9,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits  Unprepared/Unprocessed (Frozen)",
+    "category_normalized": "fruits unprepared/unprocessed (frozen)",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits  Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "fruits unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits, Vegetables & Produce",
+    "category_normalized": "fruits, vegetables & produce",
+    "candidate": false,
+    "count": 33,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 33,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 33
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Fruits/Vegetables/Nuts/Seeds Variety Packs",
+    "category_normalized": "fruits/vegetables/nuts/seeds variety packs",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Gardening",
+    "category_normalized": "gardening",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Gelatin, Gels, Pectins & Desserts",
+    "category_normalized": "gelatin, gels, pectins & desserts",
+    "candidate": false,
+    "count": 4021,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4021,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4021
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grain Based Products / Meals",
+    "category_normalized": "grain based products / meals",
+    "candidate": false,
+    "count": 686,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 686,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 686
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grain Based Products / Meals - Not Ready to Eat - Savoury (Frozen)",
+    "category_normalized": "grain based products / meals - not ready to eat - savoury (frozen)",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grain Based Products / Meals - Not Ready to Eat - Savoury (Shelf Stable)",
+    "category_normalized": "grain based products / meals - not ready to eat - savoury (shelf stable)",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grains",
+    "category_normalized": "grains",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grains/Cereal - Not Ready to Eat - (Shelf Stable)",
+    "category_normalized": "grains/cereal - not ready to eat - (shelf stable)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grains/Cereal - Ready to Eat - (Shelf Stable)",
+    "category_normalized": "grains/cereal - ready to eat - (shelf stable)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Grains/Flour",
+    "category_normalized": "grains/flour",
+    "candidate": false,
+    "count": 1060,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1060,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1060
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Granulated, Brown & Powdered Sugar",
+    "category_normalized": "granulated, brown & powdered sugar",
+    "candidate": false,
+    "count": 8369,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8369,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8369
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Gravy Mix",
+    "category_normalized": "gravy mix",
+    "candidate": false,
+    "count": 3704,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3704,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3704
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Green Supplements",
+    "category_normalized": "green supplements",
+    "candidate": false,
+    "count": 143,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 143,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 143
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ham/Cold Meats",
+    "category_normalized": "ham/cold meats",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Health Care",
+    "category_normalized": "health care",
+    "candidate": false,
+    "count": 321,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 321,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 321
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Health Supplements and Vitamins",
+    "category_normalized": "health supplements and vitamins",
+    "candidate": false,
+    "count": 9,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Herbal Supplements",
+    "category_normalized": "herbal supplements",
+    "candidate": false,
+    "count": 77,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 77,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 77
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Herbs & Spices",
+    "category_normalized": "herbs & spices",
+    "candidate": false,
+    "count": 8097,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8097,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8097
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Herbs And Spices",
+    "category_normalized": "herbs and spices",
+    "candidate": false,
+    "count": 9,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Herbs/Spices (Shelf Stable)",
+    "category_normalized": "herbs/spices (shelf stable)",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Herbs/Spices/Extracts",
+    "category_normalized": "herbs/spices/extracts",
+    "candidate": false,
+    "count": 1253,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1253,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1253
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Home Decoration & Supplies",
+    "category_normalized": "home decoration & supplies",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Honey",
+    "category_normalized": "honey",
+    "candidate": false,
+    "count": 5384,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5384,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5384
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ice Cream & Frozen Yogurt",
+    "category_normalized": "ice cream & frozen yogurt",
+    "candidate": false,
+    "count": 60617,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 60617,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 60617
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ice Cream/Ice Novelties (Shelf Stable)",
+    "category_normalized": "ice cream/ice novelties (shelf stable)",
+    "candidate": false,
+    "count": 30,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 30,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 30
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ice-Cream Take Home",
+    "category_normalized": "ice-cream take home",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ice-Cream/Block Single",
+    "category_normalized": "ice-cream/block single",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ice-Cream/Ice-Block Multi Pack",
+    "category_normalized": "ice-cream/ice-block multi pack",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Iced & Bottle Tea",
+    "category_normalized": "iced & bottle tea",
+    "candidate": true,
+    "count": 9357,
+    "decision_counts": {
+      "include": 9004,
+      "exclude": 310,
+      "review": 43
+    },
+    "reason_counts": {
+      "product_outside_scope": 11,
+      "requires_preparation": 299,
+      "category_without_preparation_marker": 9004,
+      "ambiguous_product_description": 43
+    },
+    "observed_groups": [
+      "Ready-to-drink tea"
+    ]
+  },
+  {
+    "branded_food_category": "Includes all products which can be described/observed as a healthy food alternative to meat vegetable and egg proteins. These products are non animal based and an imitation of meat products, meant to simulate the taste and mouthfeel of real meat but are normally made from a combination of non animal based ingredients. Includes products such as soya, fungus, beans, lentils, peas and chickpeas based products. These products must be frozen to extend their consumable life.",
+    "category_normalized": "includes all products which can be described/observed as a healthy food alternative to meat vegetable and egg proteins. these products are non animal based and an imitation of meat products, meant to simulate the taste and mouthfeel of real meat but are normally made from a combination of non animal based ingredients. includes products such as soya, fungus, beans, lentils, peas and chickpeas based products. these products must be frozen to extend their consumable life.",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a cereal combining all or some of the following ingredients: oats, muesli, wheat, rice, seeds, bran, fruit, nuts, cereal and honey, which has gone through further manufacturing processes such as cooking, milling, drying and reforming, which will require preparation/cooking prior to consumption. Includes products such as porridge oats, couscous and tapioca. These products have been treated or packaged in such a way as to extend their consumable life.",
+    "category_normalized": "includes any products that can be described/observed as a cereal combining all or some of the following ingredients: oats, muesli, wheat, rice, seeds, bran, fruit, nuts, cereal and honey, which has gone through further manufacturing processes such as cooking, milling, drying and reforming, which will require preparation/cooking prior to consumption. includes products such as porridge oats, couscous and tapioca. these products have been treated or packaged in such a way as to extend their consumable life.",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a fine powder derived from grains, roots or tubers. These products have been treated or packaged in such a way as to extend their consumable life. Specifically excludes products such as Cornflour. Excludes products such as Whole Grains, Bread and Baking Mixes.",
+    "category_normalized": "includes any products that can be described/observed as a fine powder derived from grains, roots or tubers. these products have been treated or packaged in such a way as to extend their consumable life. specifically excludes products such as cornflour. excludes products such as whole grains, bread and baking mixes.",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a food made from ground pork, which may be prepared using a specific, regionally based process. The ground meat is mixed with other ingredients such as animal fat, salt, spices, herbs, vegetables or fruit and then typically packed in a casing, which may be link shaped or form a rope or ring, or sold without a casing such as bologna and some frankfurters. Some sausages are cooked during processing and may be preserved by curing, drying in cool air, or smoking.",
+    "category_normalized": "includes any products that can be described/observed as a food made from ground pork, which may be prepared using a specific, regionally based process. the ground meat is mixed with other ingredients such as animal fat, salt, spices, herbs, vegetables or fruit and then typically packed in a casing, which may be link shaped or form a rope or ring, or sold without a casing such as bologna and some frankfurters. some sausages are cooked during processing and may be preserved by curing, drying in cool air, or smoking.",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a food made from ground turkey meat, which may be prepared using a specific, regionally based process. The ground meat is mixed with other ingredients such as animal fat, salt, spices, herbs, vegetables or fruit and then typically packed in a casing, which may be link shaped or form a rope or ring, or sold without a casing such as bologna and some frankfurters. Some sausages are cooked during processing and may be preserved by curing, drying in cool air, or smoking.",
+    "category_normalized": "includes any products that can be described/observed as a food made from ground turkey meat, which may be prepared using a specific, regionally based process. the ground meat is mixed with other ingredients such as animal fat, salt, spices, herbs, vegetables or fruit and then typically packed in a casing, which may be link shaped or form a rope or ring, or sold without a casing such as bologna and some frankfurters. some sausages are cooked during processing and may be preserved by curing, drying in cool air, or smoking.",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a frozen substance, which can be heated and combined with other ingredients, such as pasta, rice and chicken, to produce a specific recipe, such as Bolognese, Carbonara, Chicken Korma or Thai Curry.",
+    "category_normalized": "includes any products that can be described/observed as a frozen substance, which can be heated and combined with other ingredients, such as pasta, rice and chicken, to produce a specific recipe, such as bolognese, carbonara, chicken korma or thai curry.",
+    "candidate": false,
+    "count": 16,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 16,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 16
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a leavened or unleavened, dough-based baked product. These products do not typically contain eggs and tend to have lower fat content than other dough products such as pastry. These products must be frozen to extend their consumable life. Includes such products as naan, chapatti, loaves, rolls, bagels, focaccia, ciabatta, baguette. Also includes rye bread, bread made from rice flour and part baked bread products.",
+    "category_normalized": "includes any products that can be described/observed as a leavened or unleavened, dough-based baked product. these products do not typically contain eggs and tend to have lower fat content than other dough products such as pastry. these products must be frozen to extend their consumable life. includes such products as naan, chapatti, loaves, rolls, bagels, focaccia, ciabatta, baguette. also includes rye bread, bread made from rice flour and part baked bread products.",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a leavened or unleavened, dough-based baked product. These products do not typically contain eggs and tend to have lower fat content than other dough products such as pastry. These products must be frozen to extend their consumable life. Includes such products as naan, chapatti, loaves, rolls, bagels, focaccia, ciabatta, baguette. Also includes rye bread, bread made from rice flour and part baked bread products. Excludes products such as Shelf-Stable and Perishable Bread Products, Dried Breads, Frozen Baking Mixes and Baking Supplies, and Pies and Pastries.",
+    "category_normalized": "includes any products that can be described/observed as a leavened or unleavened, dough-based baked product. these products do not typically contain eggs and tend to have lower fat content than other dough products such as pastry. these products must be frozen to extend their consumable life. includes such products as naan, chapatti, loaves, rolls, bagels, focaccia, ciabatta, baguette. also includes rye bread, bread made from rice flour and part baked bread products. excludes products such as shelf-stable and perishable bread products, dried breads, frozen baking mixes and baking supplies, and pies and pastries.",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a liquid food made from the stock of meat, fish and/or vegetables, which may also contain some small solid pieces of meat, fish and/or vegetables. These products must be frozen to extend their consumable life.",
+    "category_normalized": "includes any products that can be described/observed as a liquid food made from the stock of meat, fish and/or vegetables, which may also contain some small solid pieces of meat, fish and/or vegetables. these products must be frozen to extend their consumable life.",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a pastry, biscuit or crumble based product filled or topped with a mixture of shredded/sliced savoury ingredients, commonly including meat, vegetables, eggs or other additive. Products must be frozen to extend their consumable life. Excludes products such as Perishable and Shelf Stable Savoury Pies, Pastries, Pizzas and Quiches, Sweet Pies/Tarts, and Potato Topped Meat Pies.",
+    "category_normalized": "includes any products that can be described/observed as a pastry, biscuit or crumble based product filled or topped with a mixture of shredded/sliced savoury ingredients, commonly including meat, vegetables, eggs or other additive. products must be frozen to extend their consumable life. excludes products such as perishable and shelf stable savoury pies, pastries, pizzas and quiches, sweet pies/tarts, and potato topped meat pies.",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a prepared food normally consumed as the last course of a meal. These products have been packaged in such a way as to extend their consumable life. Products include desserts that are biscuit based, bread based, cake/sponge based, dairy based, pastry based and rice based. Excludes products such as Perishable and Frozen Desserts, Ice Cream, Pastries and Cakes, Yogurt.",
+    "category_normalized": "includes any products that can be described/observed as a prepared food normally consumed as the last course of a meal. these products have been packaged in such a way as to extend their consumable life. products include desserts that are biscuit based, bread based, cake/sponge based, dairy based, pastry based and rice based. excludes products such as perishable and frozen desserts, ice cream, pastries and cakes, yogurt.",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a quantity of perishable, pre-mixed dough, batter or powder or other ingredients that is specifically intended to produce bread, cakes, biscuits, desserts, or other products. Products may be ready to use (where no additional ingredients need to be added to the mix prior to use) or require the addition of wet ingredients such as water, milk, oil, fat or egg. These products must be refrigerated to extend their consumable life. Excludes products such as Soups, Frozen or Shelf-Stable Baking Mixes, all Part Baked and Baked Products.",
+    "category_normalized": "includes any products that can be described/observed as a quantity of perishable, pre-mixed dough, batter or powder or other ingredients that is specifically intended to produce bread, cakes, biscuits, desserts, or other products. products may be ready to use (where no additional ingredients need to be added to the mix prior to use) or require the addition of wet ingredients such as water, milk, oil, fat or egg. these products must be refrigerated to extend their consumable life. excludes products such as soups, frozen or shelf-stable baking mixes, all part baked and baked products.",
+    "candidate": true,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 5
+    },
+    "reason_counts": {
+      "ambiguous_product_description": 4,
+      "unprepared_code_requires_review": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a quantity of shelf-stable, pre-mixed dough, batter or powder that is specifically intended to produce bread, cakes, biscuits, desserts, or other products. Products may be ready to use (where no additional ingredients need to be added to the mix prior to use) or require the addition of wet ingredients such as water, milk, oil, fat or egg. These products have been treated or packaged in such a way as to extend their consumable life. Excludes products such as Soups, Frozen or Perishable Baking Mixes, all Part Baked and Baked Products.",
+    "category_normalized": "includes any products that can be described/observed as a quantity of shelf-stable, pre-mixed dough, batter or powder that is specifically intended to produce bread, cakes, biscuits, desserts, or other products. products may be ready to use (where no additional ingredients need to be added to the mix prior to use) or require the addition of wet ingredients such as water, milk, oil, fat or egg. these products have been treated or packaged in such a way as to extend their consumable life. excludes products such as soups, frozen or perishable baking mixes, all part baked and baked products.",
+    "candidate": true,
+    "count": 14,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 14
+    },
+    "reason_counts": {
+      "ambiguous_product_description": 13,
+      "unprepared_code_requires_review": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a savoury dough-based not ready to eat, prepared/processed product, such as Pasta, Gnocchi, Noodles or Batter, with other ingredients, such as meat, dairy, eggs, fish, vegetables and/or seasoning. An optional seasoning/flavour packet may be present. These ingredients form a valuable part of the product, such as the meat/tomato sauce in Spaghetti Bolognaise, or cheese sauce in Macaroni and Cheese. They may or may not contain a sauce. These products are not ready to eat and require cooking prior to consumption. These products may have a main component which is considered a meal without any additional components. These products must be fro",
+    "category_normalized": "includes any products that can be described/observed as a savoury dough-based not ready to eat, prepared/processed product, such as pasta, gnocchi, noodles or batter, with other ingredients, such as meat, dairy, eggs, fish, vegetables and/or seasoning. an optional seasoning/flavour packet may be present. these ingredients form a valuable part of the product, such as the meat/tomato sauce in spaghetti bolognaise, or cheese sauce in macaroni and cheese. they may or may not contain a sauce. these products are not ready to eat and require cooking prior to consumption. these products may have a main component which is considered a meal without any additional components. these products must be fro",
+    "candidate": false,
+    "count": 12,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as a substance which can be heated and combined with other ingredients, such as pasta, rice and chicken, to produce a specific recipe, such as Bolognese, Carbonara, Chicken Korma or Thai Curry. These products have been treated or packaged in such a way as to extend their consumable life. Excludes products such as Sauces Dipping and Condiments and Savoury Spreads and Marinades, Perishable and Frozen Sauces Cooking.",
+    "category_normalized": "includes any products that can be described/observed as a substance which can be heated and combined with other ingredients, such as pasta, rice and chicken, to produce a specific recipe, such as bolognese, carbonara, chicken korma or thai curry. these products have been treated or packaged in such a way as to extend their consumable life. excludes products such as sauces dipping and condiments and savoury spreads and marinades, perishable and frozen sauces cooking.",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as frozen food made from the curd of milk, separated from the whey, sometimes fermented, and usually pressed, cooked, smoked, matured, or heated and mixed with artificial ingredients, such as emulsifiers, colourings and flavourings. These products must be frozen to extend their consumable life. These products include natural, processed cheese, cheese with added ingredients, such as herbs and nuts, in blocks, rolls, slices, grated, cubes, spreadable and portions.",
+    "category_normalized": "includes any products that can be described/observed as frozen food made from the curd of milk, separated from the whey, sometimes fermented, and usually pressed, cooked, smoked, matured, or heated and mixed with artificial ingredients, such as emulsifiers, colourings and flavourings. these products must be frozen to extend their consumable life. these products include natural, processed cheese, cheese with added ingredients, such as herbs and nuts, in blocks, rolls, slices, grated, cubes, spreadable and portions.",
+    "candidate": true,
+    "count": 23,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 23
+    },
+    "reason_counts": {
+      "ambiguous_product_description": 8,
+      "unresolved_group": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes any products that can be described/observed as frozen food made from the curd of milk, separated from the whey, sometimes fermented, and usually pressed, cooked, smoked, matured, or heated and mixed with artificial ingredients, such as emulsifiers, colourings and flavourings. These products must be frozen to extend their consumable life. These products include natural, processed cheese, cheese with added ingredients, such as herbs and nuts, in blocks, rolls, slices, grated, cubes, spreadable and portions. Excludes products such as Shelf Stable and Perishable Cheeses, all Cheese Substitutes and Cheese-Based/Flavoured Meals.",
+    "category_normalized": "includes any products that can be described/observed as frozen food made from the curd of milk, separated from the whey, sometimes fermented, and usually pressed, cooked, smoked, matured, or heated and mixed with artificial ingredients, such as emulsifiers, colourings and flavourings. these products must be frozen to extend their consumable life. these products include natural, processed cheese, cheese with added ingredients, such as herbs and nuts, in blocks, rolls, slices, grated, cubes, spreadable and portions. excludes products such as shelf stable and perishable cheeses, all cheese substitutes and cheese-based/flavoured meals.",
+    "candidate": true,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 1
+    },
+    "reason_counts": {
+      "unresolved_group": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from animals of the domestic pig ( Sus Scrofa Domesticus) that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "category_normalized": "includes products from animals of the domestic pig ( sus scrofa domesticus) that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from animals of the domestic pig ( Sus Scrofa Domesticus) that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. Specifically excludes Meat/Poultry Sausages - Prepared/Processed. Excludes Pork - Unprepared/Unprocessed.",
+    "category_normalized": "includes products from animals of the domestic pig ( sus scrofa domesticus) that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. specifically excludes meat/poultry sausages - prepared/processed. excludes pork - unprepared/unprocessed.",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from animals of the species Gallus gallus domesticus that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "category_normalized": "includes products from animals of the species gallus gallus domesticus that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from animals of the species Gallus gallus domesticus that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. Specifically excludes Meat/Poultry Sausages - Prepared/Processed. Excludes Chicken - Unprepared/Unprocessed.",
+    "category_normalized": "includes products from animals of the species gallus gallus domesticus that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. specifically excludes meat/poultry sausages - prepared/processed. excludes chicken - unprepared/unprocessed.",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from animals of the species Meleagris gallopavo that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "category_normalized": "includes products from animals of the species meleagris gallopavo that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from mature animals of the genus Bos that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "category_normalized": "includes products from mature animals of the genus bos that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed.",
+    "candidate": false,
+    "count": 58,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 58,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 58
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Includes products from mature animals of the genus Bos that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. Specifically excludes Meat/Poultry Sausages - Prepared/Processed. Excludes Beef - Unprepared/Unprocessed.",
+    "category_normalized": "includes products from mature animals of the genus bos that have been subjected to one or more further manufacturing processes such as being cooked, dried, cured, ground, or reformed. specifically excludes meat/poultry sausages - prepared/processed. excludes beef - unprepared/unprocessed.",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Infant Formula",
+    "category_normalized": "infant formula",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Jam, Jelly & Fruit Spreads",
+    "category_normalized": "jam, jelly & fruit spreads",
+    "candidate": false,
+    "count": 13277,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13277,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13277
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ketchup, Mustard, BBQ & Cheese Sauce",
+    "category_normalized": "ketchup, mustard, bbq & cheese sauce",
+    "candidate": false,
+    "count": 29427,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 29427,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 29427
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Kitchen Supplies",
+    "category_normalized": "kitchen supplies",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Liquid Water Enhancer",
+    "category_normalized": "liquid water enhancer",
+    "candidate": false,
+    "count": 3268,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3268,
+      "review": 0
+    },
+    "reason_counts": {
+      "ingredient_or_additive": 3268
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Lunch Snacks & Combinations",
+    "category_normalized": "lunch snacks & combinations",
+    "candidate": false,
+    "count": 3912,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3912,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3912
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Margarine/Butter",
+    "category_normalized": "margarine/butter",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meal Replacement Supplements",
+    "category_normalized": "meal replacement supplements",
+    "candidate": false,
+    "count": 828,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 828,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 828
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat Substitutes",
+    "category_normalized": "meat substitutes",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals - Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals - prepared/processed",
+    "candidate": false,
+    "count": 7978,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7978,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7978
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals - Unprepared/Unprocessed",
+    "category_normalized": "meat/poultry/other animals - unprepared/unprocessed",
+    "candidate": false,
+    "count": 624,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 624,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 624
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals  Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals prepared/processed",
+    "candidate": false,
+    "count": 9935,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9935,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9935
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals Sausages - Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals sausages - prepared/processed",
+    "candidate": false,
+    "count": 759,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 759,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 759
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals Sausages  Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals sausages prepared/processed",
+    "candidate": false,
+    "count": 1620,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1620,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1620
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals Sausages – Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals sausages – prepared/processed",
+    "candidate": false,
+    "count": 112,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 112,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 112
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals  Unprepared/Unprocessed",
+    "category_normalized": "meat/poultry/other animals unprepared/unprocessed",
+    "candidate": false,
+    "count": 4825,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4825,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4825
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals – Prepared/Processed",
+    "category_normalized": "meat/poultry/other animals – prepared/processed",
+    "candidate": false,
+    "count": 380,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 380,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 380
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Meat/Poultry/Other Animals – Unprepared/Unprocessed",
+    "category_normalized": "meat/poultry/other animals – unprepared/unprocessed",
+    "candidate": false,
+    "count": 412,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 412,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 412
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Media",
+    "category_normalized": "media",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Mexican Dinner Mixes",
+    "category_normalized": "mexican dinner mixes",
+    "candidate": false,
+    "count": 7228,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7228,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7228
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Milk",
+    "category_normalized": "milk",
+    "candidate": true,
+    "count": 22547,
+    "decision_counts": {
+      "include": 19624,
+      "exclude": 2710,
+      "review": 213
+    },
+    "reason_counts": {
+      "product_outside_scope": 2487,
+      "requires_preparation": 223,
+      "category_without_preparation_marker": 19624,
+      "ambiguous_product_description": 213
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Plant-based milk"
+    ]
+  },
+  {
+    "branded_food_category": "Milk Additives",
+    "category_normalized": "milk additives",
+    "candidate": false,
+    "count": 8983,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8983,
+      "review": 0
+    },
+    "reason_counts": {
+      "ingredient_or_additive": 8983
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Milk/Cream",
+    "category_normalized": "milk/cream",
+    "candidate": true,
+    "count": 4,
+    "decision_counts": {
+      "include": 4,
+      "exclude": 0,
+      "review": 0
+    },
+    "reason_counts": {
+      "liquid_serving_and_beverage_description": 4
+    },
+    "observed_groups": [
+      "Dairy milk"
+    ]
+  },
+  {
+    "branded_food_category": "Milk/Cream - Shelf Stable",
+    "category_normalized": "milk/cream - shelf stable",
+    "candidate": true,
+    "count": 11,
+    "decision_counts": {
+      "include": 6,
+      "exclude": 2,
+      "review": 3
+    },
+    "reason_counts": {
+      "requires_preparation": 2,
+      "liquid_serving_and_beverage_description": 6,
+      "unresolved_group": 3
+    },
+    "observed_groups": [
+      "Dairy milk"
+    ]
+  },
+  {
+    "branded_food_category": "Milk/Milk Substitutes",
+    "category_normalized": "milk/milk substitutes",
+    "candidate": true,
+    "count": 2475,
+    "decision_counts": {
+      "include": 40,
+      "exclude": 309,
+      "review": 2126
+    },
+    "reason_counts": {
+      "product_outside_scope": 275,
+      "requires_preparation": 34,
+      "explicit_ready_to_drink": 30,
+      "liquid_serving_and_beverage_description": 10,
+      "ambiguous_product_description": 557,
+      "insufficient_preparation_evidence": 471,
+      "other_preparation_code": 3,
+      "unprepared_code_requires_review": 20,
+      "unresolved_group": 1075
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Plant-based milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea"
+    ]
+  },
+  {
+    "branded_food_category": "Minerals",
+    "category_normalized": "minerals",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Miscellanious",
+    "category_normalized": "miscellanious",
+    "candidate": false,
+    "count": 187,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 187,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 187
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Mussels",
+    "category_normalized": "mussels",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages - Not Ready to Drink",
+    "category_normalized": "non alcoholic beverages - not ready to drink",
+    "candidate": false,
+    "count": 457,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 457,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 457
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages - Ready to Drink",
+    "category_normalized": "non alcoholic beverages - ready to drink",
+    "candidate": true,
+    "count": 2652,
+    "decision_counts": {
+      "include": 851,
+      "exclude": 49,
+      "review": 1752
+    },
+    "reason_counts": {
+      "product_outside_scope": 49,
+      "category_without_preparation_marker": 428,
+      "explicit_ready_to_drink": 423,
+      "ambiguous_product_description": 46,
+      "other_preparation_code": 19,
+      "unprepared_code_requires_review": 677,
+      "unresolved_group": 1010
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Plant-based milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Sports and energy drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages  Not Ready to Drink",
+    "category_normalized": "non alcoholic beverages not ready to drink",
+    "candidate": false,
+    "count": 410,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 410,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 410
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages  Ready to Drink",
+    "category_normalized": "non alcoholic beverages ready to drink",
+    "candidate": true,
+    "count": 7534,
+    "decision_counts": {
+      "include": 2767,
+      "exclude": 79,
+      "review": 4688
+    },
+    "reason_counts": {
+      "product_outside_scope": 77,
+      "requires_preparation": 2,
+      "category_without_preparation_marker": 1736,
+      "explicit_ready_to_drink": 1031,
+      "ambiguous_product_description": 25,
+      "other_preparation_code": 8,
+      "unprepared_code_requires_review": 520,
+      "unresolved_group": 4135
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Plant-based milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Sports and energy drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages – Not Ready to Drink",
+    "category_normalized": "non alcoholic beverages – not ready to drink",
+    "candidate": false,
+    "count": 48,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 48,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 48
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Non Alcoholic Beverages – Ready to Drink",
+    "category_normalized": "non alcoholic beverages – ready to drink",
+    "candidate": true,
+    "count": 788,
+    "decision_counts": {
+      "include": 366,
+      "exclude": 15,
+      "review": 407
+    },
+    "reason_counts": {
+      "product_outside_scope": 14,
+      "requires_preparation": 1,
+      "category_without_preparation_marker": 366,
+      "ambiguous_product_description": 4,
+      "unresolved_group": 403
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Sports and energy drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Noodles",
+    "category_normalized": "noodles",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nut & Seed Butters",
+    "category_normalized": "nut & seed butters",
+    "candidate": false,
+    "count": 12225,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12225,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12225
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nutritional Supplements",
+    "category_normalized": "nutritional supplements",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds - Prepared/Processed",
+    "category_normalized": "nuts/seeds - prepared/processed",
+    "candidate": false,
+    "count": 277,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 277,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 277
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds - Prepared/Processed (Out of Shell)",
+    "category_normalized": "nuts/seeds - prepared/processed (out of shell)",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds - Prepared/Processed (Shelf Stable)",
+    "category_normalized": "nuts/seeds - prepared/processed (shelf stable)",
+    "candidate": false,
+    "count": 20,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds - Unprepared/Unprocessed (In Shell)",
+    "category_normalized": "nuts/seeds - unprepared/unprocessed (in shell)",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds  Prepared/Processed",
+    "category_normalized": "nuts/seeds prepared/processed",
+    "candidate": false,
+    "count": 217,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 217,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 217
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds  Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "nuts/seeds unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds – Prepared/Processed",
+    "category_normalized": "nuts/seeds – prepared/processed",
+    "candidate": false,
+    "count": 27,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 27,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 27
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Nuts/Seeds – Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "nuts/seeds – unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Oils Edible",
+    "category_normalized": "oils edible",
+    "candidate": false,
+    "count": 728,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 728,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 728
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Oils Edible - Vegetable or Plant (Shelf Stable)",
+    "category_normalized": "oils edible - vegetable or plant (shelf stable)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Oral Hygiene Products",
+    "category_normalized": "oral hygiene products",
+    "candidate": false,
+    "count": 13,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Oriental, Mexican & Ethnic Sauces",
+    "category_normalized": "oriental, mexican & ethnic sauces",
+    "candidate": false,
+    "count": 14988,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 14988,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 14988
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Condiments",
+    "category_normalized": "other condiments",
+    "candidate": false,
+    "count": 2456,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2456,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2456
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Cooking Sauces",
+    "category_normalized": "other cooking sauces",
+    "candidate": false,
+    "count": 8867,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8867,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8867
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Deli",
+    "category_normalized": "other deli",
+    "candidate": false,
+    "count": 11716,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11716,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11716
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Drinks",
+    "category_normalized": "other drinks",
+    "candidate": true,
+    "count": 19715,
+    "decision_counts": {
+      "include": 8047,
+      "exclude": 1165,
+      "review": 10503
+    },
+    "reason_counts": {
+      "product_outside_scope": 738,
+      "requires_preparation": 427,
+      "explicit_ready_to_drink": 19,
+      "liquid_serving_and_beverage_description": 8028,
+      "ambiguous_product_description": 369,
+      "insufficient_preparation_evidence": 2014,
+      "unresolved_group": 8120
+    },
+    "observed_groups": [
+      "Dairy milk",
+      "Juice and fruit drinks",
+      "Plant-based milk",
+      "Ready-to-drink coffee",
+      "Ready-to-drink tea",
+      "Soft drinks",
+      "Sports and energy drinks",
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Other Frozen Desserts",
+    "category_normalized": "other frozen desserts",
+    "candidate": false,
+    "count": 8186,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8186,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8186
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Frozen Meats",
+    "category_normalized": "other frozen meats",
+    "candidate": false,
+    "count": 733,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 733,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 733
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Grains & Seeds",
+    "category_normalized": "other grains & seeds",
+    "candidate": false,
+    "count": 5055,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5055,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5055
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Meats",
+    "category_normalized": "other meats",
+    "candidate": false,
+    "count": 9024,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9024,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9024
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Pet Food",
+    "category_normalized": "other pet food",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Sauces Dipping/Condiments/Savoury Toppings/Savoury Spreads/Marinades (Frozen)",
+    "category_normalized": "other sauces dipping/condiments/savoury toppings/savoury spreads/marinades (frozen)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Sauces Dipping/Condiments/Savoury Toppings/Savoury Spreads/Marinades (Shelf Stable)",
+    "category_normalized": "other sauces dipping/condiments/savoury toppings/savoury spreads/marinades (shelf stable)",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Snacks",
+    "category_normalized": "other snacks",
+    "candidate": false,
+    "count": 31764,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 31764,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 31764
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Other Soups",
+    "category_normalized": "other soups",
+    "candidate": false,
+    "count": 13293,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13293,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13293
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Packaged Water",
+    "category_normalized": "packaged water",
+    "candidate": true,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 1
+    },
+    "reason_counts": {
+      "unprepared_code_requires_review": 1
+    },
+    "observed_groups": [
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Pancakes, Waffles, French Toast & Crepes",
+    "category_normalized": "pancakes, waffles, french toast & crepes",
+    "candidate": false,
+    "count": 634,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 634,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 634
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta",
+    "category_normalized": "pasta",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta - Instant Meals",
+    "category_normalized": "pasta - instant meals",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta by Shape & Type",
+    "category_normalized": "pasta by shape & type",
+    "candidate": false,
+    "count": 31089,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 31089,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 31089
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta Dinners",
+    "category_normalized": "pasta dinners",
+    "candidate": false,
+    "count": 7221,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7221,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7221
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta/Noodles",
+    "category_normalized": "pasta/noodles",
+    "candidate": false,
+    "count": 924,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 924,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 924
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pasta/Noodles - Not Ready to Eat (Frozen)",
+    "category_normalized": "pasta/noodles - not ready to eat (frozen)",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pastries/Pies/Pizzas",
+    "category_normalized": "pastries/pies/pizzas",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pastry",
+    "category_normalized": "pastry",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pastry Shells & Fillings",
+    "category_normalized": "pastry shells & fillings",
+    "candidate": false,
+    "count": 2312,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2312,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2312
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pepperoni, Salami & Cold Cuts",
+    "category_normalized": "pepperoni, salami & cold cuts",
+    "candidate": false,
+    "count": 20735,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 20735,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 20735
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Peppers",
+    "category_normalized": "peppers",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pickled Vegetables",
+    "category_normalized": "pickled vegetables",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pickles, Olives, Peppers & Relishes",
+    "category_normalized": "pickles, olives, peppers & relishes",
+    "candidate": false,
+    "count": 44203,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 44203,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 44203
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pickles, Relishes and Vinegar",
+    "category_normalized": "pickles, relishes and vinegar",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pickles/Relishes/Chutneys/Olives",
+    "category_normalized": "pickles/relishes/chutneys/olives",
+    "candidate": false,
+    "count": 520,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 520,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 520
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pies/Pastries - Sweet (Frozen)",
+    "category_normalized": "pies/pastries - sweet (frozen)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pies/Pastries - Sweet (Shelf Stable)",
+    "category_normalized": "pies/pastries - sweet (shelf stable)",
+    "candidate": false,
+    "count": 216,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 216,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 216
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pies/Pastries/Pizzas/Quiches - Savoury (Frozen)",
+    "category_normalized": "pies/pastries/pizzas/quiches - savoury (frozen)",
+    "candidate": false,
+    "count": 74,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 74,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 74
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pizza",
+    "category_normalized": "pizza",
+    "candidate": false,
+    "count": 17151,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17151,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17151
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pizza Mixes & Other Dry Dinners",
+    "category_normalized": "pizza mixes & other dry dinners",
+    "candidate": false,
+    "count": 2338,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2338,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2338
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Plant Based Milk",
+    "category_normalized": "plant based milk",
+    "candidate": true,
+    "count": 8054,
+    "decision_counts": {
+      "include": 6101,
+      "exclude": 746,
+      "review": 1207
+    },
+    "reason_counts": {
+      "product_outside_scope": 618,
+      "requires_preparation": 128,
+      "category_without_preparation_marker": 6101,
+      "ambiguous_product_description": 1207
+    },
+    "observed_groups": [
+      "Plant-based milk"
+    ]
+  },
+  {
+    "branded_food_category": "Plant Based Water",
+    "category_normalized": "plant based water",
+    "candidate": true,
+    "count": 2914,
+    "decision_counts": {
+      "include": 2876,
+      "exclude": 13,
+      "review": 25
+    },
+    "reason_counts": {
+      "product_outside_scope": 9,
+      "requires_preparation": 4,
+      "category_without_preparation_marker": 2876,
+      "ambiguous_product_description": 25
+    },
+    "observed_groups": [
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Popcorn (Shelf Stable)",
+    "category_normalized": "popcorn (shelf stable)",
+    "candidate": false,
+    "count": 13,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Popcorn, Peanuts, Seeds & Related Snacks",
+    "category_normalized": "popcorn, peanuts, seeds & related snacks",
+    "candidate": false,
+    "count": 91579,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 91579,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 91579
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pork - Prepared/Processed",
+    "category_normalized": "pork - prepared/processed",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pork - Unprepared/Unprocessed",
+    "category_normalized": "pork - unprepared/unprocessed",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pork Sausages - Prepared/Processed",
+    "category_normalized": "pork sausages - prepared/processed",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Potato - Instant Meals",
+    "category_normalized": "potato - instant meals",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Poultry, Chicken & Turkey",
+    "category_normalized": "poultry, chicken & turkey",
+    "candidate": false,
+    "count": 3082,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3082,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3082
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Powdered Drinks",
+    "category_normalized": "powdered drinks",
+    "candidate": false,
+    "count": 18532,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 18532,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 18532
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Pre-Packaged Fruit & Vegetables",
+    "category_normalized": "pre-packaged fruit & vegetables",
+    "candidate": false,
+    "count": 26161,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 26161,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 26161
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared Meals",
+    "category_normalized": "prepared meals",
+    "candidate": false,
+    "count": 51,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 51,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 51
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared Pasta & Pizza Sauces",
+    "category_normalized": "prepared pasta & pizza sauces",
+    "candidate": false,
+    "count": 16538,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 16538,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 16538
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared Soups",
+    "category_normalized": "prepared soups",
+    "candidate": false,
+    "count": 8321,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8321,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8321
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared Subs & Sandwiches",
+    "category_normalized": "prepared subs & sandwiches",
+    "candidate": false,
+    "count": 3830,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3830,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3830
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared Wraps and Burittos",
+    "category_normalized": "prepared wraps and burittos",
+    "candidate": false,
+    "count": 2355,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2355,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2355
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Prepared/Preserved Foods Variety Packs",
+    "category_normalized": "prepared/preserved foods variety packs",
+    "candidate": false,
+    "count": 530,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 530,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 530
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Processed Cereal Products",
+    "category_normalized": "processed cereal products",
+    "candidate": false,
+    "count": 12610,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 12610,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 12610
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Processed Cheese & Cheese Novelties",
+    "category_normalized": "processed cheese & cheese novelties",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Puddings & Custards",
+    "category_normalized": "puddings & custards",
+    "candidate": false,
+    "count": 5484,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5484,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5484
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Puddings and desserts",
+    "category_normalized": "puddings and desserts",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ready To Drink",
+    "category_normalized": "ready to drink",
+    "candidate": true,
+    "count": 2,
+    "decision_counts": {
+      "include": 1,
+      "exclude": 0,
+      "review": 1
+    },
+    "reason_counts": {
+      "category_without_preparation_marker": 1,
+      "unresolved_group": 1
+    },
+    "observed_groups": [
+      "Soft drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Ready-made combination meal, frozen dinner, frozen meal, or microwave meal is a pre-packaged frozen full meal.  The meal requires no preparation other than cooking and contains all the elements typically contained in a single-serving meal.  A ready-made meal (also known as a TV Dinner) must have a main component and at least one additional component such as a side item, a dessert and/or beverage. These products require cooking prior to consumption. These products must be frozen to extend their consumable life.",
+    "category_normalized": "ready-made combination meal, frozen dinner, frozen meal, or microwave meal is a pre-packaged frozen full meal. the meal requires no preparation other than cooking and contains all the elements typically contained in a single-serving meal. a ready-made meal (also known as a tv dinner) must have a main component and at least one additional component such as a side item, a dessert and/or beverage. these products require cooking prior to consumption. these products must be frozen to extend their consumable life.",
+    "candidate": true,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 0,
+      "review": 1
+    },
+    "reason_counts": {
+      "other_preparation_code": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ready-Made Combination Meals",
+    "category_normalized": "ready-made combination meals",
+    "candidate": false,
+    "count": 1099,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1099,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1099
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Ready-Made Combination Meals - Not Ready to Eat (Frozen)",
+    "category_normalized": "ready-made combination meals - not ready to eat (frozen)",
+    "candidate": false,
+    "count": 4,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Rice",
+    "category_normalized": "rice",
+    "candidate": false,
+    "count": 8730,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8730,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8730
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Rice & Grains",
+    "category_normalized": "rice & grains",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "S/O Fresh Fish Fillets/Steaks",
+    "category_normalized": "s/o fresh fish fillets/steaks",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Salad Dressing & Mayonnaise",
+    "category_normalized": "salad dressing & mayonnaise",
+    "candidate": false,
+    "count": 27505,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 27505,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 27505
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Salad Dressings",
+    "category_normalized": "salad dressings",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Salads",
+    "category_normalized": "salads",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Salami / Cured Meat",
+    "category_normalized": "salami / cured meat",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sandwiches/Filled Rolls/Wraps",
+    "category_normalized": "sandwiches/filled rolls/wraps",
+    "candidate": false,
+    "count": 2050,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2050,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2050
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sandwiches/Filled Rolls/Wraps (Frozen)",
+    "category_normalized": "sandwiches/filled rolls/wraps (frozen)",
+    "candidate": false,
+    "count": 42,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 42,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 42
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sauces",
+    "category_normalized": "sauces",
+    "candidate": false,
+    "count": 38,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 38,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 38
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sauces - Cooking (Frozen)",
+    "category_normalized": "sauces - cooking (frozen)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sauces - Cooking (Shelf Stable)",
+    "category_normalized": "sauces - cooking (shelf stable)",
+    "candidate": false,
+    "count": 48,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 48,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 48
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sauces- Cooking",
+    "category_normalized": "sauces- cooking",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sauces/Spreads/Dips/Condiments",
+    "category_normalized": "sauces/spreads/dips/condiments",
+    "candidate": false,
+    "count": 6086,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6086,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6086
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sausages, Hotdogs & Brats",
+    "category_normalized": "sausages, hotdogs & brats",
+    "candidate": false,
+    "count": 18778,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 18778,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 18778
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sausages/Smallgoods",
+    "category_normalized": "sausages/smallgoods",
+    "candidate": false,
+    "count": 21,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 21,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 21
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Savoury Bakery Products",
+    "category_normalized": "savoury bakery products",
+    "candidate": false,
+    "count": 4434,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4434,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4434
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Seafood Miscellaneous",
+    "category_normalized": "seafood miscellaneous",
+    "candidate": false,
+    "count": 38,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 38,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 38
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Seasoning Mixes, Salts, Marinades & Tenderizers",
+    "category_normalized": "seasoning mixes, salts, marinades & tenderizers",
+    "candidate": false,
+    "count": 34230,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 34230,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 34230
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Seasonings/Preservatives/Extracts Variety Packs",
+    "category_normalized": "seasonings/preservatives/extracts variety packs",
+    "candidate": false,
+    "count": 108,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 108,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 108
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Shellfish Prepared/Processed",
+    "category_normalized": "shellfish prepared/processed",
+    "candidate": false,
+    "count": 22,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 22,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 22
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Shellfish Unprepared/Unprocessed",
+    "category_normalized": "shellfish unprepared/unprocessed",
+    "candidate": false,
+    "count": 1477,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1477,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1477
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Skin Care Preparations",
+    "category_normalized": "skin care preparations",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Smoked fish",
+    "category_normalized": "smoked fish",
+    "candidate": false,
+    "count": 9,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 9,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 9
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Cereal Snacks",
+    "category_normalized": "snack foods - cereal snacks",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Chips",
+    "category_normalized": "snack foods - chips",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Corn Chips",
+    "category_normalized": "snack foods - corn chips",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Dried Fruit",
+    "category_normalized": "snack foods - dried fruit",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Multi Packs",
+    "category_normalized": "snack foods - multi packs",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Nuts",
+    "category_normalized": "snack foods - nuts",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack Foods - Other",
+    "category_normalized": "snack foods - other",
+    "candidate": false,
+    "count": 31,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 31,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 31
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snack, Energy & Granola Bars",
+    "category_normalized": "snack, energy & granola bars",
+    "candidate": false,
+    "count": 39829,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 39829,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 39829
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snacks",
+    "category_normalized": "snacks",
+    "candidate": false,
+    "count": 8769,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8769,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8769
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snacks Other",
+    "category_normalized": "snacks other",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Snacks Variety Packs",
+    "category_normalized": "snacks variety packs",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Soda",
+    "category_normalized": "soda",
+    "candidate": true,
+    "count": 32903,
+    "decision_counts": {
+      "include": 32582,
+      "exclude": 99,
+      "review": 222
+    },
+    "reason_counts": {
+      "product_outside_scope": 24,
+      "requires_preparation": 75,
+      "category_without_preparation_marker": 32582,
+      "ambiguous_product_description": 222
+    },
+    "observed_groups": [
+      "Soft drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Soups - Prepared (Shelf Stable)",
+    "category_normalized": "soups - prepared (shelf stable)",
+    "candidate": false,
+    "count": 43,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 43,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 43
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Specialty Formula Supplements",
+    "category_normalized": "specialty formula supplements",
+    "candidate": false,
+    "count": 1155,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1155,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1155
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sport Drinks",
+    "category_normalized": "sport drinks",
+    "candidate": true,
+    "count": 3321,
+    "decision_counts": {
+      "include": 3124,
+      "exclude": 149,
+      "review": 48
+    },
+    "reason_counts": {
+      "product_outside_scope": 55,
+      "requires_preparation": 94,
+      "category_without_preparation_marker": 3124,
+      "ambiguous_product_description": 48
+    },
+    "observed_groups": [
+      "Sports and energy drinks"
+    ]
+  },
+  {
+    "branded_food_category": "Sports and Weight Management",
+    "category_normalized": "sports and weight management",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Spreads",
+    "category_normalized": "spreads",
+    "candidate": false,
+    "count": 66,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 66,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 66
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Stuffing",
+    "category_normalized": "stuffing",
+    "candidate": false,
+    "count": 1477,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1477,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1477
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sugar And Flour",
+    "category_normalized": "sugar and flour",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sugar Candy/Sugar Candy Substitutes Confectionery",
+    "category_normalized": "sugar candy/sugar candy substitutes confectionery",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sugars/Sugar Substitute Products",
+    "category_normalized": "sugars/sugar substitute products",
+    "candidate": false,
+    "count": 108,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 108,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 108
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sushi",
+    "category_normalized": "sushi",
+    "candidate": false,
+    "count": 1571,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1571,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1571
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sweet Bakery Products",
+    "category_normalized": "sweet bakery products",
+    "candidate": false,
+    "count": 3460,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3460,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3460
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Sweet Spreads",
+    "category_normalized": "sweet spreads",
+    "candidate": false,
+    "count": 140,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 140,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 140
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Syrups & Molasses",
+    "category_normalized": "syrups & molasses",
+    "candidate": false,
+    "count": 8359,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8359,
+      "review": 0
+    },
+    "reason_counts": {
+      "ingredient_or_additive": 8359
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Taco Shells",
+    "category_normalized": "taco shells",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Tea - Bags, Loose Leaf, Speciality",
+    "category_normalized": "tea - bags, loose leaf, speciality",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Tea and Infusions/Tisanes",
+    "category_normalized": "tea and infusions/tisanes",
+    "candidate": false,
+    "count": 114,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 114,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 114
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Tea Bags",
+    "category_normalized": "tea bags",
+    "candidate": false,
+    "count": 6665,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6665,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_requires_preparation": 6665
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Tofu",
+    "category_normalized": "tofu",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Tomatoes",
+    "category_normalized": "tomatoes",
+    "candidate": false,
+    "count": 14510,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 14510,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 14510
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Turkey - Prepared/Processed",
+    "category_normalized": "turkey - prepared/processed",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Turkey - Unprepared/Unprocessed",
+    "category_normalized": "turkey - unprepared/unprocessed",
+    "candidate": false,
+    "count": 18,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 18,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 18
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetable & Cooking Oils",
+    "category_normalized": "vegetable & cooking oils",
+    "candidate": false,
+    "count": 18337,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 18337,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 18337
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetable and Lentil Mixes",
+    "category_normalized": "vegetable and lentil mixes",
+    "candidate": false,
+    "count": 8018,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8018,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8018
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetable Based Products / Meals",
+    "category_normalized": "vegetable based products / meals",
+    "candidate": false,
+    "count": 2446,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2446,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2446
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetable Based Products / Meals - Not Ready to Eat (Frozen)",
+    "category_normalized": "vegetable based products / meals - not ready to eat (frozen)",
+    "candidate": false,
+    "count": 227,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 227,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 227
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetable Based Products / Meals - Not Ready to Eat (Shelf Stable)",
+    "category_normalized": "vegetable based products / meals - not ready to eat (shelf stable)",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables",
+    "category_normalized": "vegetables",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables - Prepared/Processed",
+    "category_normalized": "vegetables - prepared/processed",
+    "candidate": false,
+    "count": 2699,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2699,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2699
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables - Prepared/Processed (Frozen)",
+    "category_normalized": "vegetables - prepared/processed (frozen)",
+    "candidate": false,
+    "count": 17,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 17,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 17
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables - Prepared/Processed (Shelf Stable)",
+    "category_normalized": "vegetables - prepared/processed (shelf stable)",
+    "candidate": false,
+    "count": 60,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 60,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 60
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables - Unprepared/Unprocessed (Frozen)",
+    "category_normalized": "vegetables - unprepared/unprocessed (frozen)",
+    "candidate": false,
+    "count": 11,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 11,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 11
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables - Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "vegetables - unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 13,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 13,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 13
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables  Prepared/Processed",
+    "category_normalized": "vegetables prepared/processed",
+    "candidate": false,
+    "count": 4413,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4413,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4413
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables  Unprepared/Unprocessed (Frozen)",
+    "category_normalized": "vegetables unprepared/unprocessed (frozen)",
+    "candidate": false,
+    "count": 15,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 15,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 15
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables  Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "vegetables unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 24,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 24,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 24
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables – Prepared/Processed",
+    "category_normalized": "vegetables – prepared/processed",
+    "candidate": false,
+    "count": 305,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 305,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 305
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables – Unprepared/Unprocessed (Frozen)",
+    "category_normalized": "vegetables – unprepared/unprocessed (frozen)",
+    "candidate": false,
+    "count": 2,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 2,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 2
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetables – Unprepared/Unprocessed (Shelf Stable)",
+    "category_normalized": "vegetables – unprepared/unprocessed (shelf stable)",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetarian",
+    "category_normalized": "vegetarian",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vegetarian Frozen Meats",
+    "category_normalized": "vegetarian frozen meats",
+    "candidate": false,
+    "count": 1412,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1412,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1412
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vinegars/Cooking Wines",
+    "category_normalized": "vinegars/cooking wines",
+    "candidate": false,
+    "count": 10,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 10,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 10
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vitamins",
+    "category_normalized": "vitamins",
+    "candidate": false,
+    "count": 47,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 47,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 47
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Vitamins/Minerals/Nutritional Supplements",
+    "category_normalized": "vitamins/minerals/nutritional supplements",
+    "candidate": false,
+    "count": 5,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 5,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 5
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Water",
+    "category_normalized": "water",
+    "candidate": true,
+    "count": 26274,
+    "decision_counts": {
+      "include": 26072,
+      "exclude": 60,
+      "review": 142
+    },
+    "reason_counts": {
+      "product_outside_scope": 9,
+      "requires_preparation": 51,
+      "category_without_preparation_marker": 26069,
+      "explicit_ready_to_drink": 3,
+      "ambiguous_product_description": 142
+    },
+    "observed_groups": [
+      "Water"
+    ]
+  },
+  {
+    "branded_food_category": "Weight Control",
+    "category_normalized": "weight control",
+    "candidate": false,
+    "count": 462,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 462,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 462
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Wholesome Snacks",
+    "category_normalized": "wholesome snacks",
+    "candidate": false,
+    "count": 26908,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 26908,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 26908
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Wrapped Snacks - Cereal",
+    "category_normalized": "wrapped snacks - cereal",
+    "candidate": false,
+    "count": 3,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 3,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 3
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Wrapped Snacks - Fruit Bars",
+    "category_normalized": "wrapped snacks - fruit bars",
+    "candidate": false,
+    "count": 1,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 1,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 1
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Wrapped Snacks - Muesli Bars",
+    "category_normalized": "wrapped snacks - muesli bars",
+    "candidate": false,
+    "count": 8,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 8,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 8
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Wrapped Snacks - Nut Bars",
+    "category_normalized": "wrapped snacks - nut bars",
+    "candidate": false,
+    "count": 6,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 6,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 6
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Yogurt",
+    "category_normalized": "yogurt",
+    "candidate": false,
+    "count": 36563,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 36563,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 36563
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Yogurt (Perishable)",
+    "category_normalized": "yogurt (perishable)",
+    "candidate": false,
+    "count": 54,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 54,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 54
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Yogurt/Yogurt Substitutes",
+    "category_normalized": "yogurt/yogurt substitutes",
+    "candidate": false,
+    "count": 4325,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 4325,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 4325
+    },
+    "observed_groups": []
+  },
+  {
+    "branded_food_category": "Yogurt/Yogurt Substitutes (Perishable)",
+    "category_normalized": "yogurt/yogurt substitutes (perishable)",
+    "candidate": false,
+    "count": 7,
+    "decision_counts": {
+      "include": 0,
+      "exclude": 7,
+      "review": 0
+    },
+    "reason_counts": {
+      "category_outside_scope": 7
+    },
+    "observed_groups": []
+  }
+]

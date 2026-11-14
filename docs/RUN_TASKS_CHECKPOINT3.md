@@ -8,6 +8,16 @@ cd G:\BigDATA\beverage-nutrition-bigdata
 
 Dùng tiếp `.venv`, Java 17, Spark local và raw của Checkpoint 2. Không cần ingest lại. Đợi `[PASS]` và đọc báo cáo mỗi task trước khi chạy bước tiếp theo. Runner tự bàn giao đường dẫn và hash đầu ra.
 
+Mặc định `task3.basis_mode = "csv"` trong `config/checkpoint3.json`: nguồn dinh dưỡng là CSV USDA, không đọc hoặc yêu cầu dataset JSON.
+Giữ nguyên amount đã chuẩn hóa theo 100 đơn vị; dùng đơn vị khẩu phần g/ml đã chuẩn hóa để tách 100 g/100 ml, kiểm tra khẩu phần hữu hạn và lớn hơn 0.
+Các bước kiểm tra số hợp lệ, dữ liệu thiếu, xung đột và giá trị cần rà soát vẫn được giữ. Số 0 hợp lệ không cần mốc dương từ JSON.
+Kết quả có `basis_status=documented_csv_serving_unit`, `basis_mode=csv`, `json_crosscheck_status=NOT_RUN` ở Task 3.
+Đây là xác định cơ sở đo theo tài liệu và CSV, chưa xác minh chéo với dataset JSON.
+
+Khi đổi chế độ/cấu hình, chạy Task 6 để tạo một chuỗi mới; hoặc bắt đầu lại Task 1 rồi tiếp tục các task tay.
+Sau khi cập nhật JSON, đổi `basis_mode` thành `"json_crosscheck"`, cập nhật `basis_reference_zip` và `basis_reference_sha256`, rồi chạy lại Task 6.
+Cấu hình lịch sử không có `basis_mode` tiếp tục dùng quy tắc JSON cũ để tránh thay đổi ý nghĩa của lần chạy đã lưu.
+
 ## Cấu trúc kết quả
 
 ```text
@@ -72,7 +82,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\RUN_CHECKPOINT3.ps1 -Task 
 
 - Báo cáo: `task03_nutrients/runs/<run_id>/nutrient_report.md`.
 - Chi tiết: `nutrient_result.json`, `amount_quality.json`, `preview.json` và các preview rà soát.
-- CSV ở nhánh artifacts cùng task/run: `nutrients_classified.csv`, `nutrients_clean.csv`, `nutrients_quarantine.csv`, `nutrients_value_review.csv`, `label_reference.csv`.
+- CSV ở nhánh artifacts cùng task/run: `nutrients_classified.csv`, `nutrients_clean.csv`, `nutrients_quarantine.csv`, `nutrients_value_review.csv`. `label_reference.csv` chỉ được tạo khi bật `json_crosscheck`.
 
 Kết quả cần thấy: PASS; phân biệt dữ liệu sạch/cần rà soát/xung đột, cơ sở đo và điều kiện so sánh. Số 0 hợp lệ được giữ; giá trị thiếu không thay thành 0.
 

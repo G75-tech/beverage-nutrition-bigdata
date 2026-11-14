@@ -1,0 +1,432 @@
+{
+  "status": "FAIL",
+  "run_id": "pipeline_20261113T233912583090Z_0da7de",
+  "started_at_utc": "2026-11-13T23:39:15.163331Z",
+  "read_options": {
+    "header": "true",
+    "enforceSchema": "false",
+    "mode": "FAILFAST",
+    "multiLine": "true",
+    "quote": "\"",
+    "escape": "\"",
+    "encoding": "UTF-8"
+  },
+  "check_scope": [
+    "raw file size and SHA-256 before and after scan",
+    "full Spark CSV scan with declared types",
+    "row count and null keys"
+  ],
+  "deferred_checks": [
+    "primary key uniqueness",
+    "foreign key matching",
+    "nutrition values and measurement basis",
+    "business filtering"
+  ],
+  "tables": [
+    {
+      "file_name": "branded_food.csv",
+      "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/branded_food.csv",
+      "size_bytes": 954002257,
+      "sha256": "36195ac3a901e9900742fdb3ae812fb0837c12d6daaf4f0997b53f20a825d59e",
+      "format": "CSV",
+      "grain": "One branded food record per fdc_id",
+      "primary_key": [
+        "fdc_id"
+      ],
+      "join_keys": [
+        "fdc_id"
+      ],
+      "checked_keys": [
+        "fdc_id"
+      ],
+      "primary_key_uniqueness_checked": false,
+      "schema_declaration": {
+        "columns": [
+          "fdc_id",
+          "brand_owner",
+          "brand_name",
+          "subbrand_name",
+          "gtin_upc",
+          "ingredients",
+          "not_a_significant_source_of",
+          "serving_size",
+          "serving_size_unit",
+          "household_serving_fulltext",
+          "branded_food_category",
+          "data_source",
+          "package_weight",
+          "modified_date",
+          "available_date",
+          "market_country",
+          "discontinued_date",
+          "preparation_state_code",
+          "trade_channel",
+          "short_description",
+          "material_code"
+        ],
+        "types": {
+          "fdc_id": "long",
+          "serving_size": "double"
+        },
+        "required_values": [
+          "fdc_id"
+        ]
+      },
+      "schema": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "fdc_id",
+            "type": "long",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "brand_owner",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "brand_name",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "subbrand_name",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "gtin_upc",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "ingredients",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "not_a_significant_source_of",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "serving_size",
+            "type": "double",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "serving_size_unit",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "household_serving_fulltext",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "branded_food_category",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "data_source",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "package_weight",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "modified_date",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "available_date",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "market_country",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "discontinued_date",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "preparation_state_code",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "trade_channel",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "short_description",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "material_code",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          }
+        ]
+      },
+      "schema_tree": "root\n |-- fdc_id: long (nullable = true)\n |-- brand_owner: string (nullable = true)\n |-- brand_name: string (nullable = true)\n |-- subbrand_name: string (nullable = true)\n |-- gtin_upc: string (nullable = true)\n |-- ingredients: string (nullable = true)\n |-- not_a_significant_source_of: string (nullable = true)\n |-- serving_size: double (nullable = true)\n |-- serving_size_unit: string (nullable = true)\n |-- household_serving_fulltext: string (nullable = true)\n |-- branded_food_category: string (nullable = true)\n |-- data_source: string (nullable = true)\n |-- package_weight: string (nullable = true)\n |-- modified_date: string (nullable = true)\n |-- available_date: string (nullable = true)\n |-- market_country: string (nullable = true)\n |-- discontinued_date: string (nullable = true)\n |-- preparation_state_code: string (nullable = true)\n |-- trade_channel: string (nullable = true)\n |-- short_description: string (nullable = true)\n |-- material_code: string (nullable = true)\n",
+      "partitions_observed": 1,
+      "row_count": 1999950,
+      "null_counts": {
+        "fdc_id": 0,
+        "brand_owner": 19737,
+        "brand_name": 544426,
+        "subbrand_name": 1893505,
+        "gtin_upc": 0,
+        "ingredients": 5368,
+        "not_a_significant_source_of": 1920411,
+        "serving_size": 10755,
+        "serving_size_unit": 18992,
+        "household_serving_fulltext": 40765,
+        "branded_food_category": 10630,
+        "data_source": 0,
+        "package_weight": 1135504,
+        "modified_date": 2526,
+        "available_date": 0,
+        "market_country": 0,
+        "discontinued_date": 1996248,
+        "preparation_state_code": 1896498,
+        "trade_channel": 1960536,
+        "short_description": 1896408,
+        "material_code": 1998627
+      },
+      "null_key_counts": {
+        "fdc_id": 0
+      },
+      "elapsed_seconds": 6.546
+    },
+    {
+      "file_name": "food.csv",
+      "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food.csv",
+      "size_bytes": 375881194,
+      "sha256": "7a93b9b348bd9b8e2b52f93feecd831a8f6527d7ab197b75b374bec246fb5868",
+      "format": "CSV",
+      "grain": "One food record per fdc_id",
+      "primary_key": [
+        "fdc_id"
+      ],
+      "join_keys": [
+        "fdc_id"
+      ],
+      "checked_keys": [
+        "fdc_id"
+      ],
+      "primary_key_uniqueness_checked": false,
+      "schema_declaration": {
+        "columns": [
+          "fdc_id",
+          "data_type",
+          "description",
+          "food_category_id",
+          "publication_date",
+          "market_country",
+          "trade_channel",
+          "microbe_data"
+        ],
+        "types": {
+          "fdc_id": "long",
+          "food_category_id": "long"
+        },
+        "required_values": [
+          "fdc_id"
+        ]
+      },
+      "schema": {
+        "type": "struct",
+        "fields": [
+          {
+            "name": "fdc_id",
+            "type": "long",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "data_type",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "food_category_id",
+            "type": "long",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "publication_date",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "market_country",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "trade_channel",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          },
+          {
+            "name": "microbe_data",
+            "type": "string",
+            "nullable": true,
+            "metadata": {}
+          }
+        ]
+      },
+      "schema_tree": "root\n |-- fdc_id: long (nullable = true)\n |-- data_type: string (nullable = true)\n |-- description: string (nullable = true)\n |-- food_category_id: long (nullable = true)\n |-- publication_date: string (nullable = true)\n |-- market_country: string (nullable = true)\n |-- trade_channel: string (nullable = true)\n |-- microbe_data: string (nullable = true)\n",
+      "partitions_observed": 1
+    },
+    {
+      "file_name": "food_nutrient.csv",
+      "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food_nutrient.csv",
+      "size_bytes": 1496063311,
+      "sha256": "39ee9145992ba65839b0c5cb8aff605b6af2f9aca8f3b431d2ddee53f582a34c",
+      "format": "CSV",
+      "grain": "One nutrient-value record per id; a food can have multiple nutrient records",
+      "primary_key": [
+        "id"
+      ],
+      "join_keys": [
+        "fdc_id",
+        "nutrient_id"
+      ],
+      "checked_keys": [
+        "id",
+        "fdc_id",
+        "nutrient_id"
+      ],
+      "primary_key_uniqueness_checked": false,
+      "schema_declaration": {
+        "columns": [
+          "id",
+          "fdc_id",
+          "nutrient_id",
+          "amount",
+          "data_points",
+          "derivation_id",
+          "min",
+          "max",
+          "median",
+          "footnote",
+          "min_year_acquired"
+        ],
+        "types": {
+          "id": "long",
+          "fdc_id": "long",
+          "nutrient_id": "long",
+          "amount": "double",
+          "data_points": "long",
+          "derivation_id": "long",
+          "min": "double",
+          "max": "double",
+          "median": "double",
+          "min_year_acquired": "long"
+        },
+        "required_values": [
+          "id",
+          "fdc_id",
+          "nutrient_id"
+        ]
+      }
+    },
+    {
+      "file_name": "nutrient.csv",
+      "raw_path": "data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv",
+      "size_bytes": 21556,
+      "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff",
+      "format": "CSV",
+      "grain": "One nutrient definition per id",
+      "primary_key": [
+        "id"
+      ],
+      "join_keys": [
+        "id"
+      ],
+      "checked_keys": [
+        "id"
+      ],
+      "primary_key_uniqueness_checked": false,
+      "schema_declaration": {
+        "columns": [
+          "id",
+          "name",
+          "unit_name",
+          "nutrient_nbr",
+          "rank"
+        ],
+        "types": {
+          "id": "long",
+          "rank": "double"
+        },
+        "required_values": [
+          "id"
+        ]
+      }
+    }
+  ],
+  "source": "USDA FoodData Central Branded Foods",
+  "release": "2026-04-30",
+  "dataset": "usda_branded_2026_04",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "manifest_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\metadata\\manifests\\ingestion.jsonl",
+  "environment": {
+    "python": "3.11.17",
+    "spark": "3.5.9",
+    "java": "17.0.20.1",
+    "master": "local[*]",
+    "csv_parser_column_pruning": false
+  },
+  "error": "An error occurred while calling o366.collectToPython.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 3.0 failed 1 times, most recent failure: Lost task 0.0 in stage 3.0 (TID 2) (removeallblocksite.SW executor driver): com.univocity.parsers.common.TextParsingException: org.apache.hadoop.fs.FSError - java.io.IOException: The process cannot access the file because another process has locked a portion of the file\nParser Configuration: CsvParserSettings:\n\tAuto configuration enabled=true\n\tAuto-closing enabled=true\n\tAutodetect column delimiter=false\n\tAutodetect quotes=false\n\tColumn reordering enabled=true\n\tDelimiters for detection=null\n\tEmpty value=\n\tEscape unquoted values=false\n\tHeader extraction enabled=null\n\tHeaders=null\n\tIgnore leading whitespaces=false\n\tIgnore leading whitespaces in quotes=false\n\tIgnore trailing whitespaces=false\n\tIgnore trailing whitespaces in quotes=false\n\tInput buffer size=1048576\n\tInput reading on separate thread=false\n\tKeep escape sequences=false\n\tKeep quotes=false\n\tLength of content displayed on error=1000\n\tLine separator detection enabled=true\n\tMaximum number of characters per column=-1\n\tMaximum number of columns=20480\n\tNormalize escaped line separators=true\n\tNull value=\n\tNumber of records to read=all\n\tProcessor=none\n\tRestricting data in exceptions=false\n\tRowProcessor error handler=null\n\tSelected fields=none\n\tSkip bits as whitespace=true\n\tSkip empty lines=true\n\tUnescaped quote handling=STOP_AT_DELIMITERFormat configuration:\n\tCsvFormat:\n\t\tComment character=#\n\t\tField delimiter=,\n\t\tLine separator (normalized)=\\n\n\t\tLine separator sequence=\\r\\n\n\t\tQuote character=\"\n\t\tQuote escape character=\"\n\t\tQuote escape escape character=null\nInternal state when error was thrown: line=0, column=0, record=0\r\n\tat com.univocity.parsers.common.AbstractParser.handleException(AbstractParser.java:402)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:277)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:843)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$$anon$1.<init>(UnivocityParser.scala:419)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$.convertStream(UnivocityParser.scala:418)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$.parseStream(UnivocityParser.scala:408)\r\n\tat org.apache.spark.sql.execution.datasources.csv.MultiLineCSVDataSource$.readFile(CSVDataSource.scala:184)\r\n\tat org.apache.spark.sql.execution.datasources.csv.CSVFileFormat.$anonfun$buildReader$2(CSVFileFormat.scala:137)\r\n\tat org.apache.spark.sql.execution.datasources.FileFormat$$anon$1.apply(FileFormat.scala:155)\r\n\tat org.apache.spark.sql.execution.datasources.FileFormat$$anon$1.apply(FileFormat.scala:140)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:219)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:282)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:131)\r\n\tat scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.hashAgg_doAggregateWithoutKey_0$(Unknown Source)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)\r\n\tat org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\r\n\tat org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)\r\n\tat scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)\r\n\tat org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)\r\n\tat org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)\r\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:104)\r\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)\r\n\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:141)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)\r\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)\r\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)\r\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\r\n\tat java.base/java.lang.Thread.run(Thread.java:840)\r\nCaused by: org.apache.hadoop.fs.FSError: java.io.IOException: The process cannot access the file because another process has locked a portion of the file\r\n\tat org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileInputStream.read(RawLocalFileSystem.java:211)\r\n\tat java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)\r\n\tat java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)\r\n\tat java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)\r\n\tat java.base/java.io.DataInputStream.read(DataInputStream.java:151)\r\n\tat org.apache.hadoop.fs.FSInputChecker.readFully(FSInputChecker.java:460)\r\n\tat org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSInputChecker.readChunk(ChecksumFileSystem.java:272)\r\n\tat org.apache.hadoop.fs.FSInputChecker.readChecksumChunk(FSInputChecker.java:300)\r\n\tat org.apache.hadoop.fs.FSInputChecker.read1(FSInputChecker.java:252)\r\n\tat org.apache.hadoop.fs.FSInputChecker.read(FSInputChecker.java:197)\r\n\tat java.base/java.io.DataInputStream.read(DataInputStream.java:151)\r\n\tat java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:287)\r\n\tat java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:330)\r\n\tat java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:190)\r\n\tat java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)\r\n\tat com.univocity.parsers.common.input.DefaultCharInputReader.reloadBuffer(DefaultCharInputReader.java:82)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.updateBuffer(AbstractCharInputReader.java:203)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.start(AbstractCharInputReader.java:179)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.start(AbstractCharInputReader.java:189)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:275)\r\n\t... 31 more\r\nCaused by: java.io.IOException: The process cannot access the file because another process has locked a portion of the file\r\n\tat java.base/java.io.FileInputStream.readBytes(Native Method)\r\n\tat java.base/java.io.FileInputStream.read(FileInputStream.java:276)\r\n\tat org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileInputStream.read(RawLocalFileSystem.java:202)\r\n\t... 50 more\r\n\nDriver stacktrace:\r\n\tat org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)\r\n\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)\r\n\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)\r\n\tat scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)\r\n\tat scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)\r\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)\r\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)\r\n\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)\r\n\tat org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)\r\n\tat scala.Option.foreach(Option.scala:407)\r\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)\r\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)\r\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)\r\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)\r\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)\r\nCaused by: com.univocity.parsers.common.TextParsingException: org.apache.hadoop.fs.FSError - java.io.IOException: The process cannot access the file because another process has locked a portion of the file\nParser Configuration: CsvParserSettings:\n\tAuto configuration enabled=true\n\tAuto-closing enabled=true\n\tAutodetect column delimiter=false\n\tAutodetect quotes=false\n\tColumn reordering enabled=true\n\tDelimiters for detection=null\n\tEmpty value=\n\tEscape unquoted values=false\n\tHeader extraction enabled=null\n\tHeaders=null\n\tIgnore leading whitespaces=false\n\tIgnore leading whitespaces in quotes=false\n\tIgnore trailing whitespaces=false\n\tIgnore trailing whitespaces in quotes=false\n\tInput buffer size=1048576\n\tInput reading on separate thread=false\n\tKeep escape sequences=false\n\tKeep quotes=false\n\tLength of content displayed on error=1000\n\tLine separator detection enabled=true\n\tMaximum number of characters per column=-1\n\tMaximum number of columns=20480\n\tNormalize escaped line separators=true\n\tNull value=\n\tNumber of records to read=all\n\tProcessor=none\n\tRestricting data in exceptions=false\n\tRowProcessor error handler=null\n\tSelected fields=none\n\tSkip bits as whitespace=true\n\tSkip empty lines=true\n\tUnescaped quote handling=STOP_AT_DELIMITERFormat configuration:\n\tCsvFormat:\n\t\tComment character=#\n\t\tField delimiter=,\n\t\tLine separator (normalized)=\\n\n\t\tLine separator sequence=\\r\\n\n\t\tQuote character=\"\n\t\tQuote escape character=\"\n\t\tQuote escape escape character=null\nInternal state when error was thrown: line=0, column=0, record=0\r\n\tat com.univocity.parsers.common.AbstractParser.handleException(AbstractParser.java:402)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:277)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:843)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$$anon$1.<init>(UnivocityParser.scala:419)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$.convertStream(UnivocityParser.scala:418)\r\n\tat org.apache.spark.sql.catalyst.csv.UnivocityParser$.parseStream(UnivocityParser.scala:408)\r\n\tat org.apache.spark.sql.execution.datasources.csv.MultiLineCSVDataSource$.readFile(CSVDataSource.scala:184)\r\n\tat org.apache.spark.sql.execution.datasources.csv.CSVFileFormat.$anonfun$buildReader$2(CSVFileFormat.scala:137)\r\n\tat org.apache.spark.sql.execution.datasources.FileFormat$$anon$1.apply(FileFormat.scala:155)\r\n\tat org.apache.spark.sql.execution.datasources.FileFormat$$anon$1.apply(FileFormat.scala:140)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.org$apache$spark$sql$execution$datasources$FileScanRDD$$anon$$readCurrentFile(FileScanRDD.scala:219)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.nextIterator(FileScanRDD.scala:282)\r\n\tat org.apache.spark.sql.execution.datasources.FileScanRDD$$anon$1.hasNext(FileScanRDD.scala:131)\r\n\tat scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.hashAgg_doAggregateWithoutKey_0$(Unknown Source)\r\n\tat org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown Source)\r\n\tat org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)\r\n\tat org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNext(WholeStageCodegenEvaluatorFactory.scala:43)\r\n\tat scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)\r\n\tat org.apache.spark.shuffle.sort.BypassMergeSortShuffleWriter.write(BypassMergeSortShuffleWriter.java:140)\r\n\tat org.apache.spark.shuffle.ShuffleWriteProcessor.write(ShuffleWriteProcessor.scala:59)\r\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:104)\r\n\tat org.apache.spark.scheduler.ShuffleMapTask.runTask(ShuffleMapTask.scala:54)\r\n\tat org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)\r\n\tat org.apache.spark.scheduler.Task.run(Task.scala:141)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)\r\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)\r\n\tat org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)\r\n\tat org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)\r\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)\r\n\tat java.base/java.lang.Thread.run(Thread.java:840)\r\nCaused by: org.apache.hadoop.fs.FSError: java.io.IOException: The process cannot access the file because another process has locked a portion of the file\r\n\tat org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileInputStream.read(RawLocalFileSystem.java:211)\r\n\tat java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)\r\n\tat java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)\r\n\tat java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)\r\n\tat java.base/java.io.DataInputStream.read(DataInputStream.java:151)\r\n\tat org.apache.hadoop.fs.FSInputChecker.readFully(FSInputChecker.java:460)\r\n\tat org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSInputChecker.readChunk(ChecksumFileSystem.java:272)\r\n\tat org.apache.hadoop.fs.FSInputChecker.readChecksumChunk(FSInputChecker.java:300)\r\n\tat org.apache.hadoop.fs.FSInputChecker.read1(FSInputChecker.java:252)\r\n\tat org.apache.hadoop.fs.FSInputChecker.read(FSInputChecker.java:197)\r\n\tat java.base/java.io.DataInputStream.read(DataInputStream.java:151)\r\n\tat java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:287)\r\n\tat java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:330)\r\n\tat java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:190)\r\n\tat java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)\r\n\tat com.univocity.parsers.common.input.DefaultCharInputReader.reloadBuffer(DefaultCharInputReader.java:82)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.updateBuffer(AbstractCharInputReader.java:203)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.start(AbstractCharInputReader.java:179)\r\n\tat com.univocity.parsers.common.input.AbstractCharInputReader.start(AbstractCharInputReader.java:189)\r\n\tat com.univocity.parsers.common.AbstractParser.beginParsing(AbstractParser.java:275)\r\n\t... 31 more\r\nCaused by: java.io.IOException: The process cannot access the file because another process has locked a portion of the file\r\n\tat java.base/java.io.FileInputStream.readBytes(Native Method)\r\n\tat java.base/java.io.FileInputStream.read(FileInputStream.java:276)\r\n\tat org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileInputStream.read(RawLocalFileSystem.java:202)\r\n\t... 50 more\r\n",
+  "finished_at_utc": "2026-11-13T23:39:27.566137Z",
+  "elapsed_seconds": 12.39
+}

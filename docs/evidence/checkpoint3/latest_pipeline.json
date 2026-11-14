@@ -1,17 +1,17 @@
 {
   "status": "READY_FOR_TASK7",
   "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
-  "pipeline_result_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261113T154538688059Z_b15d77/pipeline_result.json",
-  "pipeline_result_sha256": "e210c78b3a652bf7122306b9ae4b16e4e06efdf7e714163fd2f6f0c13bbeeea5",
-  "baseline_report_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261113T154538688059Z_b15d77/baseline.md",
+  "pipeline_result_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261114T000129685710Z_fc0ef0/pipeline_result.json",
+  "pipeline_result_sha256": "4a423b36d9aa402a39d1c42a7b8ba22d9dfb435bfbc54a9a3258c24d40db44fb",
+  "baseline_report_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261114T000129685710Z_fc0ef0/baseline.md",
   "kpi_output": {
-    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/nutrition_kpis.csv",
-    "sha256": "ad77394b5de8f4682a64d4c735b29f0229b60609d943529afec59b5d6f479954",
-    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/nutrition_kpis_schema.json",
+    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/nutrition_kpis.csv",
+    "sha256": "5749c6828ab36306772b47b9de78355cf3f615af4be39eedacd53e629fe312f8",
+    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/nutrition_kpis_schema.json",
     "schema_sha256": "63d791447401779217eb130045310947f1c89ead9a9b6239e466dc32b7ae26e8",
     "row_count": 80,
     "column_count": 17,
-    "size_bytes": 9638,
+    "size_bytes": 9774,
     "readback_metrics": {
       "row_count": 80,
       "null_counts": {
@@ -44,13 +44,13 @@
     "write_mode": "new directory per run"
   },
   "coverage_output": {
-    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_coverage.csv",
-    "sha256": "35392c6ad39d2e830c4b862f19eb2a89d9c8be0b47c74fbc20ef3fc3030a9df7",
-    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_coverage_schema.json",
+    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/kpi_coverage.csv",
+    "sha256": "8e2c8f4157a6c35dacc30b1ab3afc41dccebcdcded5faa48e4b1eca3d71a11f3",
+    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/kpi_coverage_schema.json",
     "schema_sha256": "5bf3707ac7ebf559f3a414a2a8f2b23b45249f3a366970d007986f024f140f1b",
     "row_count": 40,
     "column_count": 19,
-    "size_bytes": 4624,
+    "size_bytes": 4647,
     "readback_metrics": {
       "row_count": 40,
       "null_counts": {
@@ -83,13 +83,13 @@
     "write_mode": "new directory per run"
   },
   "joined_output": {
-    "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients.csv",
-    "sha256": "d514275fcdf623f5b5818112eae9a4f9eba74912b10d82eb3dbdaf4cad17d14f",
-    "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261113T154538688059Z_b15d77/beverage_nutrients_schema.json",
-    "schema_sha256": "8e1e6fa576e9ced55765392414b726b9284bf898c8a6cd9ab729338babac96e0",
+    "path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261114T000129685710Z_fc0ef0/beverage_nutrients.csv",
+    "sha256": "5d2b826d1d0fbc413c0ca0c6de9277a51d23f989e80dd5d8e5a913cef9e9bbdc",
+    "schema_path": "artifacts/checkpoint3/task04_join/runs/pipeline_20261114T000129685710Z_fc0ef0/beverage_nutrients_schema.json",
+    "schema_sha256": "f79f908d7d99cffc7b04a9cba56aeac3b9e0a150b2fdca92a4a7cbd22e69c7ce",
     "row_count": 760690,
-    "column_count": 46,
-    "size_bytes": 277695171,
+    "column_count": 39,
+    "size_bytes": 272936465,
     "readback_metrics": {
       "row_count": 760690,
       "null_counts": {
@@ -123,16 +123,9 @@
         "food_nutrient_id": 62165,
         "amount": 62165,
         "amount_status": 0,
-        "json_amount": 592590,
-        "label_amount": 592590,
-        "json_serving_size": 592590,
-        "json_serving_unit": 594025,
-        "record_reference_status": 592590,
-        "scale_checks": 592590,
-        "scale_mismatches": 592590,
         "basis_status": 0,
         "measurement_basis_candidate": 68481,
-        "measurement_basis": 616156,
+        "measurement_basis": 68481,
         "value_review_limit": 62165,
         "value_review_required": 0,
         "value_review_reason": 0,
@@ -155,14 +148,14 @@
     "joined_slots": 760690,
     "missing_source_slots": 62165,
     "value_review_records": 2074,
-    "eligible_nutrient_records": 144482,
+    "eligible_nutrient_records": 690137,
     "kpi_rows": 80,
     "coverage_rows": 40,
     "independent_kpi_repeat": "PASS"
   },
   "scope": "Prepare checkpoint report, evidence, pitch and exit ticket",
-  "run_id": "pipeline_20261113T154538688059Z_b15d77",
-  "elapsed_seconds": 396.752,
-  "run_config_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261113T154538688059Z_b15d77/run_config.json",
-  "handoff_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261113T154538688059Z_b15d77/task7_input.json"
+  "run_id": "pipeline_20261114T000129685710Z_fc0ef0",
+  "elapsed_seconds": 408.808,
+  "run_config_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261114T000129685710Z_fc0ef0/run_config.json",
+  "handoff_path": "docs/evidence/checkpoint3/task06_pipeline/runs/pipeline_20261114T000129685710Z_fc0ef0/task7_input.json"
 }

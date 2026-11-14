@@ -1,13 +1,13 @@
 {
   "task": "task3",
-  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "run_id": "pipeline_20261114T000129685710Z_fc0ef0",
   "status": "PASS",
   "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
-  "result_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrient_result.json",
-  "result_sha256": "6bb617603c59bc5ea460bb6169c6bb6d6c86b47ae15c0f7ac6dfcd3de1ce6bfd",
-  "report_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/nutrient_report.md",
-  "evidence_dir": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77",
-  "artifacts_dir": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77",
-  "console_log_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
-  "finished_at_utc": "2026-11-13T15:49:48.414873Z"
+  "result_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261114T000129685710Z_fc0ef0/nutrient_result.json",
+  "result_sha256": "790d2f30a24cf007e81e18055ab2ae8a6fb29cde4bda30a8bcf919d8312c4529",
+  "report_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261114T000129685710Z_fc0ef0/nutrient_report.md",
+  "evidence_dir": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261114T000129685710Z_fc0ef0",
+  "artifacts_dir": "artifacts/checkpoint3/task03_nutrients/runs/pipeline_20261114T000129685710Z_fc0ef0",
+  "console_log_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261114T000129685710Z_fc0ef0/console.log",
+  "finished_at_utc": "2026-11-14T00:05:30.108580Z"
 }

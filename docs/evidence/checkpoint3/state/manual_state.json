@@ -102,13 +102,17 @@
   },
   "completed": {
     "task1": {
-      "result_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T154237605267Z_2ea579/input_contract.json",
-      "result_sha256": "380b52c7bf1655e87fd58624360a5af7fb308a0d6ce8f0d90fe7bc2d28de30b6"
+      "result_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T224647435512Z_fef66c/input_contract.json",
+      "result_sha256": "3d062dbfb659496395623050748c3880ec84b29882408d7a25c5ea4f7b012693"
     },
     "task2": {
-      "result_path": "docs/evidence/checkpoint3/task02_beverages/runs/manual_20261113T154330548356Z_7a4457/filter_result.json",
-      "result_sha256": "caf5f3ce65fed61deee2c6749594a3d825dfaa847556e2a08d8eb0bc9ae5f1ab"
+      "result_path": "docs/evidence/checkpoint3/task02_beverages/runs/manual_20261113T225451589226Z_762b09/filter_result.json",
+      "result_sha256": "55f788f4786c112f8e28cf1282d5d9762fb4447471f11415551fb28de8fcb233"
+    },
+    "task3": {
+      "result_path": "docs/evidence/checkpoint3/task03_nutrients/runs/manual_20261113T225918998579Z_296e45/nutrient_result.json",
+      "result_sha256": "4a299da6eb0b09b46bef97a4e76b677f5b9b8c2d5ed4e6ff0eab265ad3f0e869"
     }
   },
-  "updated_at_utc": "2026-11-13T15:45:15.838423Z"
+  "updated_at_utc": "2026-11-13T23:04:13.572776Z"
 }

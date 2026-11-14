@@ -1,0 +1,45 @@
+# Kiểm tra dữ liệu dinh dưỡng Checkpoint 3 Task 3
+
+Trạng thái PASS. Snapshot `run_20261024T005433432881Z_3ba489_1`.
+
+Một khóa kết quả là (fdc_id, nutrient_id). Giá trị thiếu giữ null. Giá trị 0 hợp lệ được giữ.
+Trạng thái amount valid xác nhận kiểu số hữu hạn và không âm. Giá trị lớn được gắn cờ riêng để xem xét.
+Ưu tiên giá trị hợp lệ hơn giá trị thiếu và chọn id nhỏ nhất khi giá trị không xung đột.
+Nhiều giá trị hợp lệ khác nhau trong cùng khóa được đưa toàn bộ vào quarantine.
+
+| Chất dinh dưỡng | Hồ sơ đồ uống | Có giá trị hợp lệ | Amount thiếu | Không có record | Xung đột | Chỉ có record lỗi |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Total Sugars | 152138 | 132165 | 0 | 19973 | 0 | 0 |
+| Energy | 152138 | 142795 | 0 | 9343 | 0 | 0 |
+| Sodium, Na | 152138 | 141600 | 0 | 10538 | 0 | 0 |
+| Protein | 152138 | 143050 | 0 | 9088 | 0 | 0 |
+| Total lipid (fat) | 152138 | 138915 | 0 | 13223 | 0 | 0 |
+
+Record dinh dưỡng đủ điều kiện so sánh 144482.
+
+| Trạng thái cơ sở đo | Số record dinh dưỡng |
+| --- | ---: |
+| corroborated_export_label_scaling | 144534 |
+| json_record_unavailable | 530425 |
+| no_positive_scaling_anchor | 22131 |
+| unrecognized_serving_unit | 1435 |
+
+Cơ sở đo được kiểm tra nhất quán với labelNutrients và khẩu phần trong ZIP JSON cùng release.
+Ngưỡng CSV/JSON và phép tính từ khẩu phần dùng sai số tương đối 1% hoặc tuyệt đối 0,005 đơn vị.
+Chỉ gắn measurement_basis khi có ít nhất một giá trị dương kiểm tra được, mọi anchor khớp ngưỡng,
+và unit/serving/amount của record hiện tại khớp giữa CSV và JSON. Zero-only không tạo anchor.
+Đây là kiểm tra tính nhất quán giữa các trường của bản xuất USDA. Các trường hợp chưa đủ bằng chứng giữ basis_status riêng.
+Dữ liệu dùng để so sánh cần eligible_for_comparison=true và cùng measurement_basis.
+Các ngưỡng giá trị lớn là quy tắc sàng lọc để rà soát, được lưu trong config và evidence; dữ liệu nguồn được giữ.
+
+Nguồn https://fdc.nal.usda.gov/GBFPD_Documentation/
+
+clean_output `artifacts/checkpoint3/task03_nutrients/runs/manual_20261113T225918998579Z_296e45/nutrients_clean.csv`, 698525 dòng.
+
+quarantine_output `artifacts/checkpoint3/task03_nutrients/runs/manual_20261113T225918998579Z_296e45/nutrients_quarantine.csv`, 0 dòng.
+
+value_review_output `artifacts/checkpoint3/task03_nutrients/runs/manual_20261113T225918998579Z_296e45/nutrients_value_review.csv`, 2074 dòng.
+
+classified_output `artifacts/checkpoint3/task03_nutrients/runs/manual_20261113T225918998579Z_296e45/nutrients_classified.csv`, 698525 dòng.
+
+Runtime riêng Task 3 294.418 giây.

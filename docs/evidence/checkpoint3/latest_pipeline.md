@@ -1,7 +1,7 @@
 # Baseline Checkpoint 3 toàn pipeline
 
 Trạng thái: PASS.
-Pipeline run: `pipeline_20261113T154538688059Z_b15d77`.
+Pipeline run: `pipeline_20261114T000129685710Z_fc0ef0`.
 Snapshot raw: `run_20261024T005433432881Z_3ba489_1`.
 
 Phạm vi: Task 1 → 2 → 3 → 4 → 5, sau đó chạy KPI độc lập lần hai để đối chiếu.
@@ -10,21 +10,22 @@ Mỗi stage có cấu hình bàn giao mới trong run_config.json và một ti�
 Thời gian bao gồm khởi động/dừng Spark, hash dữ liệu, kiểm tra chất lượng, ghi/đọc lại CSV và thu thập kế hoạch thực thi.
 Đây là một lượt đo trên máy local; cache hệ điều hành không được ép về trạng thái lạnh.
 
-CSV raw logic: 2825968318 byte; ZIP JSON tham chiếu: 204270542 byte.
+Chế độ cơ sở đo: csv; dùng dataset JSON: False.
+CSV raw logic: 2825968318 byte; ZIP JSON được dùng: 0 byte.
 Dung lượng logic tính mỗi tệp một lần; lượng I/O thực tế có thể lớn hơn do kiểm tra và đọc lại.
 
 | Stage | Wall time (s) | Runtime bên trong (s) | Partition quan sát |
 | --- | ---: | ---: | --- |
-| task1 | 36.011 | 35.902 | branded_food=1, food=1, food_nutrient=1, nutrient=1 |
-| task2 | 91.568 | 91.452 | beverage_filter=13 |
-| task3 | 118.943 | 118.828 | nutrient_scope=1, nutrition_clean=13 |
-| task4 | 93.715 | 93.603 | beverage_nutrient_join=200 |
-| task5 | 25.069 | 24.927 | nutrition_kpis=1 |
-| task5_repeat | 25.055 | 24.918 | nutrition_kpis=1 |
+| task1 | 30.927 | 30.827 | branded_food=1, food=1, food_nutrient=1, nutrient=1 |
+| task2 | 108.95 | 108.799 | beverage_filter=13 |
+| task3 | 97.982 | 97.83 | nutrient_scope=1, nutrition_clean=13 |
+| task4 | 107.196 | 107.049 | beverage_nutrient_join=200 |
+| task5 | 29.051 | 28.884 | nutrition_kpis=1 |
+| task5_repeat | 29.01 | 28.862 | nutrition_kpis=1 |
 
-Tổng wall time trình điều phối: 396.752 giây.
-Tổng thời gian các tiến trình stage: 390.361 giây.
-Phần xác minh/điều phối còn lại: 6.391 giây.
+Tổng wall time trình điều phối: 408.808 giây.
+Tổng thời gian các tiến trình stage: 403.116 giây.
+Phần xác minh/điều phối còn lại: 5.692 giây.
 
 ## Kết quả kiểm tra
 
@@ -34,7 +35,7 @@ Phần xác minh/điều phối còn lại: 6.391 giây.
 - joined_slots: 760690
 - missing_source_slots: 62165
 - value_review_records: 2074
-- eligible_nutrient_records: 144482
+- eligible_nutrient_records: 690137
 - kpi_rows: 80
 - coverage_rows: 40
 - independent_kpi_repeat: PASS

@@ -1,0 +1,303 @@
+{
+  "status": "PASS",
+  "run_id": "pipeline_20261114T000129685710Z_fc0ef0",
+  "started_at_utc": "2026-11-14T00:02:03.283106Z",
+  "scope": "Eight non-alcoholic ready-to-drink groups; ambiguous records retained separately",
+  "measurement_basis_verified": false,
+  "input_contract_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\docs\\evidence\\checkpoint3\\task01_input\\runs\\pipeline_20261114T000129685710Z_fc0ef0\\input_contract.json",
+  "input_contract_sha256": "fdf028cefb5106611acd1473fc5f865f465ad8e527765745263ff9456c46aa34",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "policy": {
+    "scope_version": "rtd_non_alcoholic_v2",
+    "groups": [
+      "Water",
+      "Soft drinks",
+      "Juice and fruit drinks",
+      "Ready-to-drink tea",
+      "Ready-to-drink coffee",
+      "Dairy milk",
+      "Plant-based milk",
+      "Sports and energy drinks"
+    ],
+    "category_groups": {
+      "Water": "Water",
+      "Plant Based Water": "Water",
+      "Packaged Water": "Water",
+      "Soda": "Soft drinks",
+      "Drinks - Soft Drinks": "Soft drinks",
+      "Fruit & Vegetable Juice, Nectars & Fruit Drinks": "Juice and fruit drinks",
+      "Fruit Juice - Ready to Drink (Shelf Stable)": "Juice and fruit drinks",
+      "Iced & Bottle Tea": "Ready-to-drink tea",
+      "Coffee": "Ready-to-drink coffee",
+      "Coffee/Coffee Substitutes": "Ready-to-drink coffee",
+      "Milk": "Dairy milk",
+      "Plant Based Milk": "Plant-based milk",
+      "Sport Drinks": "Sports and energy drinks",
+      "Energy, Protein & Muscle Recovery Drinks": "Sports and energy drinks",
+      "Drinks - Energy Drinks": "Sports and energy drinks",
+      "Other Drinks": null,
+      "Drinks": null,
+      "Coffee/Tea/Substitutes": null,
+      "Milk/Milk Substitutes": null,
+      "Milk/Cream - Shelf Stable": null,
+      "Milk/Cream": null,
+      "Breakfast Drinks": null,
+      "Drinks - Juices, Drinks and Cordials": null,
+      "Non Alcoholic Beverages  Ready to Drink": null,
+      "Non Alcoholic Beverages - Ready to Drink": null,
+      "Non Alcoholic Beverages – Ready to Drink": null,
+      "Drinks Flavoured - Ready to Drink": null,
+      "Ready To Drink": null
+    },
+    "rtd_categories": [
+      "Water",
+      "Plant Based Water",
+      "Packaged Water",
+      "Soda",
+      "Drinks - Soft Drinks",
+      "Fruit & Vegetable Juice, Nectars & Fruit Drinks",
+      "Fruit Juice - Ready to Drink (Shelf Stable)",
+      "Iced & Bottle Tea",
+      "Milk",
+      "Plant Based Milk",
+      "Sport Drinks",
+      "Drinks - Energy Drinks",
+      "Non Alcoholic Beverages  Ready to Drink",
+      "Non Alcoholic Beverages - Ready to Drink",
+      "Non Alcoholic Beverages – Ready to Drink",
+      "Drinks Flavoured - Ready to Drink",
+      "Ready To Drink"
+    ],
+    "excluded_categories": {
+      "Powdered Drinks": "category_requires_preparation",
+      "Drinks - Powdered": "category_requires_preparation",
+      "Frozen Fruit & Fruit Juice Concentrates": "category_requires_preparation",
+      "Fruit Juice - Not Ready to Drink (Frozen)": "category_requires_preparation",
+      "Non Alcoholic Beverages - Not Ready to Drink": "category_requires_preparation",
+      "Non Alcoholic Beverages  Not Ready to Drink": "category_requires_preparation",
+      "Non Alcoholic Beverages – Not Ready to Drink": "category_requires_preparation",
+      "Tea Bags": "category_requires_preparation",
+      "Tea and Infusions/Tisanes": "category_requires_preparation",
+      "Tea - Bags, Loose Leaf, Speciality": "category_requires_preparation",
+      "Coffee - Instant, Roast and Ground": "category_requires_preparation",
+      "Liquid Water Enhancer": "ingredient_or_additive",
+      "Milk Additives": "ingredient_or_additive",
+      "Cream": "ingredient_or_additive",
+      "Cream/Cream Substitutes": "ingredient_or_additive",
+      "Syrups & Molasses": "ingredient_or_additive",
+      "Alcoholic Beverages": "alcoholic_beverage",
+      "Baby/Infant  Foods/Beverages": "specialized_nutrition",
+      "Baby/Infant - Foods/Beverages": "specialized_nutrition",
+      "Baby/Infant – Foods/Beverages": "specialized_nutrition",
+      "Food/Beverage/Tobacco Variety Packs": "mixed_variety_pack"
+    },
+    "candidate_category_pattern": "\\b(drinks?|beverages?|water|juice|milk|coffee|tea|infusions?|cordials?)\\b",
+    "group_patterns": [
+      {
+        "group": "Ready-to-drink coffee",
+        "pattern": "\\b(coffee|espresso|cappuccino)\\b|\\b(?:cafe|caffe) latte\\b"
+      },
+      {
+        "group": "Ready-to-drink tea",
+        "pattern": "\\b(tea|matcha|chai)\\b"
+      },
+      {
+        "group": "Plant-based milk",
+        "pattern": "\\b(?:almond|soy|soya|oat|rice|cashew|hemp|coconut|pea|flax|plant)[ -]*(?:based[ -]*)?(?:milk|beverage|drink)\\b|\\bhorchata\\b"
+      },
+      {
+        "group": "Sports and energy drinks",
+        "pattern": "\\b(energy (?:juice )?(?:drink|beverage|shot)|sports? drink|electrolyte|isotonic)\\b"
+      },
+      {
+        "group": "Dairy milk",
+        "pattern": "\\bmilk\\b"
+      },
+      {
+        "group": "Soft drinks",
+        "pattern": "\\b(soda|soft drink|cola|root beer|ginger ale)\\b"
+      },
+      {
+        "group": "Juice and fruit drinks",
+        "pattern": "\\b(juice|juicedrink|nectar|fruit drink|lemonade|punch)\\b"
+      },
+      {
+        "group": "Water",
+        "pattern": "\\bwater\\b"
+      }
+    ],
+    "preparation_rules": {
+      "dry_pattern": "\\b(powder(?:ed)?|dry mix|whole beans?|ground coffee|coffee grounds|tea bags?|tea leaves|loose leaf|soluble coffee|instant coffee|k[ -]?cups?|pods?|sachets?)\\b",
+      "dry_serving_pattern": "\\b(scoops?|packets?|envelopes?|sachets?|pods?|k[ -]?cups?|tea bags?)\\b",
+      "excluded_product_pattern": "\\b(condensed|evaporated|creamers?|syrup|infant|toddler|baby formula|meal replacement|medical food|enteral|nutrition(?:al)? (?:shake|drink|beverage)|breakfast(?:\\s+\\w+){0,2}\\s+shakes?|alcoholic beverage|malt beverage|freezers?|freezer pops?|ice pops?|popsicles?|ice cream|frozen dessert)\\b|ready[ -]+to[ -]+drink meal|\\bprotein\\b.{0,30}\\b(liquids?|shakes?|drinks?|beverages?)\\b|\\b(shakes?|drinks?|beverages?)\\b.{0,20}\\bprotein\\b|\\b[0-9]+(?:\\.[0-9]+)?\\s*%\\s*abv\\b",
+      "ambiguous_product_pattern": "\\b(mix|mixes|frozen|purees?|sauces?|soups?|puddings?|dressings?|gels?|jell(?:y|ies)|bars?|cand(?:y|ies)|snacks?|cookies?|yog[hu]rt|baby|children|childrens|nutrition(?:al)?|supplements?)\\b|\\bcoconut (?:milk|cream)\\b|\\bbuttermilk blends?\\b",
+      "concentrate_exception_pattern": "\\b(?:not\\s+)?from\\s+(?:[a-z]+\\s+){0,6}concentrat(?:e|es|ed)\\b",
+      "concentrate_pattern": "\\b(concentrat(?:e|es|ed)|dilute|dilution|add water|mix with water)\\b",
+      "explicit_rtd_pattern": "\\bready[\\s-]+to[\\s-]+drink\\b",
+      "liquid_description_pattern": "\\b(drinks?|beverages?|iced coffee|cold brew|chilled coffee|lattes?|cappuccino|tea|milk|juice|juicedrink|water|energy shot|electrolyte)\\b"
+    },
+    "serving_unit_aliases": {
+      "g": "g",
+      "grm": "g",
+      "gm": "g",
+      "ml": "ml",
+      "mlt": "ml"
+    }
+  },
+  "environment": {
+    "python": "3.11.17",
+    "spark": "3.5.9",
+    "master": "local[*,4]"
+  },
+  "description_join": {
+    "key": "fdc_id",
+    "type": "left",
+    "dimension_duplicate_keys": 0,
+    "rows_before": 203396,
+    "rows_after": 203396,
+    "matched_rows": 203396,
+    "unmatched_rows": 0
+  },
+  "metrics": {
+    "input_rows": 1999950,
+    "selected_rows": 152138,
+    "candidate_rows": 203396,
+    "review_rows": 34138,
+    "excluded_rows": 1813674,
+    "rows_by_group": {
+      "Water": 29557,
+      "Soft drinks": 33981,
+      "Juice and fruit drinks": 43744,
+      "Ready-to-drink tea": 11105,
+      "Ready-to-drink coffee": 3784,
+      "Dairy milk": 19608,
+      "Plant-based milk": 6594,
+      "Sports and energy drinks": 3765
+    },
+    "selection_reasons": {
+      "product_outside_scope": 10561,
+      "requires_preparation": 6559,
+      "missing_category": 10373,
+      "liquid_serving_and_beverage_description": 8820,
+      "ambiguous_product_description": 4189,
+      "insufficient_preparation_evidence": 3483,
+      "unresolved_group": 14838,
+      "explicit_ready_to_drink": 1529,
+      "other_preparation_code": 32,
+      "unprepared_code_requires_review": 1223,
+      "category_without_preparation_marker": 141789
+    },
+    "missing_category_rows": 10630,
+    "category_variants_observed": 449,
+    "rows_by_unit_status": {
+      "recognized": 149835,
+      "missing": 1781,
+      "unrecognized": 522
+    }
+  },
+  "output": {
+    "path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261114T000129685710Z_fc0ef0/beverages.csv",
+    "schema_path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261114T000129685710Z_fc0ef0/output_schema.json",
+    "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+    "sha256": "dee45d28875dbb0b480759cbf57956b8603b488d086747ebd1c118c27c0b1adb",
+    "size_bytes": 72385203,
+    "row_count": 152138,
+    "distinct_fdc_ids": 152138,
+    "column_count": 30,
+    "format": "CSV",
+    "writer": "Python csv.writer from Spark toLocalIterator",
+    "write_mode": "new directory per run; partial renamed after validation",
+    "readback_metrics": {
+      "row_count": 152138,
+      "null_counts": {
+        "fdc_id": 0,
+        "brand_owner": 1408,
+        "brand_name": 41616,
+        "subbrand_name": 142474,
+        "gtin_upc": 0,
+        "ingredients": 358,
+        "not_a_significant_source_of": 127351,
+        "serving_size": 1014,
+        "serving_size_unit": 1781,
+        "household_serving_fulltext": 2828,
+        "branded_food_category": 0,
+        "data_source": 0,
+        "package_weight": 87699,
+        "modified_date": 1,
+        "available_date": 0,
+        "market_country": 0,
+        "discontinued_date": 151958,
+        "preparation_state_code": 149707,
+        "trade_channel": 151539,
+        "short_description": 149710,
+        "material_code": 152138,
+        "description": 0,
+        "food_publication_date": 0,
+        "category_normalized": 0,
+        "beverage_group": 0,
+        "serving_size_unit_normalized": 2303,
+        "serving_size_unit_status": 0,
+        "selection_reason": 0,
+        "selection_status": 0,
+        "preparation_status": 0
+      },
+      "null_key_counts": {
+        "fdc_id": 0
+      }
+    }
+  },
+  "review_output": {
+    "path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261114T000129685710Z_fc0ef0/review.csv",
+    "schema_path": "artifacts/checkpoint3/task02_beverages/runs/pipeline_20261114T000129685710Z_fc0ef0/review_schema.json",
+    "schema_sha256": "29bdc1dc592cac7d8a6c62189e373b8ee6e2ce585fca9443024c08cf0787790c",
+    "sha256": "b7ee2e7bf9d6b5e8fc5f06f7ca43eaac8f3a364d1e3caa06f1c535b08a6d805a",
+    "size_bytes": 17996271,
+    "row_count": 34138,
+    "distinct_fdc_ids": 34138,
+    "column_count": 30,
+    "format": "CSV",
+    "writer": "Python csv.writer from Spark toLocalIterator",
+    "write_mode": "new directory per run; partial renamed after validation",
+    "readback_metrics": {
+      "row_count": 34138,
+      "null_counts": {
+        "fdc_id": 0,
+        "brand_owner": 3083,
+        "brand_name": 14891,
+        "subbrand_name": 31410,
+        "gtin_upc": 0,
+        "ingredients": 25,
+        "not_a_significant_source_of": 31824,
+        "serving_size": 126,
+        "serving_size_unit": 360,
+        "household_serving_fulltext": 3877,
+        "branded_food_category": 10373,
+        "data_source": 0,
+        "package_weight": 21591,
+        "modified_date": 2058,
+        "available_date": 0,
+        "market_country": 0,
+        "discontinued_date": 33876,
+        "preparation_state_code": 29249,
+        "trade_channel": 32580,
+        "short_description": 29247,
+        "material_code": 34138,
+        "description": 0,
+        "food_publication_date": 0,
+        "category_normalized": 10373,
+        "beverage_group": 25015,
+        "serving_size_unit_normalized": 466,
+        "serving_size_unit_status": 0,
+        "selection_reason": 0,
+        "selection_status": 0,
+        "preparation_status": 0
+      },
+      "null_key_counts": {
+        "fdc_id": 0
+      }
+    }
+  },
+  "raw_integrity_verified_before_and_after": true,
+  "finished_at_utc": "2026-11-14T00:03:52.081660Z",
+  "elapsed_seconds": 108.799
+}

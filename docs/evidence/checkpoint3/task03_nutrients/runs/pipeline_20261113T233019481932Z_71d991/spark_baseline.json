@@ -1,0 +1,35 @@
+{
+  "python": "3.11.17",
+  "spark": "3.5.9",
+  "java": "17.0.20.1",
+  "java_vm": "OpenJDK 64-Bit Server VM",
+  "jvm_max_heap_bytes": 1073741824,
+  "master": "local[*]",
+  "default_parallelism": 12,
+  "sql_configuration": {
+    "spark.sql.shuffle.partitions": "200",
+    "spark.sql.adaptive.enabled": "true",
+    "spark.sql.adaptive.coalescePartitions.enabled": "true",
+    "spark.sql.files.maxPartitionBytes": "134217728b",
+    "spark.sql.csv.parser.columnPruning.enabled": "false",
+    "spark.sql.session.timeZone": "UTC"
+  },
+  "frames": {
+    "nutrient_scope": {
+      "observed_at_utc": "2026-11-13T23:34:00.982332Z",
+      "partitions_observed": 1,
+      "column_count": 10,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T233019481932Z_71d991/plans/nutrient_scope.txt",
+      "explain_sha256": "9f0892c5153dedbfa585ff9dd40e347b4127cfac597581398b2e9ea0adbdffa0",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    },
+    "nutrition_clean": {
+      "observed_at_utc": "2026-11-13T23:35:39.458706Z",
+      "partitions_observed": 13,
+      "column_count": 27,
+      "explain_formatted_path": "docs/evidence/checkpoint3/task03_nutrients/runs/pipeline_20261113T233019481932Z_71d991/plans/nutrition_clean.txt",
+      "explain_sha256": "867fed91be0ea247a6bc69b1928cf8e29e9e59c31d1757794b1c0b30d5de69af",
+      "partition_note": "Observed from this frame with current AQE configuration; not a cluster-size measurement"
+    }
+  }
+}

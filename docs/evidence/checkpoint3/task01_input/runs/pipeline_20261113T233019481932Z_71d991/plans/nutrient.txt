@@ -1,0 +1,11 @@
+== Physical Plan ==
+Scan csv  (1)
+
+
+(1) Scan csv 
+Output [5]: [id#477L, name#478, unit_name#479, nutrient_nbr#480, rank#481]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/nutrient.csv]
+ReadSchema: struct<id:bigint,name:string,unit_name:string,nutrient_nbr:string,rank:double>
+
+

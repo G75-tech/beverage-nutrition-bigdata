@@ -1,0 +1,117 @@
+== Physical Plan ==
+AdaptiveSparkPlan (20)
++- == Final Plan ==
+   * Project (11)
+   +- * BroadcastHashJoin LeftSemi BuildRight (10)
+      :- * Project (5)
+      :  +- * Project (4)
+      :     +- * Project (3)
+      :        +- * Filter (2)
+      :           +- Scan csv  (1)
+      +- BroadcastQueryStage (9), Statistics(sizeInBytes=12.0 MiB, rowCount=1.52E+5)
+         +- BroadcastExchange (8)
+            +- * Filter (7)
+               +- Scan csv  (6)
++- == Initial Plan ==
+   Project (19)
+   +- BroadcastHashJoin LeftSemi BuildRight (18)
+      :- Project (15)
+      :  +- Project (14)
+      :     +- Project (13)
+      :        +- Filter (12)
+      :           +- Scan csv  (1)
+      +- BroadcastExchange (17)
+         +- Filter (16)
+            +- Scan csv  (6)
+
+
+(1) Scan csv 
+Output [5]: [id#382, fdc_id#383, nutrient_id#384, amount#385, derivation_id#387]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food_nutrient.csv]
+ReadSchema: struct<id:string,fdc_id:string,nutrient_id:string,amount:string,derivation_id:string>
+
+(2) Filter [codegen id : 2]
+Input [5]: [id#382, fdc_id#383, nutrient_id#384, amount#385, derivation_id#387]
+Condition : (try_cast(trim(nutrient_id#384, None) as bigint) IN (2000,1008,1093,1003,1004) AND isnotnull(try_cast(trim(fdc_id#383, None) as bigint)))
+
+(3) Project [codegen id : 2]
+Output [9]: [id#382 AS record_id_raw#404, fdc_id#383 AS fdc_id_raw#405, nutrient_id#384 AS nutrient_id_raw#406, amount#385 AS amount_raw#407, derivation_id#387, try_cast(trim(id#382, None) as bigint) AS id#414L, try_cast(trim(fdc_id#383, None) as bigint) AS fdc_id#421L, try_cast(trim(nutrient_id#384, None) as bigint) AS nutrient_id#429L, try_cast(trim(amount#385, None) as double) AS amount#438]
+Input [5]: [id#382, fdc_id#383, nutrient_id#384, amount#385, derivation_id#387]
+
+(4) Project [codegen id : 2]
+Output [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438, CASE WHEN ((isnull(id#414L) OR isnull(fdc_id#421L)) OR isnull(nutrient_id#429L)) THEN invalid_key WHEN (isnull(amount_raw#407) OR (trim(amount_raw#407, None) = )) THEN missing_amount WHEN isnull(amount#438) THEN invalid_amount WHEN (isnan(amount#438) OR amount#438 IN (Infinity,-Infinity)) THEN nonfinite_amount WHEN (amount#438 < 0.0) THEN negative_amount ELSE valid END AS amount_status#448]
+Input [9]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438]
+
+(5) Project [codegen id : 2]
+Output [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, CASE WHEN amount_status#448 IN (valid,negative_amount) THEN amount#438 END AS amount#459, amount_status#448]
+Input [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438, amount_status#448]
+
+(6) Scan csv 
+Output [1]: [fdc_id#0L]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/artifacts/checkpoint3/task02_beverages/runs/pipeline_20261114T000129685710Z_fc0ef0/beverages.csv]
+PushedFilters: [IsNotNull(fdc_id)]
+ReadSchema: struct<fdc_id:bigint>
+
+(7) Filter [codegen id : 1]
+Input [1]: [fdc_id#0L]
+Condition : isnotnull(fdc_id#0L)
+
+(8) BroadcastExchange
+Input [1]: [fdc_id#0L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=325]
+
+(9) BroadcastQueryStage
+Output [1]: [fdc_id#0L]
+Arguments: 0
+
+(10) BroadcastHashJoin [codegen id : 2]
+Left keys [1]: [fdc_id#421L]
+Right keys [1]: [fdc_id#0L]
+Join type: LeftSemi
+Join condition: None
+
+(11) Project [codegen id : 2]
+Output [10]: [fdc_id#421L, record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, nutrient_id#429L, amount#459, amount_status#448]
+Input [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#459, amount_status#448]
+
+(12) Filter
+Input [5]: [id#382, fdc_id#383, nutrient_id#384, amount#385, derivation_id#387]
+Condition : (try_cast(trim(nutrient_id#384, None) as bigint) IN (2000,1008,1093,1003,1004) AND isnotnull(try_cast(trim(fdc_id#383, None) as bigint)))
+
+(13) Project
+Output [9]: [id#382 AS record_id_raw#404, fdc_id#383 AS fdc_id_raw#405, nutrient_id#384 AS nutrient_id_raw#406, amount#385 AS amount_raw#407, derivation_id#387, try_cast(trim(id#382, None) as bigint) AS id#414L, try_cast(trim(fdc_id#383, None) as bigint) AS fdc_id#421L, try_cast(trim(nutrient_id#384, None) as bigint) AS nutrient_id#429L, try_cast(trim(amount#385, None) as double) AS amount#438]
+Input [5]: [id#382, fdc_id#383, nutrient_id#384, amount#385, derivation_id#387]
+
+(14) Project
+Output [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438, CASE WHEN ((isnull(id#414L) OR isnull(fdc_id#421L)) OR isnull(nutrient_id#429L)) THEN invalid_key WHEN (isnull(amount_raw#407) OR (trim(amount_raw#407, None) = )) THEN missing_amount WHEN isnull(amount#438) THEN invalid_amount WHEN (isnan(amount#438) OR amount#438 IN (Infinity,-Infinity)) THEN nonfinite_amount WHEN (amount#438 < 0.0) THEN negative_amount ELSE valid END AS amount_status#448]
+Input [9]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438]
+
+(15) Project
+Output [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, CASE WHEN amount_status#448 IN (valid,negative_amount) THEN amount#438 END AS amount#459, amount_status#448]
+Input [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#438, amount_status#448]
+
+(16) Filter
+Input [1]: [fdc_id#0L]
+Condition : isnotnull(fdc_id#0L)
+
+(17) BroadcastExchange
+Input [1]: [fdc_id#0L]
+Arguments: HashedRelationBroadcastMode(List(input[0, bigint, false]),false), [plan_id=315]
+
+(18) BroadcastHashJoin
+Left keys [1]: [fdc_id#421L]
+Right keys [1]: [fdc_id#0L]
+Join type: LeftSemi
+Join condition: None
+
+(19) Project
+Output [10]: [fdc_id#421L, record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, nutrient_id#429L, amount#459, amount_status#448]
+Input [10]: [record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, fdc_id#421L, nutrient_id#429L, amount#459, amount_status#448]
+
+(20) AdaptiveSparkPlan
+Output [10]: [fdc_id#421L, record_id_raw#404, fdc_id_raw#405, nutrient_id_raw#406, amount_raw#407, derivation_id#387, id#414L, nutrient_id#429L, amount#459, amount_status#448]
+Arguments: isFinalPlan=true
+
+

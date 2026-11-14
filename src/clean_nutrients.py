@@ -15,7 +15,7 @@ from src.run_storage import create_run
 from src.common import add_stage_arguments, publish_stage_result, record_spark_baseline
 from src.filter_beverages import load_locked_input, write_csv
 from src.input_contract import CSV_OPTIONS, measure_input, read_locked_csv, verify_raw
-from src.measurement_basis import write_json_reference
+from src.measurement_basis import BASIS_STATUSES, basis_mode, write_json_reference
 
 
 def load_handoff(path, config, root=ROOT):
@@ -102,28 +102,43 @@ def resolve_pairs(frame):
     return clean, quarantine, stats
 
 
-def add_basis(clean, beverages, nutrients, reference, relative_tolerance=0.01, absolute_tolerance=0.005,
-              review_limits=None):
+def add_basis(clean, beverages, nutrients, reference=None, relative_tolerance=0.01, absolute_tolerance=0.005,
+              review_limits=None, mode="json_crosscheck"):
     from pyspark.sql import functions as F
 
+    basis_mode({"basis_mode": mode})
     products = beverages.select("fdc_id", "beverage_group", "serving_size",
                                 F.col("serving_size_unit_normalized").alias("serving_unit"))
-    frame = (clean.join(products, "fdc_id", "left").join(nutrients, "nutrient_id", "left")
-             .join(reference, ["fdc_id", "nutrient_id"], "left"))
-    same_serving = (F.col("serving_size").isNotNull()
-                    & (F.abs(F.col("serving_size") - F.col("json_serving_size")) <= F.lit(1e-8)))
-    amount_tolerance = F.greatest(F.lit(absolute_tolerance),
-                                  F.greatest(F.abs(F.col("amount")), F.abs(F.col("json_amount"))) * relative_tolerance)
-    same_amount = F.abs(F.col("amount") - F.col("json_amount")) <= amount_tolerance
-    status = (F.when(F.col("amount_status") == "missing_amount", "amount_missing")
-        .when(F.col("record_reference_status").isNull(), "json_record_unavailable")
-        .when(F.col("serving_unit").isNull(), "unrecognized_serving_unit")
-        .when(F.col("json_serving_unit") != F.col("serving_unit"), "serving_unit_mismatch")
-        .when(~same_serving, "serving_size_mismatch")
-        .when(F.col("record_reference_status") != "scale_consistent", F.col("record_reference_status"))
-        .when(F.col("json_amount").isNull(), "nutrient_absent_in_json")
-        .when(~same_amount, "csv_json_amount_mismatch")
-        .otherwise("corroborated_export_label_scaling"))
+    frame = clean.join(products, "fdc_id", "left").join(nutrients, "nutrient_id", "left")
+    if mode == "csv":
+        # USDA amounts already use a 100-unit basis. The normalized label serving
+        # unit identifies g/ml; do not scale amount by serving_size a second time.
+        invalid_serving = (F.col("serving_size").isNull() | F.isnan("serving_size")
+                           | F.col("serving_size").isin(float("inf"), float("-inf"))
+                           | (F.col("serving_size") <= 0))
+        status = (F.when(F.col("amount_status") == "missing_amount", "amount_missing")
+                  .when(F.col("serving_unit").isNull() | ~F.col("serving_unit").isin("g", "ml"),
+                        "unrecognized_serving_unit")
+                  .when(invalid_serving, "invalid_serving_metadata")
+                  .otherwise(BASIS_STATUSES[mode]))
+    else:
+        if reference is None:
+            raise ValueError("JSON cross-check mode requires a label reference")
+        frame = frame.join(reference, ["fdc_id", "nutrient_id"], "left")
+        same_serving = (F.col("serving_size").isNotNull()
+                        & (F.abs(F.col("serving_size") - F.col("json_serving_size")) <= F.lit(1e-8)))
+        amount_tolerance = F.greatest(F.lit(absolute_tolerance),
+                                      F.greatest(F.abs(F.col("amount")), F.abs(F.col("json_amount"))) * relative_tolerance)
+        same_amount = F.abs(F.col("amount") - F.col("json_amount")) <= amount_tolerance
+        status = (F.when(F.col("amount_status") == "missing_amount", "amount_missing")
+            .when(F.col("record_reference_status").isNull(), "json_record_unavailable")
+            .when(F.col("serving_unit").isNull(), "unrecognized_serving_unit")
+            .when(F.col("json_serving_unit") != F.col("serving_unit"), "serving_unit_mismatch")
+            .when(~same_serving, "serving_size_mismatch")
+            .when(F.col("record_reference_status") != "scale_consistent", F.col("record_reference_status"))
+            .when(F.col("json_amount").isNull(), "nutrient_absent_in_json")
+            .when(~same_amount, "csv_json_amount_mismatch")
+            .otherwise(BASIS_STATUSES[mode]))
     frame = frame.withColumn("basis_status", status)
     candidate = (F.when(F.col("serving_unit") == "ml", "per_100_ml")
                   .when(F.col("serving_unit") == "g", "per_100_g"))
@@ -132,14 +147,14 @@ def add_basis(clean, beverages, nutrients, reference, relative_tolerance=0.01, a
         limits.extend([F.lit(int(nutrient_id)), F.lit(float(limit))])
     limit_column = F.create_map(*limits)[F.col("nutrient_id")] if limits else F.lit(None).cast("double")
     return (frame.withColumn("measurement_basis_candidate", candidate)
-        .withColumn("measurement_basis", F.when(F.col("basis_status") == "corroborated_export_label_scaling", candidate))
+        .withColumn("measurement_basis", F.when(F.col("basis_status") == BASIS_STATUSES[mode], candidate))
         .withColumn("value_review_limit", limit_column)
         .withColumn("value_review_required", F.when((F.col("amount_status") == "valid")
                                                      & (F.col("amount") > limit_column), True).otherwise(False))
         .withColumn("value_review_reason", F.when(F.col("value_review_required"), "above_configured_review_limit")
                      .otherwise("not_flagged"))
         .withColumn("eligible_for_comparison", (F.col("amount_status") == "valid")
-                     & (F.col("basis_status") == "corroborated_export_label_scaling")
+                     & (F.col("basis_status") == BASIS_STATUSES[mode])
                      & ~F.col("value_review_required")))
 
 
@@ -183,11 +198,19 @@ def write_report(folder, evidence):
         basis_totals[row["basis_status"]] = basis_totals.get(row["basis_status"], 0) + row["count"]
     for status, count in sorted(basis_totals.items()):
         lines.append(f"| {status} | {count} |")
-    lines.extend(["", "Cơ sở đo được kiểm tra nhất quán với labelNutrients và khẩu phần trong ZIP JSON cùng release.",
-                  "Ngưỡng CSV/JSON và phép tính từ khẩu phần dùng sai số tương đối 1% hoặc tuyệt đối 0,005 đơn vị.",
-                  "Chỉ gắn measurement_basis khi có ít nhất một giá trị dương kiểm tra được, mọi anchor khớp ngưỡng,",
-                  "và unit/serving/amount của record hiện tại khớp giữa CSV và JSON. Zero-only không tạo anchor.",
-                  "Đây là kiểm tra tính nhất quán giữa các trường của bản xuất USDA. Các trường hợp chưa đủ bằng chứng giữ basis_status riêng.",
+    if evidence.get("basis_mode") == "csv":
+        lines.extend(["", "Nguồn tính chính: CSV USDA; đối chiếu dataset JSON: NOT_RUN (tạm tắt theo cấu hình).",
+                      "amount đã chuẩn hóa trên 100 đơn vị được giữ nguyên; không chia theo khẩu phần thêm lần nữa.",
+                      "Cơ sở 100 ml/100 g được xác định theo đơn vị khẩu phần CSV đã chuẩn hóa (ml/g), với khẩu phần hữu hạn và lớn hơn 0.",
+                      "basis_status=documented_csv_serving_unit mô tả quy tắc theo tài liệu nguồn; không phải kết quả xác minh chéo JSON.",
+                      "Số 0 hợp lệ được tính mà không cần mốc dương. Đơn vị chưa nhận diện hoặc khẩu phần không hợp lệ chưa tham gia KPI."])
+    else:
+        lines.extend(["", "Cơ sở đo được kiểm tra nhất quán với labelNutrients và khẩu phần trong ZIP JSON cùng release.",
+                      "Ngưỡng CSV/JSON và phép tính từ khẩu phần dùng sai số tương đối 1% hoặc tuyệt đối 0,005 đơn vị.",
+                      "Chỉ gắn measurement_basis khi có ít nhất một giá trị dương kiểm tra được, mọi anchor khớp ngưỡng,",
+                      "và unit/serving/amount của record hiện tại khớp giữa CSV và JSON. Zero-only không tạo anchor.",
+                      "Đây là kiểm tra tính nhất quán giữa các trường của bản xuất USDA. Các trường hợp chưa đủ bằng chứng giữ basis_status riêng."])
+    lines.extend(["",
                   "Dữ liệu dùng để so sánh cần eligible_for_comparison=true và cùng measurement_basis.",
                   "Các ngưỡng giá trị lớn là quy tắc sàng lọc để rà soát, được lưu trong config và evidence; dữ liệu nguồn được giữ.", "",
                   "Nguồn https://fdc.nal.usda.gov/GBFPD_Documentation/", ""])
@@ -219,6 +242,9 @@ def main(argv=None):
 
         config = load_config()
         task = load_config(args.task_config or ROOT / "config/checkpoint3.json")["task3"]
+        mode = basis_mode(task)
+        evidence.update(basis_mode=mode, basis_reference=None,
+                        json_crosscheck_status="NOT_RUN" if mode == "csv" else "RUNNING")
         handoff_path = (ROOT / (args.input_handoff or task["input_handoff_path"])).resolve()
         handoff_hash = sha256(handoff_path)
         handoff, result, contract = load_handoff(handoff_path, config)
@@ -297,30 +323,38 @@ def main(argv=None):
         evidence["quarantine_output"] = quarantine_meta
         write_json(folder / "quarantine_preview.json", quarantine_preview)
 
-        print("[BASIS] Đối chiếu ZIP JSON local với khẩu phần và labelNutrients...", flush=True)
-        zip_path = (ROOT / task["basis_reference_zip"]).resolve()
-        zip_hash = sha256(zip_path)
-        if zip_hash != task["basis_reference_sha256"]:
-            raise ValueError("JSON reference archive differs from the source-preservation manifest")
-        aliases = result["policy"]["serving_unit_aliases"]
-        id_set = {row.fdc_id for row in beverage_ids.toLocalIterator()}
-        reference_partial = artifacts / "label_reference.csv.partial"
-        reference_info = write_json_reference(zip_path, reference_partial, id_set, nutrient_ids, aliases,
-                                              task["basis_relative_tolerance"], task["basis_absolute_tolerance"])
-        reference_schema = ("fdc_id long, nutrient_id long, json_amount double, label_amount double, "
-                            "json_serving_size double, json_serving_unit string, record_reference_status string, "
-                            "scale_checks long, scale_mismatches long")
-        reference = spark.read.schema(reference_schema).options(**CSV_OPTIONS).csv(reference_partial.as_posix())
-        if reference.count() != reference_info["reference_rows"]:
-            raise ValueError("JSON reference row count is inconsistent")
-        reference_path = artifacts / "label_reference.csv"
-        reference_partial.rename(reference_path)
-        reference = spark.read.schema(reference_schema).options(**CSV_OPTIONS).csv(reference_path.as_posix())
-        evidence["basis_reference"] = dict(reference_info, zip_path=str(zip_path), zip_sha256=zip_hash,
-                                            reference_path=reference_path.relative_to(ROOT).as_posix(),
-                                            reference_sha256=sha256(reference_path))
-        enriched = add_basis(clean, beverages, nutrient_metadata, reference, task["basis_relative_tolerance"],
-                             task["basis_absolute_tolerance"], task["value_review_limits"])
+        reference = None
+        zip_path = None
+        zip_hash = None
+        if mode == "json_crosscheck":
+            print("[BASIS] Đối chiếu ZIP JSON local với khẩu phần và labelNutrients...", flush=True)
+            zip_path = (ROOT / task["basis_reference_zip"]).resolve()
+            zip_hash = sha256(zip_path)
+            if zip_hash != task["basis_reference_sha256"]:
+                raise ValueError("JSON reference archive differs from the source-preservation manifest")
+            aliases = result["policy"]["serving_unit_aliases"]
+            id_set = {row.fdc_id for row in beverage_ids.toLocalIterator()}
+            reference_partial = artifacts / "label_reference.csv.partial"
+            reference_info = write_json_reference(zip_path, reference_partial, id_set, nutrient_ids, aliases,
+                                                  task["basis_relative_tolerance"], task["basis_absolute_tolerance"])
+            reference_schema = ("fdc_id long, nutrient_id long, json_amount double, label_amount double, "
+                                "json_serving_size double, json_serving_unit string, record_reference_status string, "
+                                "scale_checks long, scale_mismatches long")
+            reference = spark.read.schema(reference_schema).options(**CSV_OPTIONS).csv(reference_partial.as_posix())
+            if reference.count() != reference_info["reference_rows"]:
+                raise ValueError("JSON reference row count is inconsistent")
+            reference_path = artifacts / "label_reference.csv"
+            reference_partial.rename(reference_path)
+            reference = spark.read.schema(reference_schema).options(**CSV_OPTIONS).csv(reference_path.as_posix())
+            evidence["basis_reference"] = dict(reference_info, zip_path=str(zip_path), zip_sha256=zip_hash,
+                                                reference_path=reference_path.relative_to(ROOT).as_posix(),
+                                                reference_sha256=sha256(reference_path))
+            evidence["json_crosscheck_status"] = "PASS"
+        else:
+            print("[BASIS] Dùng CSV USDA và đơn vị khẩu phần; tạm tắt đối chiếu JSON...", flush=True)
+        enriched = add_basis(clean, beverages, nutrient_metadata, reference,
+                             task.get("basis_relative_tolerance", 0.01), task.get("basis_absolute_tolerance", 0.005),
+                             task["value_review_limits"], mode=mode)
         if args.collect_baseline:
             record_spark_baseline(spark, enriched, folder, "nutrition_clean")
         print("[OUTPUT] Ghi dữ liệu đã xử lý và kiểm tra lại bằng Spark...", flush=True)
@@ -347,13 +381,15 @@ def main(argv=None):
         evidence["redundant_non_conflicting_records_removed"] = removed
         eligible = sum(row["count"] for row in evidence["basis_counts"] if row["eligible_for_comparison"])
         valid_rows = sum(row["valid"] for row in coverage)
+        assigned = sum(row["count"] for row in evidence["basis_counts"] if row["measurement_basis"] is not None)
         corroborated = sum(row["count"] for row in evidence["basis_counts"]
                            if row["basis_status"] == "corroborated_export_label_scaling")
-        evidence.update(basis_audit_complete=True, eligible_nutrient_rows=eligible,
-                        all_valid_rows_basis_corroborated=corroborated == valid_rows)
+        evidence.update(basis_assignment_complete=True, basis_audit_complete=mode == "json_crosscheck",
+                        eligible_nutrient_rows=eligible, all_valid_rows_basis_assigned=assigned == valid_rows,
+                        all_valid_rows_basis_corroborated=mode == "json_crosscheck" and corroborated == valid_rows)
         for table in contract["tables"]:
             verify_raw(table)
-        if sha256(zip_path) != zip_hash or sha256(handoff_path) != handoff_hash:
+        if (zip_path is not None and sha256(zip_path) != zip_hash) or sha256(handoff_path) != handoff_hash:
             raise ValueError("Reference archive or input handoff changed during Task 3")
         if sha256(ROOT / output["path"]) != output["sha256"]:
             raise ValueError("Task 2 beverage CSV changed during Task 3")

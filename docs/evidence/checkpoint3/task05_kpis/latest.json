@@ -1,13 +1,13 @@
 {
   "task": "task5",
-  "run_id": "pipeline_20261113T154538688059Z_b15d77_repeat",
+  "run_id": "pipeline_20261114T000129685710Z_fc0ef0_repeat",
   "status": "PASS",
   "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
-  "result_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_result.json",
-  "result_sha256": "5d8049ab877a4803ec44a0bbbd3f0d17b1ee9209b6ac372d1f5f654f1bdd5963",
-  "report_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/kpi_report.md",
-  "evidence_dir": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat",
-  "artifacts_dir": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat",
-  "console_log_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T154538688059Z_b15d77_repeat/console.log",
-  "finished_at_utc": "2026-11-13T15:52:12.334920Z"
+  "result_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/kpi_result.json",
+  "result_sha256": "e697ef26fa9d0216c89ade46ab6651e9c7324807df62029a160e6ce39cff134a",
+  "report_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/kpi_report.md",
+  "evidence_dir": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat",
+  "artifacts_dir": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat",
+  "console_log_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261114T000129685710Z_fc0ef0_repeat/console.log",
+  "finished_at_utc": "2026-11-14T00:08:15.446819Z"
 }

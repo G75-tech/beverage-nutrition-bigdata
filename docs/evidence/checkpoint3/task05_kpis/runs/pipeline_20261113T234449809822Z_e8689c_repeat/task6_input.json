@@ -1,0 +1,122 @@
+{
+  "status": "READY_FOR_TASK6",
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "task5_result_path": "docs/evidence/checkpoint3/task05_kpis/runs/pipeline_20261113T234449809822Z_e8689c_repeat/kpi_result.json",
+  "task5_result_sha256": "c7c70969b60b5417dfeba0743d697b40519c013be8be9c0ada4e288f1430726d",
+  "output": {
+    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T234449809822Z_e8689c_repeat/nutrition_kpis.csv",
+    "sha256": "5749c6828ab36306772b47b9de78355cf3f615af4be39eedacd53e629fe312f8",
+    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T234449809822Z_e8689c_repeat/nutrition_kpis_schema.json",
+    "schema_sha256": "63d791447401779217eb130045310947f1c89ead9a9b6239e466dc32b7ae26e8",
+    "row_count": 80,
+    "column_count": 17,
+    "size_bytes": 9774,
+    "readback_metrics": {
+      "row_count": 80,
+      "null_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "measurement_basis": 0,
+        "n_beverages_total": 0,
+        "n_numeric_available": 0,
+        "n_eligible_any_basis": 0,
+        "n_compared": 0,
+        "coverage_pct_all_beverages": 0,
+        "mean_amount": 0,
+        "median_amount": 0,
+        "min_amount": 0,
+        "max_amount": 0,
+        "p25_amount": 0,
+        "p75_amount": 0,
+        "kpi_status": 0
+      },
+      "null_key_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0,
+        "unit_name": 0,
+        "measurement_basis": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "coverage_output": {
+    "path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T234449809822Z_e8689c_repeat/kpi_coverage.csv",
+    "sha256": "8e2c8f4157a6c35dacc30b1ab3afc41dccebcdcded5faa48e4b1eca3d71a11f3",
+    "schema_path": "artifacts/checkpoint3/task05_kpis/runs/pipeline_20261113T234449809822Z_e8689c_repeat/kpi_coverage_schema.json",
+    "schema_sha256": "5bf3707ac7ebf559f3a414a2a8f2b23b45249f3a366970d007986f024f140f1b",
+    "row_count": 40,
+    "column_count": 19,
+    "size_bytes": 4647,
+    "readback_metrics": {
+      "row_count": 40,
+      "null_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0,
+        "nutrient_name": 0,
+        "unit_name": 0,
+        "expected_beverages": 0,
+        "with_source_record": 0,
+        "with_clean_record": 0,
+        "numeric_valid": 0,
+        "missing_amount": 0,
+        "no_source_record": 0,
+        "conflicting_duplicate": 0,
+        "invalid_only": 0,
+        "value_review_required": 0,
+        "numeric_valid_basis_unconfirmed": 0,
+        "eligible_for_comparison": 0,
+        "numeric_coverage_pct": 0,
+        "eligible_coverage_pct": 0,
+        "n_compared_per_100_ml": 0,
+        "n_compared_per_100_g": 0
+      },
+      "null_key_counts": {
+        "beverage_group": 0,
+        "nutrient_id": 0
+      }
+    },
+    "format": "CSV",
+    "write_mode": "new directory per run"
+  },
+  "grain": [
+    "beverage_group",
+    "nutrient_id",
+    "unit_name",
+    "measurement_basis"
+  ],
+  "aggregation_policy": {
+    "measurement_bases": [
+      "per_100_ml",
+      "per_100_g"
+    ],
+    "weighting": "one equal weight per fdc_id within each group/nutrient/basis",
+    "percentile_method": "Spark exact percentile with linear interpolation",
+    "round_decimal_places": 6,
+    "repeat_relative_tolerance": 1e-09,
+    "repeat_absolute_tolerance": 1e-09
+  },
+  "repeatability": {
+    "status": "PASS",
+    "reference_result_path": "G:\\BigDATA\\beverage-nutrition-bigdata\\docs\\evidence\\checkpoint3\\task05_kpis\\runs\\pipeline_20261113T234449809822Z_e8689c\\kpi_result.json",
+    "reference_result_sha256": "d6afd8b0b94399031cbb27ad234aac07fe31511d1b779b83cd31dc7c677e9b1d",
+    "reference_run_id": "pipeline_20261113T234449809822Z_e8689c",
+    "tables": {
+      "output": {
+        "rows_compared": 80,
+        "cells_compared": 1360,
+        "max_absolute_difference": 0.0,
+        "csv_sha256_identical": true
+      },
+      "coverage_output": {
+        "rows_compared": 40,
+        "cells_compared": 760,
+        "max_absolute_difference": 0.0,
+        "csv_sha256_identical": true
+      }
+    }
+  },
+  "next_step": "Package the pipeline entry point and measure its full baseline"
+}

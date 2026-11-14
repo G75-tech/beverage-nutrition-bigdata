@@ -1,0 +1,27 @@
+[
+  {
+    "nutrient_id": 1003,
+    "amount_status": "valid",
+    "count": 143050
+  },
+  {
+    "nutrient_id": 1004,
+    "amount_status": "valid",
+    "count": 138915
+  },
+  {
+    "nutrient_id": 1008,
+    "amount_status": "valid",
+    "count": 142795
+  },
+  {
+    "nutrient_id": 1093,
+    "amount_status": "valid",
+    "count": 141600
+  },
+  {
+    "nutrient_id": 2000,
+    "amount_status": "valid",
+    "count": 132165
+  }
+]

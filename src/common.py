@@ -22,11 +22,19 @@ def load_config(path=None):
 
 
 def sha256(path):
-    digest = hashlib.sha256()
-    with Path(path).open("rb") as stream:
-        for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+    # Windows may briefly deny a read while another process releases the file.
+    # Restart the whole digest after a failed read; never accept a partial hash.
+    for attempt in range(4):
+        try:
+            digest = hashlib.sha256()
+            with Path(path).open("rb") as stream:
+                for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+                    digest.update(chunk)
+            return digest.hexdigest()
+        except PermissionError:
+            if attempt == 3:
+                raise
+            time.sleep(0.25 * (2 ** attempt))
 
 
 def write_json(path, value):
@@ -65,10 +73,17 @@ def prepare_environment():
     os.environ.setdefault("SPARK_LOCAL_IP", "127.0.0.1")
 
 
+def local_spark_master():
+    attempts = int(os.environ.get("CHECKPOINT3_LOCAL_TASK_ATTEMPTS", "1"))
+    if not 1 <= attempts <= 4:
+        raise ValueError("Local Spark task attempts must be between 1 and 4")
+    return "local[*]" if attempts == 1 else f"local[*,{attempts}]"
+
+
 def start_spark(name):
     prepare_environment()
     from pyspark.sql import SparkSession
-    return (SparkSession.builder.master("local[*]").appName(name)
+    return (SparkSession.builder.master(local_spark_master()).appName(name)
             .config("spark.ui.enabled", "false")
             .config("spark.driver.bindAddress", "127.0.0.1")
             .config("spark.driver.host", "127.0.0.1")

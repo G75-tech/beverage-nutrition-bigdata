@@ -1,0 +1,11 @@
+== Physical Plan ==
+Scan csv  (1)
+
+
+(1) Scan csv 
+Output [21]: [fdc_id#0L, brand_owner#1, brand_name#2, subbrand_name#3, gtin_upc#4, ingredients#5, not_a_significant_source_of#6, serving_size#7, serving_size_unit#8, household_serving_fulltext#9, branded_food_category#10, data_source#11, package_weight#12, modified_date#13, available_date#14, market_country#15, discontinued_date#16, preparation_state_code#17, trade_channel#18, short_description#19, material_code#20]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/branded_food.csv]
+ReadSchema: struct<fdc_id:bigint,brand_owner:string,brand_name:string,subbrand_name:string,gtin_upc:string,ingredients:string,not_a_significant_source_of:string,serving_size:double,serving_size_unit:string,household_serving_fulltext:string,branded_food_category:string,data_source:string,package_weight:string,modified_date:string,available_date:string,market_country:string,discontinued_date:string,preparation_state_code:string,trade_channel:string,short_description:string,material_code:string>
+
+

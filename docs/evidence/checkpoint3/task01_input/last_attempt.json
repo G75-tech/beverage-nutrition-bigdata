@@ -1,13 +1,13 @@
 {
   "task": "task1",
-  "run_id": "pipeline_20261113T154538688059Z_b15d77",
+  "run_id": "pipeline_20261114T000129685710Z_fc0ef0",
   "status": "PASS",
   "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
-  "result_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/input_contract.json",
-  "result_sha256": "9ced3d5a330ae4fa53e8c8477cc5f2a4c264154b7b6b6c5402ffe574a8b405fa",
-  "report_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/input_contract.md",
-  "evidence_dir": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77",
+  "result_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261114T000129685710Z_fc0ef0/input_contract.json",
+  "result_sha256": "fdf028cefb5106611acd1473fc5f865f465ad8e527765745263ff9456c46aa34",
+  "report_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261114T000129685710Z_fc0ef0/input_contract.md",
+  "evidence_dir": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261114T000129685710Z_fc0ef0",
   "artifacts_dir": null,
-  "console_log_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261113T154538688059Z_b15d77/console.log",
-  "finished_at_utc": "2026-11-13T15:46:17.852463Z"
+  "console_log_path": "docs/evidence/checkpoint3/task01_input/runs/pipeline_20261114T000129685710Z_fc0ef0/console.log",
+  "finished_at_utc": "2026-11-14T00:02:03.106874Z"
 }

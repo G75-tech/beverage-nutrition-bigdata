@@ -6,11 +6,36 @@ import unittest
 
 from src.common import load_config, record_spark_baseline, sha256, start_spark, write_json
 from src.checkpoint3_pipeline import (
-    execute_chain, pipeline_lock, publish_latest, run_stage, validate_receipt, wire_next, working_config,
+    collect_inputs, execute_chain, pipeline_lock, publish_latest, run_stage, validate_receipt, wire_next, working_config,
 )
 
 
 class PipelineControlTests(unittest.TestCase):
+    def test_csv_pipeline_has_no_json_path_or_file_dependency(self):
+        from unittest.mock import patch
+
+        with patch("src.checkpoint3_pipeline.sha256", side_effect=AssertionError("Opened a reference file")):
+            inputs = collect_inputs({"task3": {"basis_mode": "csv"}},
+                                    {"tables": [{"size_bytes": 10}, {"size_bytes": 20}]})
+        self.assertFalse(inputs["json_reference_enabled"])
+        self.assertEqual(inputs["reference_zip_bytes"], 0)
+        self.assertEqual(inputs["raw_csv_bytes"], 30)
+        self.assertNotIn("reference_zip_path", inputs)
+
+    def test_optional_json_pipeline_still_checks_reference_hash(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            path = root / "reference.zip"
+            path.write_bytes(b"reference fixture")
+            task = {"basis_mode": "json_crosscheck", "basis_reference_zip": "reference.zip",
+                    "basis_reference_sha256": sha256(path)}
+            inputs = collect_inputs({"task3": task}, {"tables": []}, root)
+            self.assertTrue(inputs["json_reference_enabled"])
+            self.assertEqual(inputs["reference_zip_bytes"], path.stat().st_size)
+            path.write_bytes(b"changed")
+            with self.assertRaisesRegex(ValueError, "checksum"):
+                collect_inputs({"task3": task}, {"tables": []}, root)
+
     def test_working_config_keeps_policy_but_drops_old_artifact_pins(self):
         original = {"snapshot_run_id": "old", "tables": {"food": {"key": "fdc_id"}},
                     "task2": {"scope_policy_path": "scope.json", "input_contract_path": "stale"},

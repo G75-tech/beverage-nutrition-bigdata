@@ -1,0 +1,101 @@
+{
+  "snapshot_run_id": "run_20261024T005433432881Z_3ba489_1",
+  "tables": {
+    "branded_food.csv": {
+      "grain": "One branded food record per fdc_id",
+      "primary_key": [
+        "fdc_id"
+      ],
+      "join_keys": [
+        "fdc_id"
+      ]
+    },
+    "food.csv": {
+      "grain": "One food record per fdc_id",
+      "primary_key": [
+        "fdc_id"
+      ],
+      "join_keys": [
+        "fdc_id"
+      ]
+    },
+    "food_nutrient.csv": {
+      "grain": "One nutrient-value record per id; a food can have multiple nutrient records",
+      "primary_key": [
+        "id"
+      ],
+      "join_keys": [
+        "fdc_id",
+        "nutrient_id"
+      ]
+    },
+    "nutrient.csv": {
+      "grain": "One nutrient definition per id",
+      "primary_key": [
+        "id"
+      ],
+      "join_keys": [
+        "id"
+      ]
+    }
+  },
+  "task2": {
+    "scope_policy_path": "config/beverage_scope.json",
+    "input_contract_path": "docs/evidence/checkpoint3/task01_input/runs/manual_20261113T224647435512Z_fef66c/input_contract.json"
+  },
+  "task3": {
+    "nutrients": [
+      {
+        "id": 2000,
+        "name": "Total Sugars",
+        "unit_name": "G"
+      },
+      {
+        "id": 1008,
+        "name": "Energy",
+        "unit_name": "KCAL"
+      },
+      {
+        "id": 1093,
+        "name": "Sodium, Na",
+        "unit_name": "MG"
+      },
+      {
+        "id": 1003,
+        "name": "Protein",
+        "unit_name": "G"
+      },
+      {
+        "id": 1004,
+        "name": "Total lipid (fat)",
+        "unit_name": "G"
+      }
+    ],
+    "basis_reference_zip": "datasets/usda_branded_2026/json/FoodData_Central_branded_food_json_2026-04-30.zip",
+    "basis_reference_sha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+    "basis_relative_tolerance": 0.01,
+    "basis_absolute_tolerance": 0.005,
+    "value_review_limits": {
+      "2000": 100.0,
+      "1003": 100.0,
+      "1004": 100.0,
+      "1008": 1000.0,
+      "1093": 10000.0
+    }
+  },
+  "task4": {},
+  "task5": {
+    "aggregation_policy": {
+      "measurement_bases": [
+        "per_100_ml",
+        "per_100_g"
+      ],
+      "weighting": "one equal weight per fdc_id within each group/nutrient/basis",
+      "percentile_method": "Spark exact percentile with linear interpolation",
+      "round_decimal_places": 6,
+      "repeat_relative_tolerance": 1e-09,
+      "repeat_absolute_tolerance": 1e-09
+    }
+  },
+  "task6": {}
+}

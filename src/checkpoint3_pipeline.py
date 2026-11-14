@@ -17,6 +17,7 @@ from src.common import ROOT, load_config, sha256, utc_now, write_json
 from src.input_contract import lock_snapshot, verify_raw
 from src.join_beverage_nutrients import verify_artifact
 from src.run_storage import create_run, fresh_id, publish_run, run_paths
+from src.measurement_basis import basis_mode
 
 
 STAGES = [
@@ -143,7 +144,7 @@ def run_stage(stage, config_path, folder, logs, pipeline_id, snapshot, executor=
     command = [sys.executable, "-B", "-u", "-m", module, "--task-config", str(stage_config),
                "--result-pointer", str(pointer), "--collect-baseline"]
     env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1", CHECKPOINT3_PIPELINE_RUN_ID=pipeline_id,
-               CHECKPOINT3_STAGE_RUN_ID=stage_id)
+               CHECKPOINT3_STAGE_RUN_ID=stage_id, CHECKPOINT3_LOCAL_TASK_ATTEMPTS="4")
     started = time.perf_counter()
     with log_path.open("w", encoding="utf-8") as output:
         completed = executor(command, cwd=root, env=env, stdout=output, stderr=subprocess.STDOUT, check=False)
@@ -199,6 +200,22 @@ def collect_outputs(results, root=ROOT):
     return list(outputs.values())
 
 
+def collect_inputs(config, contract, root=ROOT):
+    """CSV mode never opens, hashes or requires the optional dataset JSON."""
+    mode = basis_mode(config["task3"])
+    inputs = {"raw_csv_bytes": sum(table["size_bytes"] for table in contract["tables"]),
+              "raw_tables": contract["tables"], "basis_mode": mode,
+              "json_reference_enabled": mode == "json_crosscheck", "reference_zip_bytes": 0}
+    if mode == "json_crosscheck":
+        path = Path(root) / config["task3"]["basis_reference_zip"]
+        checksum = sha256(path)
+        if checksum != config["task3"]["basis_reference_sha256"]:
+            raise ValueError("JSON reference ZIP differs from its configured checksum")
+        inputs.update(reference_zip_path=config["task3"]["basis_reference_zip"],
+                      reference_zip_bytes=path.stat().st_size, reference_zip_sha256=checksum)
+    return inputs
+
+
 def write_report(folder, evidence):
     logical = evidence.get("inputs", {})
     lines = ["# Baseline Checkpoint 3 toàn pipeline", "", f"Trạng thái: {evidence['status']}.",
@@ -208,7 +225,8 @@ def write_report(folder, evidence):
              "Mỗi stage có cấu hình bàn giao mới trong run_config.json và một tiến trình Spark local riêng.",
              "Thời gian bao gồm khởi động/dừng Spark, hash dữ liệu, kiểm tra chất lượng, ghi/đọc lại CSV và thu thập kế hoạch thực thi.",
              "Đây là một lượt đo trên máy local; cache hệ điều hành không được ép về trạng thái lạnh.", "",
-             f"CSV raw logic: {logical.get('raw_csv_bytes', '?')} byte; ZIP JSON tham chiếu: {logical.get('reference_zip_bytes', '?')} byte.",
+             f"Chế độ cơ sở đo: {logical.get('basis_mode', 'json_crosscheck')}; dùng dataset JSON: {logical.get('json_reference_enabled', True)}.",
+             f"CSV raw logic: {logical.get('raw_csv_bytes', '?')} byte; ZIP JSON được dùng: {logical.get('reference_zip_bytes', '?')} byte.",
              "Dung lượng logic tính mỗi tệp một lần; lượng I/O thực tế có thể lớn hơn do kiểm tra và đọc lại.", "",
              "| Stage | Wall time (s) | Runtime bên trong (s) | Partition quan sát |",
              "| --- | ---: | ---: | --- |"]
@@ -292,12 +310,7 @@ def run(args):
         write_json(config_path, config)
         print("[INPUT] Kiểm tra raw snapshot và cấu hình trước khi chạy...", flush=True)
         contract = lock_snapshot(load_config(), config)
-        zip_path = ROOT / config["task3"]["basis_reference_zip"]
-        if sha256(zip_path) != config["task3"]["basis_reference_sha256"]:
-            raise ValueError("JSON reference ZIP differs from its configured checksum")
-        evidence["inputs"] = {"raw_csv_bytes": sum(table["size_bytes"] for table in contract["tables"]),
-                              "raw_tables": contract["tables"], "reference_zip_path": config["task3"]["basis_reference_zip"],
-                              "reference_zip_bytes": zip_path.stat().st_size, "reference_zip_sha256": sha256(zip_path)}
+        evidence["inputs"] = collect_inputs(config, contract)
         results = execute_chain(config, config_path, folder, logs, run_id, evidence)
         evidence["outputs"] = collect_outputs(results)
         for table in contract["tables"]:
@@ -305,8 +318,9 @@ def run(args):
         for name, checksum in evidence["source_sha256"].items():
             if sha256(ROOT / name) != checksum:
                 raise ValueError(f"Implementation or project config changed during the pipeline: {name}")
-        if sha256(zip_path) != evidence["inputs"]["reference_zip_sha256"]:
-            raise ValueError("JSON reference ZIP changed during the pipeline")
+        if evidence["inputs"]["json_reference_enabled"]:
+            if sha256(ROOT / evidence["inputs"]["reference_zip_path"]) != evidence["inputs"]["reference_zip_sha256"]:
+                raise ValueError("JSON reference ZIP changed during the pipeline")
         task2, task3, task4, task5 = (results[name] for name in ("task2", "task3", "task4", "task5_repeat"))
         evidence["quality"] = {"selected_beverages": task2["output"]["row_count"], "review_beverages": task2["review_output"]["row_count"],
                                "clean_nutrient_records": task3["clean_output"]["row_count"], "joined_slots": task4["output"]["row_count"],

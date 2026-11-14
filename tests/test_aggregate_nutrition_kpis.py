@@ -144,6 +144,22 @@ class KpiSparkTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unsafe value"):
             compute_kpis(forged, self.coverage, POLICY)
 
+    def test_csv_mode_accepts_documented_basis_and_rejects_mixed_policy(self):
+        from pyspark.sql import functions as F
+
+        csv_fact = self.fact.withColumn("basis_status", F.when(
+            F.col("basis_status") == "corroborated_export_label_scaling", "documented_csv_serving_unit")
+            .otherwise(F.col("basis_status")))
+        kpis, _ = compute_kpis(csv_fact, self.coverage, POLICY, mode="csv")
+        rows = {(row.beverage_group, row.measurement_basis): row for row in kpis.collect()}
+        self.assertEqual(rows["Nhóm A", "per_100_ml"].n_compared, 2)
+        self.assertEqual(rows["Nhóm A", "per_100_ml"].mean_amount, 5)
+        self.assertEqual(rows["Nhóm A", "per_100_g"].mean_amount, 20)
+        with self.assertRaisesRegex(ValueError, "unsafe value"):
+            compute_kpis(csv_fact, self.coverage, POLICY, mode="json_crosscheck")
+        with self.assertRaisesRegex(ValueError, "unsafe value"):
+            compute_kpis(self.fact, self.coverage, POLICY, mode="csv")
+
     def test_csv_roundtrip_preserves_unicode_nulls_and_counts(self):
         summary = validate_kpis(self.kpis, self.quality, 3, 4, 6)
         self.assertEqual(summary["computed_rows"], 2)

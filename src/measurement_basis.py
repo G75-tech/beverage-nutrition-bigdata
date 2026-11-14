@@ -1,4 +1,4 @@
-"""Cross-check the local USDA JSON export against label serving-size arithmetic."""
+"""Measurement-basis policy and optional USDA JSON label cross-checks."""
 from __future__ import annotations
 
 import csv
@@ -13,6 +13,16 @@ import zipfile
 LABEL_FIELDS = {2000: "sugars", 1008: "calories", 1093: "sodium", 1003: "protein", 1004: "fat"}
 REFERENCE_COLUMNS = ["fdc_id", "nutrient_id", "json_amount", "label_amount", "json_serving_size",
                      "json_serving_unit", "record_reference_status", "scale_checks", "scale_mismatches"]
+BASIS_STATUSES = {"csv": "documented_csv_serving_unit",
+                  "json_crosscheck": "corroborated_export_label_scaling"}
+
+
+def basis_mode(task):
+    """Old pinned configs retain their original JSON policy; new configs select CSV."""
+    mode = task.get("basis_mode", "json_crosscheck")
+    if mode not in BASIS_STATUSES:
+        raise ValueError(f"Unsupported measurement basis mode: {mode!r}")
+    return mode
 
 
 def iter_foods(stream, chunk_size=1024 * 1024):

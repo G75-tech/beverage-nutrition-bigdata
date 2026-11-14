@@ -1,0 +1,11 @@
+== Physical Plan ==
+Scan csv  (1)
+
+
+(1) Scan csv 
+Output [8]: [fdc_id#237L, data_type#238, description#239, food_category_id#240L, publication_date#241, market_country#242, trade_channel#243, microbe_data#244]
+Batched: false
+Location: InMemoryFileIndex [file:/G:/BigDATA/beverage-nutrition-bigdata/data/raw/usda_branded_2026_04/ingest_date=2026-10-24/run_id=run_20261024T005433432881Z_3ba489_1/food.csv]
+ReadSchema: struct<fdc_id:bigint,data_type:string,description:string,food_category_id:bigint,publication_date:string,market_country:string,trade_channel:string,microbe_data:string>
+
+

@@ -5,12 +5,51 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from src.common import start_spark
+from src.common import local_spark_master, sha256, start_spark
 from src.clean_nutrients import add_basis, classify_amounts, resolve_pairs, save_frame
-from src.measurement_basis import iter_foods, reference_rows
+from src.measurement_basis import basis_mode, iter_foods, reference_rows
+
+
+class HashReadTests(unittest.TestCase):
+    def test_local_task_attempts_are_bounded_and_default_master_is_preserved(self):
+        from unittest.mock import patch
+
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertEqual(local_spark_master(), "local[*]")
+        with patch.dict("os.environ", {"CHECKPOINT3_LOCAL_TASK_ATTEMPTS": "4"}):
+            self.assertEqual(local_spark_master(), "local[*,4]")
+        for attempts in ("0", "5", "invalid"):
+            with patch.dict("os.environ", {"CHECKPOINT3_LOCAL_TASK_ATTEMPTS": attempts}), self.assertRaises(ValueError):
+                local_spark_master()
+
+    def test_transient_permission_error_restarts_the_complete_hash(self):
+        import hashlib
+        from unittest.mock import MagicMock, patch
+
+        interrupted = MagicMock()
+        interrupted.__enter__.return_value.read.side_effect = [b"partial", PermissionError("file busy")]
+        complete = MagicMock()
+        complete.__enter__.return_value.read.side_effect = [b"complete file", b""]
+        with patch("pathlib.Path.open", side_effect=[interrupted, complete]) as opened, patch("src.common.time.sleep"):
+            self.assertEqual(sha256("fixture.csv"), hashlib.sha256(b"complete file").hexdigest())
+        self.assertEqual(opened.call_count, 2)
+
+    def test_persistent_permission_error_still_stops_verification(self):
+        from unittest.mock import patch
+
+        with patch("pathlib.Path.open", side_effect=PermissionError("file busy")) as opened, patch("src.common.time.sleep"):
+            with self.assertRaises(PermissionError):
+                sha256("fixture.csv")
+        self.assertEqual(opened.call_count, 4)
 
 
 class JsonReferenceTests(unittest.TestCase):
+    def test_explicit_csv_policy_and_legacy_json_policy_are_distinct(self):
+        self.assertEqual(basis_mode({"basis_mode": "csv"}), "csv")
+        self.assertEqual(basis_mode({}), "json_crosscheck")
+        with self.assertRaisesRegex(ValueError, "Unsupported"):
+            basis_mode({"basis_mode": "typo"})
+
     def test_streams_records_across_chunk_boundaries_and_preserves_unicode(self):
         foods = [{"fdcId": 1, "description": "Nước " + "x" * 100}, {"fdcId": 2}]
         source = io.StringIO(json.dumps({"BrandedFoods": foods}, ensure_ascii=False, indent=2))
@@ -122,6 +161,46 @@ class NutrientSparkTests(unittest.TestCase):
             self.assertFalse(rows[0].eligible_for_comparison)
             self.assertEqual(rows[1].amount, 0)
             self.assertTrue(rows[1].eligible_for_comparison)
+
+    def test_csv_mode_preserves_standardized_amount_and_zero_without_json(self):
+        clean = self.spark.createDataFrame(
+            [(1, 2000, 8.0, "valid"), (2, 2000, 0.0, "valid"),
+             (3, 2000, 12.5, "valid"), (4, 2000, 150.0, "valid"),
+             (5, 2000, 10.0, "valid"), (6, 2000, 10.0, "valid"),
+             (7, 2000, 10.0, "valid"), (8, 2000, 10.0, "valid"),
+             (9, 2000, 10.0, "valid"), (10, 2000, None, "missing_amount"),
+             (11, 2000, 10.0, "valid"), (12, 2000, 10.0, "valid")],
+            "fdc_id long, nutrient_id long, amount double, amount_status string")
+        beverages = self.spark.createDataFrame(
+            [(1, "Soda", 250.0, "ml"), (2, "Water", 250.0, "ml"),
+             (3, "Milk", 30.0, "g"), (4, "Soda", 100.0, "ml"),
+             (5, "Soda", 250.0, None), (6, "Soda", 250.0, "oz"),
+             (7, "Soda", 0.0, "ml"), (8, "Soda", float("nan"), "ml"),
+             (9, "Soda", float("inf"), "ml"), (10, "Soda", 250.0, "ml"),
+             (11, "Soda", None, "ml"), (12, "Soda", -250.0, "ml")],
+            "fdc_id long, beverage_group string, serving_size double, serving_size_unit_normalized string")
+        nutrients = self.spark.createDataFrame([(2000, "Total Sugars", "G")],
+                                               "nutrient_id long, nutrient_name string, unit_name string")
+        rows = {row.fdc_id: row for row in add_basis(clean, beverages, nutrients,
+                                                    review_limits={2000: 100}, mode="csv").collect()}
+        self.assertEqual(rows[1].amount, 8.0)  # Already per 100 ml; never divide by 250 again.
+        self.assertEqual(rows[1].measurement_basis, "per_100_ml")
+        self.assertTrue(rows[1].eligible_for_comparison)
+        self.assertEqual(rows[1].basis_status, "documented_csv_serving_unit")
+        self.assertEqual(rows[2].amount, 0.0)
+        self.assertTrue(rows[2].eligible_for_comparison)
+        self.assertEqual(rows[3].measurement_basis, "per_100_g")
+        self.assertEqual(rows[3].amount, 12.5)
+        self.assertTrue(rows[4].value_review_required)
+        self.assertFalse(rows[4].eligible_for_comparison)
+        for food_id in (5, 6):
+            self.assertEqual(rows[food_id].basis_status, "unrecognized_serving_unit")
+        for food_id in (7, 8, 9, 11, 12):
+            self.assertEqual(rows[food_id].basis_status, "invalid_serving_metadata")
+        self.assertEqual(rows[10].basis_status, "amount_missing")
+        for food_id in range(5, 13):
+            self.assertFalse(rows[food_id].eligible_for_comparison)
+            self.assertIsNone(rows[food_id].measurement_basis)
 
 
 if __name__ == "__main__":

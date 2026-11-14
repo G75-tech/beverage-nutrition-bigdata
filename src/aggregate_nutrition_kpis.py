@@ -15,6 +15,7 @@ from src.run_storage import create_run
 from src.common import add_stage_arguments, publish_stage_result, record_spark_baseline
 from src.clean_nutrients import save_frame
 from src.input_contract import CSV_OPTIONS, measure_input
+from src.measurement_basis import BASIS_STATUSES, basis_mode
 from src.join_beverage_nutrients import (
     KEYS, coverage_table, require_unique, validate_fact, verify_artifact,
 )
@@ -54,6 +55,9 @@ def load_inputs(config, root=ROOT):
     task3_path = (root / result["task3_result_path"]).resolve()
     if sha256(task3_path) != result["task3_result_sha256"] or result["task3_result_sha256"] != config["task3"]["result_sha256"]:
         raise ValueError("Upstream Task 3 evidence changed")
+    task3 = load_config(task3_path)
+    if basis_mode(task3) != basis_mode(config["task3"]):
+        raise ValueError("Task 3 measurement basis mode differs from the KPI configuration")
     for key in ("output", "coverage_output", "group_coverage_output"):
         if handoff[key] != result[key]:
             raise ValueError(f"Task 4 handoff metadata differs: {key}")
@@ -75,15 +79,16 @@ def validate_policy(policy):
             raise ValueError("Repeatability tolerance must be finite and nonnegative")
 
 
-def validate_eligible(fact, bases):
+def validate_eligible(fact, bases, mode="json_crosscheck"):
     from pyspark.sql import functions as F
 
+    basis_mode({"basis_mode": mode})
     eligible = F.col("eligible_for_comparison")
     bad = eligible & (
         ~F.col("clean_record_present").eqNullSafe(True)
         | ~F.col("value_review_required").eqNullSafe(False)
         | ~F.col("amount_status").eqNullSafe("valid")
-        | ~F.col("basis_status").eqNullSafe("corroborated_export_label_scaling")
+        | ~F.col("basis_status").eqNullSafe(BASIS_STATUSES[mode])
         | F.col("measurement_basis").isNull() | ~F.col("measurement_basis").isin(bases)
         | F.col("amount").isNull() | F.isnan("amount")
         | F.col("amount").isin(float("inf"), float("-inf")) | (F.col("amount") < 0))
@@ -91,11 +96,11 @@ def validate_eligible(fact, bases):
         raise ValueError("An unsafe value is marked eligible for KPI calculation")
 
 
-def compute_kpis(fact, group_coverage, policy):
+def compute_kpis(fact, group_coverage, policy, mode="json_crosscheck"):
     from pyspark.sql import functions as F
 
     bases = policy["measurement_bases"]
-    validate_eligible(fact, bases)
+    validate_eligible(fact, bases, mode)
     eligible = fact.filter(F.col("eligible_for_comparison"))
     # One FDC record has at most one amount for each nutrient after Task 3/4 checks.
     stats = eligible.groupBy(*(GROUP_KEYS + ["measurement_basis"])).agg(
@@ -235,7 +240,9 @@ def write_report(folder, evidence):
              "Grain: (beverage_group, nutrient_id, unit_name, measurement_basis). Hai cơ sở 100 ml và 100 g được tách riêng.",
              "Mỗi hồ sơ FDC đủ điều kiện có trọng số bằng nhau trong từng nhóm/chỉ số/cơ sở đo.",
              "Số 0 hợp lệ tham gia tính; chỉ số thiếu giữ null và không tham gia mẫu số trung bình.",
-             "Chỉ dùng eligible_for_comparison=true; các cờ và điều kiện cơ sở đo được kế thừa Task 3–4.", "",
+             "Chỉ dùng eligible_for_comparison=true; các cờ và điều kiện cơ sở đo được kế thừa Task 3–4.",
+             ("Nguồn tính: CSV USDA. Cơ sở đo theo đơn vị khẩu phần đã chuẩn hóa; đối chiếu dataset JSON: NOT_RUN."
+              if evidence.get("basis_mode") == "csv" else "Cơ sở đo qua kiểm tra chéo CSV/JSON theo Task 3."), "",
              "Các thống kê: mean (trung bình), median (trung vị), min, max, p25, p75 (các phân vị 25% và 75%).",
              "Phân vị tính bằng Spark percentile chính xác, có nội suy tuyến tính; trung vị là phân vị 50%.",
              f"Giá trị thống kê xuất với tối đa {policy.get('round_decimal_places', '?')} chữ số sau dấu thập phân.",
@@ -245,8 +252,14 @@ def write_report(folder, evidence):
              f"Số dòng KPI: {metrics.get('key_profile', {}).get('row_count', '?')}; có kết quả: {metrics.get('computed_rows', '?')}; chưa có mẫu: {metrics.get('empty_rows', '?')}.",
              f"Tổng record dinh dưỡng được dùng: {metrics.get('compared_nutrient_records', '?')}.",
              f"Đối chiếu hai lần chạy độc lập: {evidence.get('repeatability', {}).get('status', 'NOT_RUN')}.", "",
-             "| Nhóm đồ uống | Cơ sở đo | Số hồ sơ | Trung bình đường | Trung vị đường | Độ phủ (%) |",
-             "| --- | --- | ---: | ---: | ---: | ---: |"]
+             "| Chỉ số | Có số hợp lệ | Đủ điều kiện cả hai cơ sở đo | Theo 100 ml | Theo 100 g |",
+             "| --- | ---: | ---: | ---: | ---: |"]
+    for row in evidence.get("coverage_summary", []):
+        lines.append(f"| {row['nutrient_name']} | {row['numeric_available']} | {row['eligible_any_basis']} | "
+                     f"{row['compared_per_100_ml']} | {row['compared_per_100_g']} |")
+    lines.extend(["", "CSV nutrition_kpis.csv chứa đủ năm chỉ số. Bảng dưới đây xem nhanh riêng chỉ số Đường.", "",
+             "| Nhóm đồ uống | Cơ sở đo | Số hồ sơ đủ điều kiện | Trung bình đường | Trung vị đường | Độ phủ (%) |",
+             "| --- | --- | ---: | ---: | ---: | ---: |"])
     for row in evidence.get("sugar_preview", []):
         def text(value):
             return "—" if value is None else str(value)
@@ -282,6 +295,8 @@ def main(argv=None):
         from pyspark.sql.types import StructType
 
         config = load_config(args.task_config or ROOT / "config/checkpoint3.json")
+        mode = basis_mode(config["task3"])
+        evidence["basis_mode"] = mode
         task = config["task5"]
         policy = task["aggregation_policy"]
         validate_policy(policy)
@@ -320,7 +335,7 @@ def main(argv=None):
             raise ValueError("Coverage recomputed from Task 4 differs from its locked report")
         coverage_rows = require_unique(actual_coverage, ["beverage_group", "nutrient_id"], "input coverage")["row_count"]
         print("[KPI] Lọc đủ điều kiện, tách cơ sở đo và tính trung bình/trung vị/phân vị...", flush=True)
-        kpis, quality = compute_kpis(fact, actual_coverage, policy)
+        kpis, quality = compute_kpis(fact, actual_coverage, policy, mode)
         if args.collect_baseline:
             record_spark_baseline(spark, kpis, folder, "nutrition_kpis")
         expected_rows = coverage_rows * len(policy["measurement_bases"])
