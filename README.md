@@ -58,7 +58,7 @@ Bốn bảng được nạp vào raw:
 
 Ở bước nối bảng dự kiến, `fdc_id` liên kết sản phẩm giữa ba bảng đầu; `food_nutrient.nutrient_id` liên kết với `nutrient.id`. Cần giữ nguyên ý nghĩa dữ liệu thiếu và kiểm tra cơ sở đo trước khi so sánh; không tự quy đổi dữ liệu trên 100 g thành trên 100 ml.
 
-**Dataset và raw không được đưa lên GitHub.** Người chạy cần chuẩn bị CSV riêng. Bản ZIP JSON đã được kiểm kê trong lần triển khai gốc, chưa được giải nén hoặc ingest; JSON không cần cho luồng chạy mặc định. Open Food Facts mới là nguồn dự phòng dự kiến.
+**Dataset và raw không được đưa lên GitHub.** Người chạy cần chuẩn bị CSV riêng. Dataset JSON tạm không được sử dụng trong luồng mặc định; chế độ đối chiếu JSON có thể bật lại sau khi cập nhật dữ liệu và cấu hình. Open Food Facts mới là nguồn dự phòng dự kiến.
 
 ## Công nghệ
 
@@ -324,6 +324,12 @@ Dữ liệu FoodData Central được USDA công bố theo **CC0 1.0**, xem [đi
 ## Checkpoint 3 — chạy từng task và quản lý kết quả
 
 Xem [hướng dẫn Task 1–7](docs/RUN_TASKS_CHECKPOINT3.md) và [mục lục kết quả mới](docs/evidence/checkpoint3/INDEX.md).
+
+Luồng mặc định dùng **CSV USDA** (`task3.basis_mode = "csv"` trong `config/checkpoint3.json`).
+Giá trị dinh dưỡng đã chuẩn hóa trên 100 đơn vị được giữ nguyên; cơ sở 100 g/100 ml theo đơn vị khẩu phần g/ml đã chuẩn hóa, với khẩu phần hữu hạn và lớn hơn 0.
+Giữ kiểm tra số hợp lệ, dữ liệu thiếu, khóa trùng/xung đột và ngưỡng cần rà soát; số 0 hợp lệ tham gia KPI.
+Dataset JSON không được đọc hoặc yêu cầu trong chế độ này. Kết quả ghi rõ cơ sở đo theo CSV, chưa đối chiếu JSON.
+Khi cần đối chiếu lại, cập nhật dataset/đường dẫn/hash rồi đổi `task3.basis_mode` thành `"json_crosscheck"` và chạy lại Task 6.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\RUN_CHECKPOINT3.ps1 -Task 1
